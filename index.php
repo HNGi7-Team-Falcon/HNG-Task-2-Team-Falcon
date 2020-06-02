@@ -28,7 +28,7 @@
 			$output = shell_exec("$runtime $filePath"); # Execute script and assign result
 
 			if ($isJson) {
-				echo json_encode($output) . "\n";
+				echo json_encode($output);
 			} else {
 				echo $output;
 			}
