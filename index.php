@@ -23,14 +23,14 @@
 		$filePath = "./scripts/$fileName";
 
 		if (is_file($filePath)) {
-			
+
 			$runtime = getRuntime("$fileName");
 			$output = shell_exec("$runtime $filePath"); # Execute script and assign result
 
 			if ($isJson) {
-				echo "return json";
-			} else {
 				echo json_encode($output) . "\n";
+			} else {
+				echo $output;
 			}
 		}
 	}
