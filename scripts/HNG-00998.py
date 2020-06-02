@@ -2,6 +2,7 @@ first_name = "Bolaji"
 last_name ="Alabi"
 hng_id = "00998"
 language ="Python"
+flush = true;
 
 
 def printData ():
