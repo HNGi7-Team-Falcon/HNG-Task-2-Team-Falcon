@@ -28,4 +28,4 @@ jobs:
           # PR Label name
           #label_name: # optional
           # The name of target branch to merge:  
-          target_branch: 'submissions'
+          target_branch: submissions
