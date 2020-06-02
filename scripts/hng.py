@@ -4,5 +4,5 @@ full_name = 'Tomiwa Obanla'
 hng_id = 'HNG-00056'
 language = 'python'
 
-print('Hello WOrld, this is {} with HNGi7 ID {} using {} for stage 2 task'.format(full_name, hng_id, language))
+print('Hello WOrld, this is {} with HNGi7 ID {} using {} for stage 2 task.'.format(full_name, hng_id, language))
 
