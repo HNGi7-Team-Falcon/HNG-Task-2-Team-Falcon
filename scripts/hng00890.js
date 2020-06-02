@@ -1,4 +1,5 @@
-const x = 'Hello world this is Babatunde Abdulhameed with HNGi7 ID [00890] using Javascript for stage 2 task' 
+const task_two = 'Hello world this is Babatunde Abdulhameed with HNGi7 ID [00890] using Javascript for stage 2 task' 
 
-console.log(x);
+//return task_two;
 
+console.log(task_two);
