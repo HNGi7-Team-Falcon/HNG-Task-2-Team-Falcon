@@ -1,2 +1,6 @@
-task2_message = "Hello World, this is Adedamola Alege with HNGi7 ID HNG-04599 using python for stage 2 task"
-print(task2_message)
+fullname = "Alege Adedamola"
+hng_id = "HNG-04599"
+language = "python"
+
+message = f"Hello World, this is {fullname} with HNGi7 ID {hng_id} using {language} for stage 2 task"
+print(message, flush=True)
