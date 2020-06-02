@@ -2,4 +2,4 @@
 
 console.log("Hello World, this is Ukponoabasi Nnah with HNGi7 ID HNG-00896 using javascript for stage 2 task")
 
-//this script was written in javascript
+//this script was written in javascript by HNG-00896
