@@ -4,7 +4,7 @@ name: MergeApprovedPR
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/1 * * * *"
 
 jobs:
   merge:
@@ -17,3 +17,4 @@ jobs:
         uses: framer/merge-approved-pull-request-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_LABEL: '*'
