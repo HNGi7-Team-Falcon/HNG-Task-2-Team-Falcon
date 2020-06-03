@@ -3,6 +3,6 @@ def Task_Two(Name, HNG_ID, Lang):
 
 Name = "Edoh Joseph Onome"
 HNG_ID = "HNG-04518"
-Lang = "Pyhton"
+Lang = "Python"
 
 Task_Two(Name, HNG_ID, Lang)
