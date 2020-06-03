@@ -1,6 +1,3 @@
-
-#print("Hello world, this is Abdulateef Gafar with HNGi7 ID 03315 using Python for stage 2 task", flush=True)
-
 def introduction():
     name = "Abdulateef Gafar"
     ID = "HNG-03315"
