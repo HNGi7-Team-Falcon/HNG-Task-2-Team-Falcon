@@ -88,7 +88,7 @@ if ($response_type == 'json') {
         $result[] = $data;
 
     }
-    echo json_encode($result);
+    echo json_encode($result, JSON_PRETTY_PRINT);
     die();
 }
 ?>
