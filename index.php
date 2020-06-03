@@ -92,7 +92,7 @@
                             $language = trim(get_string_between($response, 'using', 'for'));
                             $email = extract_email($response);
 
-                            $newResponse = (String) str_replace($email, "",$response);
+                            $newResponse = (String) trim(str_replace($email, "",$response));
 
                             # Check status of response
                             $passCondition1 = "Hello World, this is {$internName} with HNGi7 ID HNG-{$internID} using {$language} for stage 2 task ";
