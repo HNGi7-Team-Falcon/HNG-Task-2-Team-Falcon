@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HNG</title>
-    <link rel="stylesheet" href="">
-</head>     
-<body>
-    <p></p>
+function message() { 
+ var fullName = "Azubuike Nnamdi Clement";
+var hngId = "HNG-03331";
+var email = "blessedmarcel1@gmail.com";
+var language = "JavaScript";
 
-    <script>
+ return("Hello world I am " + fullName + " by name with " + hngId + " and slack email " + email + " using " + language + " for stage 2 task ") ;
+}
 
-        var info =
-        "{
-            "fullname" : Azubuike Nnamdi Clement",
-            "id": "HNG-03331",
-            "language": "Javascript"
-            }"
-
-            var display = document.querySelector("p");
-            display.textContent = "Hello World, this is ${json.fullname} with HNGi7 ID ${json.id} using ${json.language} for stage 2 task";
-            
-    </script>
-
-</body>
-</html>
+console.log(message ())
