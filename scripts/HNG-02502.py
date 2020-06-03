@@ -9,9 +9,7 @@ def Open(open):
 	def user(cmd):
 		if cmd == 'yes':
 			print('Hello world')
-			print('Full name: Samuel Jonathan')
-			print('User ID : 02502')
-			print('Programming Language: Python')
+			print('Full name: Samuel Jonathan\nUser ID :02502\nProgramming Language: Python\nEmail:Omohsam81@gmail.com')
 		elif cmd == 'end':
 			print('Program Closed thanks for checking\nPlease grade me well')
 		else :
