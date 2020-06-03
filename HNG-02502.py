@@ -1,6 +1,15 @@
 import re
 import json
-#
+
+#print HNG user detail
+open= True
+def Open(open):
+	global Open
+	global cmd
+	cmd=re.sub(" ", "",input(('Program to check my HNG user details\n To check Input : Yes\n To End input: End\n >>')).lower())
+	global user
+
+
 	def user(cmd):
 		comment='Program Closed thanks for checking\nPlease grade me well!'
 		if cmd == 'yes':
