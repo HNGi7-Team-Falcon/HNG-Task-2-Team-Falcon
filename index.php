@@ -1,8 +1,8 @@
 <?php
-	$template = "/^Hello World, this is ([\w+\s]+) with HNGi7 ID (HNG-[\d]+) using (\w+) for stage 2 task\s/";
+	$template = "/^Hello World, this is [\w\s]+ with HNGi7 ID HNG-\d{0,} using \w+ for stage 2 task/";
 	$idRegex = "/(HNG[-{0,}][\d]+)/";
-	$emailRegex = "/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/";
-	$languageRegex = "/using \[{0,1}(\w+)\b/";
+	$emailRegex = "/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/i";
+	$languageRegex = "/using \[{0,1}(\w+)\b/i";
 	$nameRegex = "/this is \[{0,1}([\w+,\s]+)]{0,1} with/i";
 
 	# Retrive the runtime engine name
@@ -57,22 +57,18 @@
 
 			} else {
 
-				preg_match_all($template, $output, $matches);
-
-				$isMatched = false;
+				$isMatched = preg_match($template, $output, $matches) === 1;
 
 				$name;
 				$language;
 				$email;
 
-				if (isset($matches[0][0])){
-					preg_match_all($template, $matches[0][0], $expectedFormat);
+				if (isset($matches[0])){
+					preg_match_all($template, $matches[0], $expectedFormat);
 
-					if (isset($expectedformat[0][0])) {
-						$item["expected"] = $expectedformat[0][0];
+					if (isset($expectedformat[0])) {
+						$item["expected"] = $expectedformat[0];
 					}
-
-					$isMatched = $matches[0][0] === $output;
 				}
 
 				if ($isMatched) {
