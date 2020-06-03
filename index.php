@@ -77,9 +77,7 @@
 
                             # Command for Php
                             if ($ext == 'php') {
-
                                 $response = exec("$ext $file 2>&1", $output);
-
                             } else if ($ext == 'js') {
                                 $response = exec("node $file 2>&1", $output);
                             } else {
@@ -98,11 +96,13 @@
                             $newResponse = (String) str_replace($email, "",$response);
 
                             # Check status of response
-                            $passCondition = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task ";
-                            $passCondition2 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task. ";
+                            $passCondition1 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task ";
+                            $passCondition2 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task.";
+                            $passCondition3 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task";
+                            $passCondition4 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task. ";
 
 
-                            if (($passCondition == $newResponse) || ($passCondition2 == $newResponse)) {
+                            if (($passCondition1 == $newResponse) || ($passCondition2 == $newResponse) || ($passCondition3 == $newResponse) || ($passCondition4 == $newResponse)) {
                                 $status = 'pass';
                             } else {
                                 $status = 'fail';
