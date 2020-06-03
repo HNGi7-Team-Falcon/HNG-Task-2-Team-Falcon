@@ -1,0 +1,1 @@
+console.log("Hello World, this is Ayomide Micho with HNGi7 ID HNG-04703 using Javascript for stage 2 task. gabrielmicho@gmail.com")
