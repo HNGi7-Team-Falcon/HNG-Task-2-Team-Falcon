@@ -16,7 +16,7 @@
 		$supported_map = json_decode($supported_json, true); # convert to json object to work with
 
 		$tokens = explode(".", $fileName); // split file name into [fileName, extension];
-		$runtime;
+		$runtime = "php";
 		if (isset($tokens[1])) {
 			$ext = $tokens[1]; // extension
 			if (isset($ext) && isset($supported_map[strtolower($ext)])) {
@@ -46,7 +46,7 @@
 				$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
 			}
 
-			if ($output === null) {
+			if (is_null($output)) {
 
 				$item["status"] = "fail";
 				$item["message"] = "unable to run script";
