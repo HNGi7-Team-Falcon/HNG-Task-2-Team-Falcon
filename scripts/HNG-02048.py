@@ -1,6 +1,6 @@
 name ="oluwafemi sopade"
 ID = "HNG-02048"
-Email= "icekidz1997@gmail.com"
+Email = "icekidz1997@gmail.com"
 language = "python"
 
 
