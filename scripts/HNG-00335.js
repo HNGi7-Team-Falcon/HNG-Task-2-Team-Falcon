@@ -1,7 +1,7 @@
 const myFunction = () => {
 
     let fullname = 'Robert Ebafua';
-    let hngId = '00335';
+    let hngId = 'HNG-00335';
     let devLang = 'Javascript';
     let email  = 'robertebafua@gmail.com';
 
