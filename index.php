@@ -135,6 +135,7 @@
 		$rows = getRows($data);
 
 		$table = '
+		<h1 class="text-center">Team Falcon</h1>
 		<table class="table table-bordered">
 			<thead class="thead-dark">
 				<tr>
@@ -152,10 +153,12 @@
 		<!DOCTYPE html>
 		<html>"
 			.$head
-			."<body>"
+			."<body>
+					<div class=container>"
 				.$table
 				.$bootstrap
-			."</body>
+				."</div>
+			</body>
 		</html>";
 	}
 
