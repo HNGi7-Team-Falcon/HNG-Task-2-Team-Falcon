@@ -1,4 +1,11 @@
 <?php
-echo "Hello World,
-this is Damilola Omolusi with the HNGi7 [00349] using [php] for stage 2 task. goodness.omolusi@gmail.com";
+$FirstName = "Damilola";
+$Lastname = "Omolusi";
+$HNGID = "HNG-00349";
+$Language = "PHP";
+$Email = "goodness.omolusi@gmail.com";
+echo "Hello World, this is $FirstName $LastName with $HNGID using $Language for stage 2 task. $Email";
+
 ?>
+
+
