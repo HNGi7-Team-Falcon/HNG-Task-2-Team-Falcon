@@ -36,6 +36,9 @@
 	$files = scandir($path);
 
 	$data =  array();
+	$totalCount = 0;
+	$passCount = 0;
+	$failCount = 0;
 
 	foreach ($files as $key => $fileName) {
 
@@ -43,6 +46,8 @@
 
 		if (!is_dir($filePath)) {
 			$item = array();
+			$item["count"] = ++$totalCount;
+
 			$runtime = getRuntime("$fileName");
 			$output;
 
@@ -55,6 +60,7 @@
 				$item["status"] = "fail";
 				$item["output"] = "unable to run script";
 				$item["name"] = $fileName;
+				$passCount = $passCount + 1;
 
 			} else {
 
@@ -66,8 +72,10 @@
 
 				if ($isMatched) {
 					$item["status"] = "pass";
+					$passCount = $passCount + 1;
 				} else {
 					$item["status"] = "fail";
+					$passCount = $passCount + 1;
 				}
 
 				$item["output"] = $output;
@@ -139,6 +147,7 @@
 		<table class="table table-bordered">
 			<thead class="thead-dark">
 				<tr>
+					<th scope="col">#</th>
 					<th scope="col">Name</th>
 					<th scope="col">Output</th>
 					<th scope="col">Status</th>
@@ -175,6 +184,7 @@
 		$fail = $item["status"] == "fail";
 		$class = $fail ? "text-danger" : "'text-success'";
 		return "<tr>"
+			."<th scope='row'>".$item["count"]."</th>"
 			."<td class=".$class.">".$item["name"]."</td>"
 			."<td><code>".htmlspecialchars($item["output"])."</code></td>"
 			."<td class=".$class.">".strtoupper($item["status"])."</td>"
