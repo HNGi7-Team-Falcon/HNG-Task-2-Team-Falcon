@@ -9,15 +9,17 @@ $files = scandir($dir);
 
 //loop through array of files
 	foreach ($files as $key => $value) {
-		if (strrpos($value, 'HNG-0')  !== false ) {
+		if (strrpos($value, 'HNG-')  !== false ) {
 			$file = $dir ."/". $value;
 			//get file extensions
 			$id = substr($value,0,9);
 			$ext = substr(strrchr($value, "."), 1);
-			$res = exec("$ext $file 2>&1", $output);
+			//run the file in php and get the output
+			$res = ($ext === 'js') ? exec("node $file 2>&1", $output) : exec("$ext $file 2>&1", $output) ; //exec("$ext $file 2>&1", $output);
 			$title = "$value";
 			$name = trim(get_string_between($res, 'this is', 'with'));
 			$language = trim(get_string_between($res, 'using', 'for'));
+			//set pass criteria
 			$passCondition = "Hello World, this is {$name} with HNGi7 ID {$id} using {$language} for stage 2 task";
 			if($passCondition === $res){
 				$status = 'pass';
