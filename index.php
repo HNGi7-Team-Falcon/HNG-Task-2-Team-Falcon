@@ -74,7 +74,7 @@
 
                             # Get file Extension
                             $filename = str_ireplace('scripts/','',$file);
-                            $ext = substr(strrchr($filename, "."), 1);
+                            $ext = strtolower(substr(strrchr($filename, "."), 1));
 
                             # Command for different
                             if ($ext == 'php') {
