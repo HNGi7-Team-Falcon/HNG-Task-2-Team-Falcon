@@ -28,14 +28,14 @@
 	}
  
 
-	$list = shell_exec("ls ./scripts"); # Get the list of files in directory
-	$files = explode("\n", $list); # Convert list to array of file names
+	$path = "scripts";
+	$files = scandir($path);
 
 	$data =  array();
 
 	foreach ($files as $key => $fileName) {
 
-		$filePath = "./scripts/$fileName";
+		$filePath = "./$path/$fileName";
 
 		if (!is_dir($filePath)) {
 			$item = array();
