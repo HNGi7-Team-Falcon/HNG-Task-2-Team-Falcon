@@ -1,9 +1,5 @@
-let name = `Eleanya-Alichi-David`;
-let email = `davideleanyaalichi@gmail.com`;
-let id = `HNG-01887`;
-let lang = `Javascript`;
-​
-const function1 = function () {
-    return ` Hello my name is ${name}, with id ${id} using ${lang} for my stage 2 task, and email - ${email}`
+var a ="test"
+var davidsString="Hello World, this is Eleanya-Alichi-David with HNGi7 ID HNG-01887 using Javascript for stage 2 task. davideleanyaalichi@gmail.com"
+if(a="test"){
+console.log(davidsString);
 }
-​function1()
