@@ -60,7 +60,7 @@
 				$item["status"] = "fail";
 				$item["output"] = "unable to run script";
 				$item["name"] = $fileName;
-				$passCount = $passCount + 1;
+				$failCount++;
 
 			} else {
 
@@ -72,10 +72,10 @@
 
 				if ($isMatched) {
 					$item["status"] = "pass";
-					$passCount = $passCount + 1;
+					$passCount++;
 				} else {
 					$item["status"] = "fail";
-					$passCount = $passCount + 1;
+					$failCount++;
 				}
 
 				$item["output"] = $output;
@@ -128,6 +128,10 @@
 	}
 
 	function htmlFormat($data) {
+		global $totalCount;
+		global $passCount;
+		global $failCount;
+
 		$bootstrap = '
 				<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -143,7 +147,6 @@
 		$rows = getRows($data);
 
 		$table = '
-		<h1 class="text-center">Team Falcon</h1>
 		<table class="table table-bordered">
 			<thead class="thead-dark">
 				<tr>
@@ -158,12 +161,32 @@
 			'</tbody>
 		</table>';
 
+		$stats = '
+		<h1 class="text-center">Team Falcon</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col text-center">Submitted</th>
+					<th scope="col">Passed</th>
+					<th scope="col">Failed</th>
+				</tr>
+			</thead>
+			<tbody>'
+			.'<tr>'
+				.'<td>'.$totalCount.'</td>'
+				.'<td>'.$passCount.'</td>'
+				.'<td>'.$failCount.'</td>'
+			.'</tr>'
+			.'</tbody>
+		</table>';
+
 		echo "
 		<!DOCTYPE html>
 		<html>"
 			.$head
 			."<body>
 					<div class=container>"
+				.$stats
 				.$table
 				.$bootstrap
 				."</div>
