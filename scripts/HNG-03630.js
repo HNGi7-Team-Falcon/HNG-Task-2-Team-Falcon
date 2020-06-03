@@ -5,6 +5,6 @@ const email = "adevic4christ@gmail.com";
 
 (() => {
   const info = `Hello World, this is ${fullName} with HNGi7 ID ${intId} using ${lang} for stage 2 task. ${email}`;
-  process.stdout.write(info);
+  console.log(info);
   return info;
 })();
