@@ -1,16 +1,16 @@
 <?php
-
-	$template = "/^Hello World, this is ([\s\S]+) with HNGi7 ID ([\s\S]+) using ([\s\S]+) for stage 2 task$/";
-
+	$template = "/Hello World, this is ([\w+\s]+) with HNGi7 ID (HNG-[\d]+) using (\w+) for stage 2 task/";
+	$idRegex = "/(HNG[-{0,}][\d]+)|(\d{2,}+)/";
 	# Retrive the runtime engine name
 	function getRuntime($fileName) {;
 
-		$supported_json = '{"py":"python", "js":"node", "php": "php"}'; # currently supported types should be updated
+		$supported_json = '{"py":"python", "js":"node", "php": "php", "rb": "irb"}'; # currently supported types should be updated
 		$supported_map = json_decode($supported_json, true); # convert to json object to work with
 
 		$tokens = explode(".", $fileName); // split file name into [fileName, extension];
 		$ext = $tokens[1]; // extension
 		$runtime = $supported_map[$ext]; // Get the name of the runtime
+
 		return $runtime;
 	}
  
@@ -24,7 +24,7 @@
 
 		$filePath = "./scripts/$fileName";
 
-		if (is_file($filePath)) {
+		if (($filePath)) {
 			$item = array();
 			$runtime = getRuntime("$fileName");
 			$output;
@@ -33,24 +33,28 @@
 				$output = shell_exec("$runtime $filePath"); # Execute script and assign result
 			}
 
-			if ($output == null) {
+			if ($output === null) {
+
 				$item["status"] = "fail";
+				$item["message"] = "unable to run script";
+				$item["fileName"] = $fileName;
+
 			} else {
-				if (preg_match($template, $output, $matches) == 1) {
-					$fullname = $matches[1];
-					$id = $matches[2];
-					$language = $matches[3];
+
+				preg_match_all($template, $output, $matches) === 1;
+				preg_match($idRegex, $output, $idMatch);
+
+				$isMatched = $matches[0][0] === $output;
+
+				if ($isMatched) {
 					$item["status"] = "success";
-					$payload = array();
-					$payload["id"] = $id;
-					$payload["fullname"] = $fullname;
-					$payload["language"] = $language;
 				} else {
 					$item["status"] = "fail";
 				}
+
+				$item["output"] = $output;
+				$item["id"] = $idMatch[0];
 			}
-			$payload["output"] = $output;
-			$item["payload"] = $payload;
 
 			array_push($data, $item);
 		}
