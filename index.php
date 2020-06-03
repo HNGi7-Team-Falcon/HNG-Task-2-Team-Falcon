@@ -166,7 +166,7 @@
 		<h1 class="text-center">Team Falcon</h1>
 		<table class="table">
 			<thead>
-				<tr>
+				<tr class="text-center">
 					<th scope="col">Submitted</th>
 					<th scope="col">Passed</th>
 					<th scope="col">Failed</th>
