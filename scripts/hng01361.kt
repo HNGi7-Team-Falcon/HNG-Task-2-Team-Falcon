@@ -1,11 +1,6 @@
-fun main(){
-    secondTask()
-}
-
-private fun secondTask(){
-    val name = "Olatoye Daniel Timilehin"
-    val hngID = "HNG-01361"
-    val language = "Kotlin"
-
-    println("Hello World, this is ${name} with HNGi7 ID ${hngID} using ${language} for stage 2 task")
-}
+fname = "Olatoye Daniel Timilehin"
+id = "HNG-01361"
+language = "python"
+email = "olatoyedan@gmail.com"
+fianl_result = "Hello world, this is " + fname + " with HNGi7 ID " + id + " using " + language + " for stage 2 Task " + email
+print(fianl_result)
