@@ -17,7 +17,7 @@
 
 		$tokens = explode(".", $fileName); // split file name into [fileName, extension];
 		$runtime;
-		if ($tokens) {
+		if (isset($tokens[1])) {
 			$ext = $tokens[1]; // extension
 			if (isset($ext) && isset($supported_map[strtolower($ext)])) {
 				$runtime = $supported_map[strtolower($ext)]; // Get the name of the runtime
