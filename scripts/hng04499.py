@@ -3,7 +3,7 @@ my_dict = {
    "hng_id" : "04499"
    "language" : "Python"
    "email" : "alishadesua1@gmail.com"
-   "status" : "Pass"
+   
 }
 d1 = my_dict.get("name", " ")
 d2 = my_dict.get("hng_id", " ")
