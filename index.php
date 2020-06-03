@@ -17,7 +17,7 @@
 		$runtime;
 		if ($tokens) {
 			$ext = $tokens[1]; // extension
-			if ($ext) {
+			if (isset($ext) && isset($supported_map[strtolower($ext)])) {
 				$runtime = $supported_map[strtolower($ext)]; // Get the name of the runtime
 			}
 		}
@@ -60,20 +60,14 @@
 				$language;
 				$email;
 
-				if (!is_null($matches)){
-					if ($matches[0] && $matches[0][0]) {
-						$fullOutput = $matches[0][0];
-						if ($fullOutput) {
-							preg_match_all($template, $fullOutput, $matches2);
+				if (isset($matches[0][0])){
+					preg_match_all($template, $matches[0][0], $matches2);
 
-							$name = $matches2[1][0];
-							$language = $matches2[3][0];
-
-							$item["name"] = $name;
-							$item["language"] = $language;
-							$isMatched = $matches[0][0] === $output;
-						}
-					}
+					$name = $matches2[1][0];
+					$language = $matches2[3][0];
+					$item["name"] = $name;
+					$item["language"] = $language;
+					$isMatched = $matches[0][0] === $output;
 				}
 
 				if ($isMatched) {
@@ -83,7 +77,7 @@
 				}
 
 				$item["output"] = $output;
-				if ($idMatches != null && $idMatches[0] != null) {
+				if (isset($idMatches[0])) {
 					$item["id"] = $idMatches[0];
 				}
 			}
@@ -97,8 +91,11 @@
 	$response = array();
 	$response["data"] = $data;
 
- 	$queryStr = $_SERVER['QUERY_STRING'];
- 	$isJson = $queryStr == "json";
+	$isJson = false;
+	if(isset($_SERVER->QUERY_STRING)) {
+	 	$queryStr = $_SERVER->QUERY_STRING;
+	 	$isJson = $queryStr == "json";
+	}
 
 	if ($isJson) {
 		header("Content-Type: application/json");
