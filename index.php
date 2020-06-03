@@ -1,10 +1,16 @@
 <?php
-	$template = "/Hello World, this is ([\w+\s]+) with HNGi7 ID (HNG-[\d]+) using (\w+) for stage 2 task\s?/";
+	$template = "/Hello World, this is ([\w+\s\S]+) with HNGi7 ID (HNG-[\d]+) using (\w+) for stage 2 task\s?/";
 	$idRegex = "/(HNG[-{0,}][\d]+)/";
 	# Retrive the runtime engine name
 	function getRuntime($fileName) {;
 
-		$supported_json = '{"py":"python", "js":"node", "php": "php", "rb": "irb"}'; # currently supported types should be updated
+		$supported_json = '{
+			"py": "python",
+			"js": "node",
+			"php": "php",
+			"rb": "irb",
+			"java": "java"
+		}'; # currently supported types should be updated
 		$supported_map = json_decode($supported_json, true); # convert to json object to work with
 
 		$tokens = explode(".", $fileName); // split file name into [fileName, extension];
