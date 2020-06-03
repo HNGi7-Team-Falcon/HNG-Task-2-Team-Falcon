@@ -1,7 +1,7 @@
 <script>
 var fullName = "Comfort Nyatsine";
 var HNGi7_ID = "HNG-03622";
-var email = "comfynyatsine@gmail.com"
+var email = "comfynyatsine@gmail.com";
 var language = "JavaScript";
 
 function myTask(){
