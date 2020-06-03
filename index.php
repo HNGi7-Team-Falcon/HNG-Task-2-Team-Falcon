@@ -164,7 +164,7 @@ if ($response_type == 'json') {
                     }
 
                     $internName = trim(get_string_between($response, 'this is', 'with'));
-                    $internID = $id = trim(get_string_between($response, 'ID', 'using'));
+                    $internID = trim(get_string_between($response, 'ID', 'using'));
                     $language = trim(get_string_between($response, 'using', 'for'));
                     $email = extract_email($response);
 
@@ -178,8 +178,16 @@ if ($response_type == 'json') {
 
 
                     if (($passCondition1 == $newResponse) || ($passCondition2 == $newResponse) || ($passCondition3 == $newResponse) || ($passCondition4 == $newResponse)) {
-                        $status = '<b class="text-success">pass</b>';
-                        $passed++;
+
+
+                        if (strpos($internID, 'HNG-') !== false) {
+                            $status = '<b class="text-success">pass</b>';
+                            $passed++;
+                        } else {
+                            $status = '<b class="text-danger">Check your HNG id</b>';
+                        }
+
+
                     } else {
                         $failed++;
                         $status = '<b class="text-danger">Incorrect string passed</b>';
@@ -191,7 +199,7 @@ if ($response_type == 'json') {
                         <td><?php echo $internName;  ?></td>
                         <td><?php echo $newResponse;  ?></td>
                         <td><?php echo $status;  ?></td> <!-- -->
-                        <td><?php echo $internID;  ?></td>
+                        <td><?php echo $internID;  ?></td> <!-- -->
                     </tr>
                     <?
                 }
