@@ -7,7 +7,7 @@
  */
 
 
- const task2 = () => "Hello World, this is Isaiah Abiodun with HNGi7 ID 03665 using JavaScript for stage 2 task."
+ const task2 = () => "Hello World, this is Isaiah Abiodun with HNGi7 ID 03665 using JavaScript for stage 2 task. isaiah.abiodun@outlook.com"
  task2();
- 
+
  console.log(task2())
