@@ -3,9 +3,9 @@
 # CREATED BY ROTIMI
 ################################
 
-my_details = "Hello World, this is {full_name} with HNGi7 ID {ID} using {language} for Stage 2 task. {email}".format(
+my_details = "Hello World, this is {full_name} with HNGi7 ID {id} using {language} for Stage 2 task. {email}".format(
 	full_name = 'Bola-Rotimi Praise.O',
-	ID = 'HNG-01313',
+	id = 'HNG-01313',
 	language = 'Python',
 	email = 'opraise139@gmail.com',
 )
