@@ -95,10 +95,10 @@
                             $newResponse = (String) str_replace($email, "",$response);
 
                             # Check status of response
-                            $passCondition1 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task ";
-                            $passCondition2 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task.";
-                            $passCondition3 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task";
-                            $passCondition4 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task. ";
+                            $passCondition1 = "Hello World, this is {$internName} with HNGi7 ID HNG-{$internID} using {$language} for stage 2 task ";
+                            $passCondition2 = "Hello World, this is {$internName} with HNGi7 ID HNG-{$internID} using {$language} for stage 2 task.";
+                            $passCondition3 = "Hello World, this is {$internName} with HNGi7 ID HNG-{$internID} using {$language} for stage 2 task";
+                            $passCondition4 = "Hello World, this is {$internName} with HNGi7 ID HNG-{$internID} using {$language} for stage 2 task. ";
 
 
                             if (($passCondition1 == $newResponse) || ($passCondition2 == $newResponse) || ($passCondition3 == $newResponse) || ($passCondition4 == $newResponse)) {
