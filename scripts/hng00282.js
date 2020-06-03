@@ -1,0 +1,1 @@
+console.log('Hello World, Thomas Rita with HNGi7 ID 00282 using Javascript for stage 2 task. auxano42@gmail.com')
