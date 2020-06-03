@@ -6,7 +6,7 @@ def internDetails():
         "language":"python"
     }
 
-    output = "Hello World, this is {name} with HNGi7 ID {ID} and email {email} using {language} for stage 2 task".format(
+    output = "Hello World, this is {name} with HNGi7 ID {ID} using {language} for stage 2 task. {email}".format(
         name=details["name"], ID=details["ID"], email=details["email"], language=details["language"])
 
     print(output)
