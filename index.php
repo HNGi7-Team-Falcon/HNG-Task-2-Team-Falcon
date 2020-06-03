@@ -92,8 +92,8 @@
 	$response["data"] = $data;
 
 	$isJson = false;
-	if(isset($_SERVER->QUERY_STRING)) {
-	 	$queryStr = $_SERVER->QUERY_STRING;
+	if(isset($_SERVER["QUERY_STRING"])) {
+	 	$queryStr = $_SERVER["QUERY_STRING"];
 	 	$isJson = $queryStr == "json";
 	}
 
