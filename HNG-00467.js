@@ -1,0 +1,4 @@
+function info() {
+return ("Hello World, this is Muhammad-Olodo Abdulmujeeb Opeyemi with HNGi7 ID HNG-00467 using JavaScript for stage 2 task. email address is olodoopeyemi@gmail.com);
+}
+console.log(info());
