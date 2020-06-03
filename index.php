@@ -179,11 +179,12 @@ if ($response_type == 'json') {
 
 
                         if (($passCondition1 == $newResponse) || ($passCondition2 == $newResponse) || ($passCondition3 == $newResponse) || ($passCondition4 == $newResponse)) {
-
+                            $stat = 'pass';
 
                             if (strpos($internID, 'HNG-') !== false) {
                                 $status = '<b class="text-success">pass</b>';
                                 $passed++;
+                                $stat = 'pass';
 
                             } else {
                                 $message = '<b class="text-danger">Add HNG to your ID</b>';
