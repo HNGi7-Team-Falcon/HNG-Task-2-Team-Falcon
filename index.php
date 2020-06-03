@@ -12,7 +12,7 @@
 	}
  
  	#$isJson = htmlspecialchars($_GET["json"]);
- 	$isJson = false;
+ 	$isJson = true;
 
 	$list = shell_exec("ls ./scripts"); # Get the list of files in directory
 
