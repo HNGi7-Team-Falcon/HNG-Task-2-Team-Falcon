@@ -2,7 +2,7 @@
 
 	# Retrive the runtime engine name
 	function getRuntime($fileName) {
-		$supported_json = '{"py":"python", "js":"node"}'; # currently supported types should be updated
+		$supported_json = '{"py":"python", "js":"node", "php": "php"}'; # currently supported types should be updated
 		$supported_map = json_decode($supported_json, true); # convert to json object to work with
 
 		$tokens = explode(".", $fileName); // split file name into [fileName, extension];
@@ -14,7 +14,7 @@
 
 	$list = shell_exec("ls ./scripts"); # Get the list of files in directory
 	$files = explode("\n", $list); # Convert list to array of file names
-	
+
 	$data =  array();
 
 	foreach ($files as $key => $fileName) {
