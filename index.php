@@ -12,7 +12,7 @@
 	}
  
  	#$isJson = htmlspecialchars($_GET["json"]);
- 	$isJson = false;
+ 	$isJson = true;
 
 	$list = shell_exec("ls ./scripts"); # Get the list of files in directory
 
@@ -28,9 +28,10 @@
 			$output = shell_exec("$runtime $filePath"); # Execute script and assign result
 
 			if ($isJson) {
+				header("Content-Type: application/json");
 				echo json_encode($output);
 			} else {
-				echo $output;
+				echo $output . "Text";
 			}
 		}
 	}
