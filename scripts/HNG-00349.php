@@ -1,6 +1,6 @@
 <?php
 $FirstName = "Damilola";
-$Lastname = "Omolusi";
+$LastName = "Omolusi";
 $HNGID = "HNG-00349";
 $Language = "PHP";
 $Email = "goodness.omolusi@gmail.com";
