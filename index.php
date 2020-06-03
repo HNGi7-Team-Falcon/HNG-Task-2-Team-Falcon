@@ -113,7 +113,7 @@
                                 <td><?php echo $counter; ?></td>
                                 <td><?php echo $internID;  ?></td>
                                 <td><?php echo $newResponse;  ?></td>
-                                <td><?php echo $status;  ?></td>
+                                <td><?php echo $status;  ?></td> <!-- -->
                             </tr>
                             <?
                         }
