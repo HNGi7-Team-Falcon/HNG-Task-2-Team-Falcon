@@ -1,6 +1,10 @@
 <?php
-	$template = "/Hello World, this is ([\w+\s\S]+) with HNGi7 ID (HNG-[\d]+) using (\w+) for stage 2 task\s?/";
+	$template = "/^Hello World, this is ([\w+\s]+) with HNGi7 ID (HNG-[\d]+) using (\w+) for stage 2 task\s/";
 	$idRegex = "/(HNG[-{0,}][\d]+)/";
+	$emailRegex = "/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/";
+	$languageRegex = "/using \[{0,1}(\w+)\b/";
+	$nameRegex = "/this is \[{0,1}([\w+,\s]+)]{0,1} with/";
+
 	# Retrive the runtime engine name
 	function getRuntime($fileName) {;
 
@@ -19,7 +23,7 @@
 		$runtime = "php";
 		if (isset($tokens[1])) {
 			$ext = $tokens[1]; // extension
-			if (isset($ext) && isset($supported_map[strtolower($ext)])) {
+			if ($ext && isset($supported_map[strtolower($ext)])) {
 				$runtime = $supported_map[strtolower($ext)]; // Get the name of the runtime
 			}
 		}
@@ -54,9 +58,8 @@
 			} else {
 
 				preg_match_all($template, $output, $matches);
-				preg_match($idRegex, $output, $idMatches);
 
-				$isMatched;
+				$isMatched = false;
 
 				$name;
 				$language;
@@ -65,10 +68,10 @@
 				if (isset($matches[0][0])){
 					preg_match_all($template, $matches[0][0], $expectedFormat);
 
-					$name = $expectedFormat[1][0];
-					$language = $expectedFormat[3][0];
-					$item["name"] = $name;
-					$item["language"] = $language;
+					if (isset($expectedformat[0][0])) {
+						$item["expected"] = $expectedformat[0][0];
+					}
+
 					$isMatched = $matches[0][0] === $output;
 				}
 
@@ -79,10 +82,33 @@
 				}
 
 				$item["output"] = $output;
-				if (isset($idMatches[0])) {
-					$item["id"] = $idMatches[0];
-				}
 			}
+			// extract id
+			preg_match($idRegex, $output, $idMatches);
+			if (isset($idMatches[0])) {
+				$item["id"] = $idMatches[0];
+			}
+
+			// extract name 
+			preg_match($nameRegex, $output, $nameMatches);
+			if (isset($nameMatches[1])) {
+				$item["name"] = $nameMatches[1];
+			}
+
+			// extract language
+			preg_match($languageRegex, $output, $languageMatches);
+			if (isset($languageMatches[1])) {
+				$item["language"] = $languageMatches[1];
+			}
+
+
+			// extract email
+			preg_match($emailRegex, $output, $emailMatches);
+			if (isset($emailMatches[0])) {
+				$item["email"] = $emailMatches[0];
+			}
+
+			// fileName
 			$item["fileName"] = $fileName;
 
 			array_push($data, $item);
