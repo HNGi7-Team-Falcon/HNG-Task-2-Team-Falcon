@@ -116,6 +116,7 @@
                                 <td><?php echo $internName;  ?></td>
                                 <td><?php echo $newResponse;  ?></td>
                                 <td><?php echo $status;  ?></td> <!-- -->
+                                <td><?php echo $internID;  ?></td> <!-- -->
                             </tr>
                             <?
                         }
