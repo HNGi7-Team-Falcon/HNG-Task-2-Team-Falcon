@@ -69,7 +69,7 @@
 							$name = $matches2[1][0];
 							$language = $matches2[3][0];
 
-							$item["name"] = $fullOutput;
+							$item["name"] = $name;
 							$item["language"] = $language;
 							$isMatched = $matches[0][0] === $output;
 						}
