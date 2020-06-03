@@ -1,5 +1,5 @@
 def name (self):
-    hng_id = 'HNG_01552'
+    hng_id = 'HNG-01552'
     names = 'Ashara Kosisochukwu'
     language = 'python'
     email = 'asharakosi@gmail.com'
