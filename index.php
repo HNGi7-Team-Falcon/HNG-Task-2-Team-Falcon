@@ -1,18 +1,6 @@
-<!DOCTYPE_HTML>
-
 <?php
+$directory = 'scripts';
 
-$url = $_SERVER['REQUEST_URI'];
-$response_type = substr(strrchr($url, "?"), 1);
-
-//define directory
-$dir = 'scripts';
-$counter = 1;
-
-
-/**
- * source https://stackoverflow.com/a/9826656/11800056
- **/
 function get_string_between($string, $start, $end){
     $string = ' ' . $string;
     $ini = strpos($string, $start);
@@ -22,125 +10,130 @@ function get_string_between($string, $start, $end){
     return substr($string, $ini, $len);
 }
 
+
 function extract_email($string) {
     preg_match('/\b[^\s]+@[\w\d.-]+/', $string, $match);
     return $match[0];
 }
+
+// str_replace($search, $replace, $subject)
+
 ?>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Team Falcon</title>
+
     <style>
-        body {
-            text-align: center;
+        #btn {
+            border: 1px solid #ddd;
         }
-        table,
-        th,
-        td{
-            border: 1px solid black;
-            border-collapse: collapse;
-            text-align: left;
-        }
+
     </style>
+
 </head>
 <body>
 
-<?php
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-4">
+            <button class="btn btn-light" id="btn">Submitted <span class="badge-primary" id="badge">4</span></button>
+        </div>
+        <div class="col-lg-4">
+            <button class="btn btn-light" id="btn">Passes  <span class="badge-success" id="badge">4</span></button>
+        </div>
+        <div class="col-lg-4">
+            <button class="btn btn-light" id="btn">Fails <span class="badge-danger" id="badge">4</span></button>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-lg-12">
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Error</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                $counter = 0;
+                foreach (glob($directory."/*.*") as $file)  {
+                    $counter++;
 
-//scan directory and return array of files
-$files = array_slice(scandir($dir),3);
-$length = count($files);
-$noOfPasses = 0;
-$noOfFailures = 0;
-//loop through array of files
-if ($response_type === 'json') {
-    $result = array();
-    $result['length'] = $length;
-    foreach ($files as $key => $value) {
-        if (strrpos($value, 'HNG-')  !== false ) {
-            $file = $dir ."/". $value;
-            //$email_get = file_get_contents($file);
-            //die(var_dump($email_get));
-            //get file extensions
-            $id = substr($value,0,9);
-            $ext = substr(strrchr($value, "."), 1);
-            //run the file in php and get the output
-            $res = ($ext === 'js') ? exec("node $file 2>&1", $output) : exec("$ext $file 2>&1", $output) ;
-            $name = trim(get_string_between($res, 'this is', 'with'));
-            $language = trim(get_string_between($res, 'using', 'for'));
-            //$email = trim(get_string_between($res, 'my', 'email'));
+                    # Get file Extension
+                    $filename = str_ireplace('scripts/','',$file);
+                    $ext = strtolower(substr(strrchr($filename, "."), 1));
+
+                    # Command for different
+                    if ($ext == 'php') {
+                        $response = exec("$ext $file 2>&1", $output);
+                    } else if ($ext == 'js') {
+                        $response = exec("node $file 2>&1", $output);
+                    } else if ($ext == 'py') {
+                        $response = exec("python $file 2>&1", $output);
+                    } else {
+                        $reason = 'Invalid file type';
+                    }
+
+                    $internName = trim(get_string_between($response, 'this is', 'with'));
+                    $internID = $id = trim(get_string_between($response, 'ID', 'using'));
+                    $language = trim(get_string_between($response, 'using', 'for'));
+                    $email = extract_email($response);
+
+                    $newResponse = (String) str_replace($email, "",$response);
+
+                    # Check status of response
+                    $passCondition1 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task ";
+                    $passCondition2 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task.";
+                    $passCondition3 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task";
+                    $passCondition4 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task. ";
 
 
+                    if (($passCondition1 == $newResponse) || ($passCondition2 == $newResponse) || ($passCondition3 == $newResponse) || ($passCondition4 == $newResponse)) {
+                        $status = '<b class="text-success">pass</b>';
+                    } else {
+                        $status = '<b class="text-danger">Incorrect string passed</b>';
+                    }
 
-            $response = trim(substr($res, 0,strrpos($res, 'my')));
-            //set pass criteria
-            $passCondition = "Hello World, this is {$name} with HNGi7 ID {$id} using {$language} for stage 2 task";
-            if($passCondition === $response){
-                $status = 'pass';
-                $noOfPasses++;
-            }else{
-                $status = 'fail';
-                $noOfFailures++;
-            }
+                    ?>
+                    <tr>
+                        <td><?php echo $counter; ?></td>
+                        <td><?php echo $internName;  ?></td>
+                        <td><?php echo $newResponse;  ?></td>
+                        <td><?php echo $status;  ?></td> <!-- -->
+                        <td><?php echo $internID;  ?></td> <!-- -->
+                    </tr>
+                    <?
+                }
+                ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-            $result['Pass'] = $noOfPasses;
-            $result['Fail'] = $noOfFailures;
-            $data = new stdClass();
-            $data->file = $value;
-            $data->output = $response;
-            $data->owner = $name;
-            $data->id = $id;
-            $data->email = $email;
-            $data->language = $language;
-            $data->status = @$status;
-            $result[] = $data;
-        }
-
-    }//end foreach
-
-    echo json_encode($result);
-
-}else{
-    //display html
-    echo '<h2>HNG-Task-2-Team-Falcon</h2><p>Team Falcom submission scripts in a HNG-Task-2-Team-Falcon repository for the second task in HNG.</p>
-	<table style="width:100%">
-	<tr style="text-align: center;">
-	<th>No</th>
-	<th>File</th>
-	<th>HNGi7_ID</th>
-	<th>Email</th>
-	<th>Output</th>
-	<th>Status</th></tr>';
-
-    foreach ($files as $key => $value) {
-        if (strrpos($value, 'HNG-')  !== false ) {
-            $file = $dir ."/". $value;
-            //get file extensions
-            $id = substr($value,0,9);
-            $ext = substr(strrchr($value, "."), 1);
-            //run the file in php and get the output
-            $res = ($ext === 'js') ? exec("node $file 2>&1", $output) : exec("$ext $file 2>&1", $output) ;
-            $name = trim(get_string_between($res, 'this is', 'with'));
-            $language = trim(get_string_between($res, 'using', 'for'));
-            $response = trim(substr($res, 0,strrpos($res, 'my')));
-            $email = trim(get_string_between($res, 'my', 'email'));
-            //set pass criteria
-            $passCondition = "Hello World, this is {$name} with HNGi7 ID {$id} using {$language} for stage 2 task";
-            if($passCondition === $response){
-                $status = 'pass';
-            }else{
-                $status = 'fail';
-            }
-        }
-        echo '<tr><td>'.$counter.'</td><td>'.$value.'</td><td>'.$id.'</td><td>'.$email.'</td><td>'.$response.'</td><td>'.$status.'</td></tr>';
-
-        $counter++;
-    }
-
-    echo '</table>';
-
-}
-
-?>
-
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 </body>
 </html>
