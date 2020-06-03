@@ -17,22 +17,22 @@
 	$list = shell_exec("ls ./scripts"); # Get the list of files in directory
 
 	$files = explode("\n", $list); # Convert list to array of file names
+	$response =  array();
 
 	foreach ($files as $key => $fileName) {
 
 		$filePath = "./scripts/$fileName";
 
 		if (is_file($filePath)) {
-
 			$runtime = getRuntime("$fileName");
 			$output = shell_exec("$runtime $filePath"); # Execute script and assign result
-
-			if ($isJson) {
-				header("Content-Type: application/json");
-				echo json_encode($output);
-			} else {
-				echo $output;
-			}
+			array_push($response, $output);
 		}
+	}
+	if ($isJson) {
+		header("Content-Type: application/json");
+		echo json_encode($response);
+	} else {
+		echo $response;
 	}
 ?>
