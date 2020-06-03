@@ -5,7 +5,7 @@
 - Make sure you are on a personal computer
 - [Fork] this repository by clicking on the fork button
 - Clone your forked repository
-- Checkout (I.e Change your branch) to **submissions** branch using ```git checkout -b submissions``` 
+- Checkout (I.e Change your branch) to **submissions** branch using ```git checkout submissions``` 
 - Refresh then go to the **scripts** directory and:
   - create a new file in a server-side scripting language of your choice (i.e. PHP, Python or Javasript) a statement to return `Hello World, this is [full name] with HNGi7 ID [ID] using [language] for stage 2 task`
   - with naming format _“yourhngid.language”_ e.g hng0001.php, hng001.py, hng001.js
