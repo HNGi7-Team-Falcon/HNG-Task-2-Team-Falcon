@@ -11,12 +11,10 @@
 		return $runtime;
 	}
  
- 	$queryStr = $_SERVER['QUERY_STRING'];
- 	$isJson = $queryStr == "json";
 
 	$list = shell_exec("ls ./scripts"); # Get the list of files in directory
-
 	$files = explode("\n", $list); # Convert list to array of file names
+	
 	$data =  array();
 
 	foreach ($files as $key => $fileName) {
@@ -27,7 +25,7 @@
 			$item = array();
 			$runtime = getRuntime("$fileName");
 			$output;
-			
+
 			if ($runtime) {
 				$output = shell_exec("$runtime $filePath"); # Execute script and assign result
 			}
@@ -49,6 +47,9 @@
 	// convert to JSON:API format https://jsonapi.org/
 	$response = array();
 	$response["data"] = $data;
+
+ 	$queryStr = $_SERVER['QUERY_STRING'];
+ 	$isJson = $queryStr == "json";
 
 	if ($isJson) {
 		header("Content-Type: application/json");
