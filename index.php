@@ -81,7 +81,7 @@
                             } else if ($ext == 'js') {
                                 $response = exec("node $file 2>&1", $output);
                             } else if ($ext == 'py') {
-
+                                $response = exec("$ext $file 2>&1", $output);
                             } else {
                                 $response = 'Not PHP';
                                 $internName = 'No name';
@@ -109,8 +109,6 @@
                             } else {
                                 $status = '<b class="text-danger">fail</b>';
                             }
-
-                            echo $newResponse;
 
                             ?>
                             <tr>
