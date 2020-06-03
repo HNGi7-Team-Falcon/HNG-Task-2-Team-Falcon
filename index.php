@@ -123,7 +123,7 @@ if ($response_type === 'json') {
 				$status = 'fail';
 			}
 	}
-	echo '<tr><td>'.$counter.'</td><td>'.$value.'</td><td>'.$id.'</td><td>'.$email.'</td><td>'.$res.'</td><td>'.$status.'</td></tr>';
+	echo '<tr><td>'.$counter.'</td><td>'.$value.'</td><td>'.$id.'</td><td>'.$email.'</td><td>'.$response.'</td><td>'.$status.'</td></tr>';
 
 	$counter++;
 }
