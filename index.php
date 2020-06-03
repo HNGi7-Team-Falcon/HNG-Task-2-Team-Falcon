@@ -100,7 +100,6 @@
                             $passCondition3 = "Hello World, this is {$internName} with HNGi7 ID HNG-{$internID} using {$language} for stage 2 task";
                             $passCondition4 = "Hello World, this is {$internName} with HNGi7 ID HNG-{$internID} using {$language} for stage 2 task. ";
 
-                            echo $newResponse;
 
                             if (($passCondition1 == $newResponse) || ($passCondition2 == $newResponse) || ($passCondition3 == $newResponse) || ($passCondition4 == $newResponse)) {
                                 $status = '<b class="text-success">pass</b>';
