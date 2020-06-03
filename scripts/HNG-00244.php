@@ -12,9 +12,7 @@
 		$language = 'PHP';
 
 
-		echo "<h3>Hello World, this is $name with HNGi7 ID $hng_id using $language for stage 2 task.</h3>";
-
-		echo "<p>Email Address: $email</p>";
+		echo "Hello World, this is $name with HNGi7 ID $hng_id and email $email using $language for stage 2 task.";
 
 	?>
 </body>
