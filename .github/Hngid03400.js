@@ -1,4 +1,6 @@
-var input =["Abasiono" +" Timothy"]
-alert(Hello world, this is + input + with + id + using javascript)
-var id= ["HNGi7" + "ID" + "03400"]
+var input =["Abasiono" +" Timothy"];
+alert("Hello world, this is" + " " + input + " with" + " id" + " " + "using javascript");
+var id= ["HNG" + "ID" + "03400"];
+
+
 
