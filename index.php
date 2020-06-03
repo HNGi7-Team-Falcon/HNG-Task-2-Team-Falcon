@@ -11,8 +11,8 @@
 		return $runtime;
 	}
  
- 	#$isJson = htmlspecialchars($_GET["json"]);
- 	$isJson = true;
+ 	$queryStr = $_SERVER['QUERY_STRING'];
+ 	$isJson = $queryStr == "json";
 
 	$list = shell_exec("ls ./scripts"); # Get the list of files in directory
 
