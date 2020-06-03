@@ -5,7 +5,7 @@ const language = "javascript";
 
 function detailsPrintOut() {
   console.log(
-    `Hello World, this is ${name} with HNGi7 ID ${HNGi7_ID} using ${language} for stage 2. ${email}`
+    `Hello World, this is ${name} with HNGi7 ID ${HNGi7_ID} using ${language} for stage 2 task. ${email}`
   );
 }
 
