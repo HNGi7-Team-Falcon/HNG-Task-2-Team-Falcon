@@ -80,6 +80,8 @@
                                 $response = exec("$ext $file 2>&1", $output);
                             } else if ($ext == 'js') {
                                 $response = exec("node $file 2>&1", $output);
+                            } else if ($ext == 'py') {
+
                             } else {
                                 $response = 'Not PHP';
                                 $internName = 'No name';
@@ -103,9 +105,9 @@
 
 
                             if (($passCondition1 == $newResponse) || ($passCondition2 == $newResponse) || ($passCondition3 == $newResponse) || ($passCondition4 == $newResponse)) {
-                                $status = 'pass';
+                                $status = '<b class="text-success">pass</b>';
                             } else {
-                                $status = 'fail';
+                                $status = '<b class="text-danger">fail</b>';
                             }
 
                             echo $newResponse;
