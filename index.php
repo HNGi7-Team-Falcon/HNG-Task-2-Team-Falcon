@@ -9,7 +9,7 @@
 
 		$tokens = explode(".", $fileName); // split file name into [fileName, extension];
 		$ext = $tokens[1]; // extension
-		$runtime = $supported_map[$ext]; // Get the name of the runtime
+		$runtime = $supported_map[strtolower($ext)]; // Get the name of the runtime
 
 		return $runtime;
 	}
@@ -24,13 +24,13 @@
 
 		$filePath = "./scripts/$fileName";
 
-		if (($filePath)) {
+		if (!is_dir($filePath)) {
 			$item = array();
 			$runtime = getRuntime("$fileName");
 			$output;
 
 			if ($runtime) {
-				$output = shell_exec("$runtime $filePath"); # Execute script and assign result
+				$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
 			}
 
 			if ($output === null) {
@@ -42,7 +42,7 @@
 			} else {
 
 				preg_match_all($template, $output, $matches) === 1;
-				preg_match($idRegex, $output, $idMatch);
+				preg_match($idRegex, $output, $idMatches);
 
 				$isMatched = $matches[0][0] === $output;
 
@@ -53,7 +53,7 @@
 				}
 
 				$item["output"] = $output;
-				$item["id"] = $idMatch[0];
+				$item["id"] = $idMatches[0];
 			}
 
 			array_push($data, $item);
