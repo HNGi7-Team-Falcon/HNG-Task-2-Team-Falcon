@@ -13,4 +13,4 @@ d5 = my_dict.get("status", " ")
 If "name" and "hng_id" and "language" and "email" and "status" in my_dict:
    print("Hello world, this is " , d1, "with HNGi7 ID " , d2, "using " , d3, "for Stage 2 task. My mail is " , d4, "and status" , d5 )
    
-#using dictionary
+#using dictionaries
