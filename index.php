@@ -184,9 +184,11 @@ if ($response_type == 'json') {
                             if (strpos($internID, 'HNG-') !== false) {
                                 $status = '<b class="text-success">pass</b>';
                                 $passed++;
+
                             } else {
                                 $message = '<b class="text-danger">Add HNG to your ID</b>';
                                 $status = '<b class="text-danger">Fail</b>';
+                                $stat = 'fail';
                             }
 
 
@@ -194,6 +196,7 @@ if ($response_type == 'json') {
                             $failed++;
                             $message = '<b class="text-danger">Incorrect string passed</b>';
                             $status = '<b class="text-danger">Fail</b>';
+                            $stat = 'fail';
                         }
 
                         ?>
@@ -203,7 +206,7 @@ if ($response_type == 'json') {
                             <td><?php echo $newResponse;  ?></td>
                             <td><?php echo $status;  ?></td> <!-- -->
                             <?php
-                                if ($status == 'fail') {
+                                if ($stat == 'fail') {
                                     ?>
                                     <td><?php echo $message;  ?></td> <!-- -->
                                     <?php
