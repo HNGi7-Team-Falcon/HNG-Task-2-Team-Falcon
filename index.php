@@ -63,14 +63,6 @@
 				$language;
 				$email;
 
-				if (isset($matches[0])){
-					preg_match_all($template, $matches[0], $expectedFormat);
-
-					if (isset($expectedformat[0])) {
-						$item["expected"] = $expectedformat[0];
-					}
-				}
-
 				if ($isMatched) {
 					$item["status"] = "pass";
 				} else {
