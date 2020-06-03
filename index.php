@@ -45,13 +45,13 @@ function extract_email($string) {
 <div class="container">
     <div class="row mt-5">
         <div class="col-lg-4">
-            <button class="btn btn-light badge-primary" id="btn">Submitted <span id="badge">$counter</span></button>
+            <button class="btn btn-light badge-primary" id="btn">Submitted <span id="badge"><?php echo $counter; ?></span></button>
         </div>
         <div class="col-lg-4">
-            <button class="btn btn-light badge-success" id="btn">Passes  <span id="badge">4</span></button>
+            <button class="btn btn-light badge-success" id="btn">Passes  <span id="badge"><?php echo $passed; ?></span></button>
         </div>
         <div class="col-lg-4">
-            <button class="btn btn-light badge-danger" id="btn">Fails <span id="badge">4</span></button>
+            <button class="btn btn-light badge-danger" id="btn">Fails <span id="badge"><?php echo $failed; ?></span></button>
         </div>
     </div>
     <div class="row mt-2">
