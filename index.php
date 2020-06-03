@@ -5,19 +5,20 @@
 	$languageRegex = "/using \[{0,1}(\w+)\b/i";
 	$nameRegex = "/this is \[{0,1}([\w+,\s]+)]{0,1} with/i";
 
+	$supported_json = '{
+		"py": "python",
+		"js": "node",
+		"php": "php",
+		"rb": "irb",
+		"java": "java",
+		"kt": "kotlinc",
+		"dart": "dart"
+	}'; # currently supported types should be updated
+	$supported_map = json_decode($supported_json, true); # convert to json object to work with
+
 	# Retrive the runtime engine name
 	function getRuntime($fileName) {;
-
-		$supported_json = '{
-			"py": "python",
-			"js": "node",
-			"php": "php",
-			"rb": "irb",
-			"java": "java",
-			"kt": "kotlinc",
-			"dart": "dart"
-		}'; # currently supported types should be updated
-		$supported_map = json_decode($supported_json, true); # convert to json object to work with
+		global $supported_map;
 
 		$tokens = explode(".", $fileName); // split file name into [fileName, extension];
 		$runtime = "php";
