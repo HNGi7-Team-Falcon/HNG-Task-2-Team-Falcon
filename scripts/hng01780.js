@@ -1,3 +1,8 @@
+const hngId = "01780",
+  progLang = "JavaScript",
+  fullName = "Olajide Hammed Abayomi",
+  email = "olajide.a.hammed@gmail.com";
+
 console.log(
-  "Hello World, this is Olajide Hammed Abayomi with HNGi7 ID HNG-01780 using Javascript for stage 2 task"
+  `Hello World, this is ${fullName} with HNGi7 ID ${hngId} using ${progLang} for stage 2 task. ${email}`
 );
