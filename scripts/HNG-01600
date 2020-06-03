@@ -2,3 +2,4 @@
 function remark(){
     console.log("Hello World,this is Lawal Toheeb Babstunde with HNGi7 ID HNG-01600 using Javascript for stage 2 task")};
     remark();
+    var mail = lawaltoheeb231@gmail.com;
