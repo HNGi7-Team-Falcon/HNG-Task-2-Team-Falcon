@@ -173,9 +173,9 @@
 			</thead>
 			<tbody>'
 			.'<tr>'
-				.'<td class="table-info text-center">'.$totalCount.'</td>'
-				.'<td class="table-success text-center">'.$passCount.'</td>'
-				.'<td class="table-danger text-center">'.$failCount.'</td>'
+				.'<td class="col-4 table-info text-center">'.$totalCount.'</td>'
+				.'<td class="col-4 table-success text-center">'.$passCount.'</td>'
+				.'<td class="col-4 table-danger text-center">'.$failCount.'</td>'
 			.'</tr>'
 			.'</tbody>
 		</table>';
