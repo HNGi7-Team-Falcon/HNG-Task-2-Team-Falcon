@@ -4,19 +4,26 @@
 
 
 
-$fullname = "<strong>"."Jaiyeola Matin Oluwaseun"."</strong>";
+$fullname = "Jaiyeola Matin Oluwaseun";
 
-$hngID = "<strong>"."00400"."</strong>";
+$hngID = "HNG-00400";
 
-$lang = "<strong>"."PHP"."</strong>";
+$lang = "PHP";
+
+$email= "martinjaiyeola40@gmail.com";
+
+$result = "Hello World, this is " . $fullname .
+
+" with HNGi7 ID " . $hngID . 
+
+" using " . $lang . " for stage 2 task. " . $email;
+
+
+echo $result
 
 
 
-echo "Hello World, this is " . $fullname .
 
-    " with HNGi7 ID " . $hngID . 
-
-    " using " . $lang . " for stage 2 task";
 
 
 
