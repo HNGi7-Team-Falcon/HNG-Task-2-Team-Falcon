@@ -1,8 +1,8 @@
 let fullName = "Gbenga Owoeye";
 let hngId = "HNG-01365";
 let email = "gbengaowoeye43@gmail.com";
-let lang = "Javascript";
+let lang = "JavaScript";
 
 console.log(
-  `Hello World, this is ${fullName} with ID ${hngId} and email ${email} using ${lang} for stage 2 task`
+  `Hello World, this is ${fullName} with HNGi7 ID ${hngId} using ${lang} for stage 2 task`
 );
