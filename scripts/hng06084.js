@@ -1,9 +1,4 @@
-const express = require("express");
-const app = express();
+const fullname = `Ajayi solomon`;
+const HNGID = `hng-06084`;
 
-app.get("/", (req, res) => {
-  res.send('Hello World, this is Ajayi Solomon with HNGi7 ID hng-06084 using Javascript for stage 2 task');
-});
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
-});
+console.log(`Hello World, this is ${fullname} with HNGi7 ID ${HNGID}  using Javascript for stage 2 task`);
