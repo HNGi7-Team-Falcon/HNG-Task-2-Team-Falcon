@@ -63,10 +63,10 @@
 				$email;
 
 				if (isset($matches[0][0])){
-					preg_match_all($template, $matches[0][0], $matches2);
+					preg_match_all($template, $matches[0][0], $expectedFormat);
 
-					$name = $matches2[1][0];
-					$language = $matches2[3][0];
+					$name = $expectedFormat[1][0];
+					$language = $expectedFormat[3][0];
 					$item["name"] = $name;
 					$item["language"] = $language;
 					$isMatched = $matches[0][0] === $output;
