@@ -10,13 +10,11 @@ jobs:
   merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Automatically Merge PR
-        uses: plm9606/automerge_actions@1.2.2
+      - uses: actions/checkout@master
         with:
-          # The PR label name you want to use when merge PR automatically.
-          label-name: '*'# optional, default is automerge
-          # Number of reviewers needed to automatically merge the PR.
-          reviewers-number: 0 # optional, default is 1
-          # The merge method; merge, squash or rebase.
-          merge-method: squash # optional, default is merge
-          # Let the bot delete the merged branch. true or false.
+          ref: submissions
+      - name: merge
+        uses: framer/merge-approved-pull-request-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_LABEL: '*'
