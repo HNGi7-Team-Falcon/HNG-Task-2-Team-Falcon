@@ -1,4 +1,3 @@
-//stating the variables
 
 let greetings = 'Hello World';
 var first_Name = 'Wisdom';
