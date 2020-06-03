@@ -1,4 +1,4 @@
-full_name = "Anna Kenechi"
+full_name = "Ugwu Anna Kenechi"
 id_name = "HNG-02989"
 language_name = "Python"
 
