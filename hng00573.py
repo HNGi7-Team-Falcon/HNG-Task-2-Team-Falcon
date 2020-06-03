@@ -1,1 +1,7 @@
-print("Hello World, this is Martins Olatunji with HNGi7 using python or stage 2 task")
+string_name = 'Martins Olatunji'
+string_HNGi7ID = 'HNG-00573'
+string_language = 'python'
+string_email ='Martinsolatunji2@gmail.com'
+
+
+print(" Hello World, this is " +string_name+ " with HNGi7 ID " +string_HNGi7ID+ " using " +string_language+ " for stage 2 task. " +string_email) 
