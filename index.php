@@ -89,10 +89,6 @@
 		}
 	}
 
-	// convert to JSON:API format https://jsonapi.org/
-	$response = array();
-	$response["data"] = $data;
-
 	$isJson = false;
 	if(isset($_SERVER["QUERY_STRING"])) {
 	 	$queryStr = $_SERVER["QUERY_STRING"];
@@ -103,5 +99,5 @@
 		header("Content-Type: application/json");
 	}
 
-	echo json_encode($response);
+	echo json_encode($data);
 ?>
