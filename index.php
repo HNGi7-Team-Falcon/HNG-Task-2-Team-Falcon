@@ -26,7 +26,11 @@
 		if (is_file($filePath)) {
 			$item = array();
 			$runtime = getRuntime("$fileName");
-			$output = shell_exec("$runtime $filePath"); # Execute script and assign result
+			$output;
+			
+			if ($runtime) {
+				$output = shell_exec("$runtime $filePath"); # Execute script and assign result
+			}
 
 			if ($output == null) {
 				$item["status"] = "fail";
