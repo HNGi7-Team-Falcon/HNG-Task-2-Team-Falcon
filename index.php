@@ -3,7 +3,7 @@
 	$idRegex = "/(HNG[-{0,}][\d]+)/";
 	$emailRegex = "/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/";
 	$languageRegex = "/using \[{0,1}(\w+)\b/";
-	$nameRegex = "/this is \[{0,1}([\w+,\s]+)]{0,1} with/";
+	$nameRegex = "/this is \[{0,1}([\w+,\s]+)]{0,1} with/i";
 
 	# Retrive the runtime engine name
 	function getRuntime($fileName) {;
