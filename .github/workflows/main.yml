@@ -24,6 +24,7 @@ jobs:
       - name: Merge branch
         uses: devmasx/merge-branch@v1.1.0
         with:
+          type: now
           #type: # optional, default is labeled
           # PR Label name
           #label_name: # optional
