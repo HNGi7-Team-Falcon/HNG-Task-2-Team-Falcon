@@ -185,15 +185,15 @@ if ($response_type == 'json') {
                                 $status = '<b class="text-success">pass</b>';
                                 $passed++;
                             } else {
-                                $message = '<b class="text-danger">Check your HNG id</b>';
-                                $status = 'fail';
+                                $message = '<b class="text-danger">Add HNG to your ID</b>';
+                                $status = '<b class="text-danger">Fail</b>';
                             }
 
 
                         } else {
                             $failed++;
                             $message = '<b class="text-danger">Incorrect string passed</b>';
-                            $status = 'fail';
+                            $status = '<b class="text-danger">Fail</b>';
                         }
 
                         ?>
