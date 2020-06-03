@@ -2,6 +2,7 @@ first_name = "Bolaji"
 last_name ="Alabi"
 hng_id = "HNG-00998"
 language ="Python"
+email = "alabibolaji78@gmail.com"
 flush = true;
 
 
