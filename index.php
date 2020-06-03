@@ -166,16 +166,16 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th scope="col text-center">Submitted</th>
+					<th scope="col">Submitted</th>
 					<th scope="col">Passed</th>
 					<th scope="col">Failed</th>
 				</tr>
 			</thead>
 			<tbody>'
 			.'<tr>'
-				.'<td>'.$totalCount.'</td>'
-				.'<td>'.$passCount.'</td>'
-				.'<td>'.$failCount.'</td>'
+				.'<td class="table-info text-center">'.$totalCount.'</td>'
+				.'<td class="table-success text-center">'.$passCount.'</td>'
+				.'<td class="table-danger text-center">'.$failCount.'</td>'
 			.'</tr>'
 			.'</tbody>
 		</table>';
