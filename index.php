@@ -138,7 +138,7 @@ if ($response_type == 'json') {
                         <th scope="col">Name</th>
                         <th scope="col">Message</th>
                         <th scope="col">Status</th>
-                        <th scope="col">Error</th>
+                        <th scope="col">Comments</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -202,7 +202,18 @@ if ($response_type == 'json') {
                             <td><?php echo $internName;  ?></td>
                             <td><?php echo $newResponse;  ?></td>
                             <td><?php echo $status;  ?></td> <!-- -->
-                            <td><?php echo $message;  ?></td> <!-- -->
+                            <?php
+                                if ($status == 'fail') {
+                                    ?>
+                                    <td><?php echo $message;  ?></td> <!-- -->
+                                    <?php
+                                } else {
+                                    ?>
+                                    <td><b class="text-success">Well done</b></td>
+                                <?php
+                                }
+                            ?>
+
                         </tr>
                         <?
                     }
