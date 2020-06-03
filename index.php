@@ -130,82 +130,86 @@ if ($response_type == 'json') {
     </div>
     <div class="row mt-2">
         <div class="col-lg-12">
-            <table class="table">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Message</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Error</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                $counter = 0;
-                $passed = 0;
-                $failed = 0;
-                foreach (glob($directory."/*.*") as $file)  {
-                    $counter++;
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Error</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $counter = 0;
+                    $passed = 0;
+                    $failed = 0;
+                    foreach (glob($directory."/*.*") as $file)  {
+                        $counter++;
 
-                    # Get file Extension
-                    $filename = str_ireplace('scripts/','',$file);
-                    $ext = strtolower(substr(strrchr($filename, "."), 1));
+                        # Get file Extension
+                        $filename = str_ireplace('scripts/','',$file);
+                        $ext = strtolower(substr(strrchr($filename, "."), 1));
 
-                    # Command for different
-                    if ($ext == 'php') {
-                        $response = exec("$ext $file 2>&1", $output);
-                    } else if ($ext == 'js') {
-                        $response = exec("node $file 2>&1", $output);
-                    } else if ($ext == 'py') {
-                        $response = exec("python $file 2>&1", $output);
-                    } else {
-                        $reason = 'Invalid file type';
-                    }
-
-                    $internName = trim(get_string_between($response, 'this is', 'with'));
-                    $internID = trim(get_string_between($response, 'ID', 'using'));
-                    $language = trim(get_string_between($response, 'using', 'for'));
-                    $email = extract_email($response);
-
-                    $newResponse = (String) str_replace($email, "",$response);
-
-                    # Check status of response
-                    $passCondition1 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task ";
-                    $passCondition2 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task.";
-                    $passCondition3 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task";
-                    $passCondition4 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task. ";
-
-
-                    if (($passCondition1 == $newResponse) || ($passCondition2 == $newResponse) || ($passCondition3 == $newResponse) || ($passCondition4 == $newResponse)) {
-
-
-                        if (strpos($internID, 'HNG-') !== false) {
-                            $status = '<b class="text-success">pass</b>';
-                            $passed++;
+                        # Command for different
+                        if ($ext == 'php') {
+                            $response = exec("$ext $file 2>&1", $output);
+                        } else if ($ext == 'js') {
+                            $response = exec("node $file 2>&1", $output);
+                        } else if ($ext == 'py') {
+                            $response = exec("python $file 2>&1", $output);
                         } else {
-                            $status = '<b class="text-danger">Check your HNG id</b>';
+                            $reason = 'Invalid file type';
                         }
 
+                        $internName = trim(get_string_between($response, 'this is', 'with'));
+                        $internID = trim(get_string_between($response, 'ID', 'using'));
+                        $language = trim(get_string_between($response, 'using', 'for'));
+                        $email = extract_email($response);
 
-                    } else {
-                        $failed++;
-                        $status = '<b class="text-danger">Incorrect string passed</b>';
+                        $newResponse = (String) str_replace($email, "",$response);
+
+                        # Check status of response
+                        $passCondition1 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task ";
+                        $passCondition2 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task.";
+                        $passCondition3 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task";
+                        $passCondition4 = "Hello World, this is {$internName} with HNGi7 ID {$internID} using {$language} for stage 2 task. ";
+
+
+                        if (($passCondition1 == $newResponse) || ($passCondition2 == $newResponse) || ($passCondition3 == $newResponse) || ($passCondition4 == $newResponse)) {
+
+
+                            if (strpos($internID, 'HNG-') !== false) {
+                                $status = '<b class="text-success">pass</b>';
+                                $passed++;
+                            } else {
+                                $message = '<b class="text-danger">Check your HNG id</b>';
+                                $status = 'fail';
+                            }
+
+
+                        } else {
+                            $failed++;
+                            $message = '<b class="text-danger">Incorrect string passed</b>';
+                            $status = 'fail';
+                        }
+
+                        ?>
+                        <tr>
+                            <td><?php echo $counter; ?></td>
+                            <td><?php echo $internName;  ?></td>
+                            <td><?php echo $newResponse;  ?></td>
+                            <td><?php echo $status;  ?></td> <!-- -->
+                            <td><?php echo $message;  ?></td> <!-- -->
+                        </tr>
+                        <?
                     }
-
                     ?>
-                    <tr>
-                        <td><?php echo $counter; ?></td>
-                        <td><?php echo $internName;  ?></td>
-                        <td><?php echo $newResponse;  ?></td>
-                        <td><?php echo $status;  ?></td> <!-- -->
-                        <td><?php echo $internID;  ?></td> <!-- -->
-                    </tr>
-                    <?
-                }
-                ?>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
