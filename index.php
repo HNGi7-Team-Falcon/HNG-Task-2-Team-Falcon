@@ -108,6 +108,8 @@
                                 $status = 'fail';
                             }
 
+                            echo $newResponse;
+
                             ?>
                             <tr>
                                 <td><?php echo $counter; ?></td>
