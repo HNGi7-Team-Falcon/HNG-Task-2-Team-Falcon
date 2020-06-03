@@ -53,7 +53,8 @@
 			if (is_null($output)) {
 
 				$item["status"] = "fail";
-				$item["message"] = "unable to run script";
+				$item["output"] = "unable to run script";
+				$item["name"] = $fileName;
 
 			} else {
 
@@ -81,6 +82,8 @@
 			preg_match($nameRegex, $output, $nameMatches);
 			if (isset($nameMatches[1])) {
 				$item["name"] = $nameMatches[1];
+			} else {
+				$item["name"] = $fileName;
 			}
 
 			// extract language
@@ -111,7 +114,69 @@
 
 	if ($isJson) {
 		header("Content-Type: application/json");
+		echo json_encode($data);
+	} else {
+		htmlFormat($data);
 	}
 
-	echo json_encode($data);
+	function htmlFormat($data) {
+		$bootstrap = '
+				<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>';
+
+		$head = '
+		<head>
+			<title>Team Falcon</title>
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		</head>
+		';
+
+		$rows = getRows($data);
+
+		$table = '
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Output</th>
+					<th scope="col">Status</th>
+				</tr>
+			</thead>
+			<tbody>'
+				.$rows.
+			'</tbody>
+		</table>';
+
+		echo "
+		<!DOCTYPE html>
+		<html>"
+			.$head
+			."<body>"
+				.$table
+				.$bootstrap
+			."</body>
+		</html>";
+	}
+
+	function getRows($items) {
+		$rows = "";
+		foreach ($items as $key => $item) {
+			$row = getRow($item); 
+			$rows = $rows.$row;
+		}
+		return $rows;
+	}
+
+	function getRow($item) {
+		$fail = $item["status"] == "fail";
+		$class = $fail ? "text-danger" : "'text-success'";
+		return "<tr>"
+			."<td class=".$class.">".$item["name"]."</td>"
+			."<td><code>".htmlspecialchars($item["output"])."</code></td>"
+			."<td class=".$class.">".strtoupper($item["status"])."</td>"
+			."</tr>";
+	}
+
 ?>
+
