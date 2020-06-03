@@ -5,4 +5,4 @@ function odiri () {
 
    } 
           
-document.write(odiri());
+console.log(odiri());
