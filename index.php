@@ -63,6 +63,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Message</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Error</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -75,7 +76,7 @@
                             $filename = str_ireplace('scripts/','',$file);
                             $ext = substr(strrchr($filename, "."), 1);
 
-                            # Command for Php
+                            # Command for different
                             if ($ext == 'php') {
                                 $response = exec("$ext $file 2>&1", $output);
                             } else if ($ext == 'js') {
@@ -83,11 +84,7 @@
                             } else if ($ext == 'py') {
                                 $response = exec("python $file 2>&1", $output);
                             } else {
-                                $response = 'Not PHP';
-                                $internName = 'No name';
-                                $email = 'No Email';
-                                $newResponse = 'Not PHP';
-                                $status = 'fail';
+                                $reason = 'Invalid file type';
                             }
 
                             $internName = trim(get_string_between($response, 'this is', 'with'));
@@ -107,7 +104,7 @@
                             if (($passCondition1 == $newResponse) || ($passCondition2 == $newResponse) || ($passCondition3 == $newResponse) || ($passCondition4 == $newResponse)) {
                                 $status = '<b class="text-success">pass</b>';
                             } else {
-                                $status = '<b class="text-danger">fail</b>';
+                                $status = '<b class="text-danger">Incorrect string passed</b>';
                             }
 
                             ?>
