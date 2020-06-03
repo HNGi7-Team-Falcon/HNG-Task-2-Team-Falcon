@@ -4,7 +4,7 @@ var HNGi7_ID = "HNG-03622";
 var language = "JavaScript";
 
 function myTask(){
-		let stageTwo_Task = "Hello world, this is " + fullName + " with HNGi7 ID " + HNGi7_ID + " using " + language; 
+		let stageTwo_Task = "Hello world, this is " + fullName + " with HNGi7 ID " + HNGi7_ID + " using " + language "for stage 2 task"; 
         return stageTwo_Task;
 }
 
