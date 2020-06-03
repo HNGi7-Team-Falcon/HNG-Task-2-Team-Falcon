@@ -1,17 +1,18 @@
-# HNG-Task-2-Team-Falcon
-Team Falcon submission repository for the second task in HNG.
+# Team-Falcon's Submission Repo For The Second Task In The HNG7i
 
-## For Team Members 
-#### Step 1
-Make sure you are on a personal computer
-#### Step 2
-Fork this repository by clicking on the fork button
-#### Step 3
-Write in whatever server sided language of your choice a statement to return "Hello World, this is [full name] with HNGi7 ID [ID] using [language] for stage 2 task"
-Replace
-[full name] with your actual fullname
-[id] with your actual HNGID found on your HNGBoard.
-[language] with the programming language you used.
+## Instructions For Team Members
 
-## For Mentors
-Step 1:
+1. Make sure you are on a personal computer
+2. [Fork] this repository by clicking on the fork button
+3. Write in a server sided language of your choice (i.e. PHP, Python or Javasript) a statement to return `Hello World, this is [full name] with HNGi7 ID [ID] using [language] for stage 2 task`
+4. Replace:
+   - **[full name]** with your actual _fullname_,
+   - **[id]** with your actual _HNG-ID_ found on your **[HNGBoard]** and
+   - **[language]** with the _programming language_ you used.
+
+## Instructions For The Mentors
+
+1.
+
+[fork]: https://help.github.com/en/enterprise/2.13/user/articles/fork-a-repo#:~:text=A%20fork%20is%20a%20copy,point%20for%20your%20own%20idea.
+[hngboard]: https://board.hng.tech/
