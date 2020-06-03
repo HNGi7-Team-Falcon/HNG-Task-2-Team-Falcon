@@ -28,9 +28,16 @@
 			$runtime = getRuntime("$fileName");
 			$output = shell_exec("$runtime $filePath"); # Execute script and assign result
 
-			$item["success"] = $output != null;
-			$item["payload"] = $output;
-			
+			if ($output == null) {
+				$item["status"] = "fail";
+			} else {
+				$item["status"] = "pass";
+			}
+			$payload = array();
+			$payload["output"] = $output;
+			$payload["fileName"] = $fileName;
+			$item["payload"] = $payload;
+
 			array_push($data, $item);
 		}
 	}
