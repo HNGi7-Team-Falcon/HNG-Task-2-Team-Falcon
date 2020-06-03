@@ -1,4 +1,5 @@
 //stating the variables
+
 let greetings = 'Hello World';
 var first_Name = 'Wisdom';
 let last_Name = 'Ekpotu';
@@ -10,3 +11,5 @@ var Language = 'javascript';
 console.log(
   `${greetings}, this is ${fullName} with HNGi7 ID ${id} using ${Language} for stage 2 task. ${E_mail}. `
 );
+
+
