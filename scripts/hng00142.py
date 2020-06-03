@@ -1,1 +1,6 @@
-print("Hello World, this is Olayinka Olasunkanmi with HNGi7 ID HNG-00142 using Python 3 for stage 2 task")
+full_name = 'Olayinka Olasunkanmi'
+hng_id = 'HNG-00142'
+language = 'Python'
+email = 'sj.olayinka@gmail.com'
+introduction = f'Hello World, this is {full_name} with HNGi7 ID {hng_id} using {language} for stage 2 task'
+print(introduction)
