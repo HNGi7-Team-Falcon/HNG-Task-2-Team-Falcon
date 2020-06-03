@@ -27,8 +27,10 @@
 			$item = array();
 			$runtime = getRuntime("$fileName");
 			$output = shell_exec("$runtime $filePath"); # Execute script and assign result
-			$item["success"] = true;
+
+			$item["success"] = $output != null;
 			$item["payload"] = $output;
+			
 			array_push($data, $item);
 		}
 	}
@@ -40,6 +42,6 @@
 	if ($isJson) {
 		header("Content-Type: application/json");
 	}
-	
+
 	echo json_encode($response);
 ?>
