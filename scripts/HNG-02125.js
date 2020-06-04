@@ -1,6 +1,6 @@
         var name = "Shotolu Paul"
         var hngid = "HNG-02125"
-        var lang = "javascript"
+        var lang = "Javascript"
         var mail= "paulshotolu@gmail.com"
 
 		function paulfunc() {
