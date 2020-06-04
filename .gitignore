@@ -14,3 +14,5 @@
 
 .history/**
 .idea
+
+/scripts/**.ts
