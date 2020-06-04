@@ -10,5 +10,3 @@ let printHello = () => {
 }
 
 printHello();
-
-
