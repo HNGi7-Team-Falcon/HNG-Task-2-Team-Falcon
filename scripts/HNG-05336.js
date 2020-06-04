@@ -1,5 +1,5 @@
 const name = 'Amasa Abubakar'
-const id = '[HNG-05336]'
+const id = 'HNG-05336'
 const lang = 'javascript'
 const e = 'aremu14.amasa@hotmail.com'
 
