@@ -1,7 +1,2 @@
-name = "Adeoye Ayomide"
-id = " HNG-04569"
-lang = "python"
 email = "ayomilotunde02@gmail.com"
-flush = True
-
-print ("Hello World, this is " + name + " with HNGi7 ID " + id + " using " + lang + " for stage 2 task " + email)
+print("Hello World, this is Adeoye Ayomide with HNGi7 ID HNG-04569 using Python for stage 2 task. Email:"+email)
