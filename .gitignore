@@ -6,3 +6,13 @@
 
 # Others
 .idea/
+
+/.idea
+
+.history/
+/.history
+
+.history/**
+.idea
+
+/scripts/**.ts

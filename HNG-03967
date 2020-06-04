@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang = "en-us">
-<head><title>HNGi7 stage 2 task</title></head>
+<head>HNGi7 stage 2 task</head>
 <body>
 <?php
 $my_name = "KINGSLEY CHIEMERIE AMOKE";
