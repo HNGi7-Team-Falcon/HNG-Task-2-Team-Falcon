@@ -12,5 +12,7 @@
 .history/
 /.history
 
-.history
+.history/**
 .idea
+
+/scripts/**.ts

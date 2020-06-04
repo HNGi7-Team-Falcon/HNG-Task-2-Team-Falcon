@@ -10,7 +10,7 @@ let myEmail = "anumuduchukwuebuka@gmail.com";
 
 // Function to INTRODUCE ME =====================================================================================================================================
 const introduceMe = () => {
-    console.log(`Hello World, this is ${myName} with HNGi7 ID ${myId} using ${myLanguage} for stage 2 task`)
+    console.log(`Hello World, this is ${myName} with HNGi7 ID ${myId} using ${myLanguage} for stage 2 task. ${myEmail}`)
 }
 //END of Function to INTRODUCE ME =====================================================================================================================================
 
