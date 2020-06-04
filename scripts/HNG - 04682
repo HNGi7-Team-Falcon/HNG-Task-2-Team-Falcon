@@ -1,7 +1,0 @@
-def hngi7task2(Full_Name,ID,lang,email):
-    return f'Hello World, this is {Full_Name} with HNGi7 ID {ID} using {lang} for stage 2 task. {email}'
-fullname = 'koyi olamilekan'
-id = 'HNG-04286'
-lang = 'python'
-email = 'lekan.koyi@gmail.com'
-print (hngi7task2(fullname,id,lang,email))
