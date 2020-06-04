@@ -1,12 +1,13 @@
 const name = "Mohammed Bashir Oladimeji"
 const id = "HNG-02012"
 const email = "rihsabmohd@gmail.com"
+const language = "javascript"
 
 
 
 
 let printHello = () => {
-	return `Hello world, this is ${name} with HNGi7  ID ${id} using javascript for stage 2 task. ${email}`;
+	return `Hello World, this is ${name} with HNGi7  ID ${id} using ${language} for stage 2 task. ${email}`;
 }
 
-printHello();
+console.log(printHello());
