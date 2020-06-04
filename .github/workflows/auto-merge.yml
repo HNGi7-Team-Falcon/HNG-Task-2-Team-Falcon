@@ -17,4 +17,4 @@ jobs:
         uses: framer/merge-approved-pull-request-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MERGE_LABEL: ready
+          MERGE_LABEL: '*'

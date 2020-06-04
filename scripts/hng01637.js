@@ -1,13 +1,11 @@
-let name = 'Adetayo Akinsanya',
+let fullname = 'Akinsanya Adetayo',
   id = 'HNG-01637',
-  email = 'akinsanyaadetayo@gmail.com',
-  language = 'JavaScript';
+  language = 'JavaScript',
+  email = 'akinsanyaadetayo@gmail.com';
 
-const myInfo = () => {
-  let description = `Hello world, this is ${name} with HNGi7 ID ${id} and email ${email} using ${language} for stage 2 task`;
-
-  console.log(description);
-  return description;
+const myOutput = () => {
+  console.log(
+    `Hello World, this is ${fullname} with HNGi7 ID ${id} using ${language} for stage 2 task. ${email}`
+  );
 };
-
-myInfo();
+myOutput();

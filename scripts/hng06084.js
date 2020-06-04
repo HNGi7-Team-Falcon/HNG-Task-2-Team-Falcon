@@ -1,5 +1,10 @@
-const FULL_NAME = `Ajayi solomon`;
-const HNGID = `hng-06084`;
-const EMAIL = `temmyjay001@gmail.com`;
+const details = {
+    firstName: "Ajayi",
+    lastName: "Solomon",
+    HNG_id: "HNG-06084",
+    email: "temmyjay001@gmail.com",
+};
 
-console.log(`Hello World, this is ${FULL_NAME} with HNGi7 ID ${HNGID}  using Javascript for stage 2 task. ${EMAIL}`);
+const output = (`Hello World, this is ${details.firstName} ${details.lastName} with HNGi7 ID ${details.HNG_id} using JavaScript for stage 2 task. ${details.email}`);
+
+console.log(output);
