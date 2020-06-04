@@ -1,5 +1,5 @@
 def taskCode():
-    my_name = "Oluwatosin Taiwo "
+    my_name = "Oluwatosin Taiwo"
     hng_id = "HNG-01224"
     language = "Python"
     email = "ttvicktor1@gmail.com"
