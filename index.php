@@ -52,7 +52,7 @@
 
 			$runtime = getRuntime("$fileName");
 
-			echo $fileName;
+			// echo $fileName;
 			if ($runtime) {
 
 				set_time_limit(5);
@@ -132,7 +132,7 @@
 		header("Content-Type: application/json");
 		echo json_encode($data);
 	} else {
-		// htmlFormat($data);
+		htmlFormat($data);
 	}
 
 	function htmlFormat($data) {
