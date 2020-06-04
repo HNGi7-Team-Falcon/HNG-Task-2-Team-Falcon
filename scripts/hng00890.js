@@ -1,5 +1,10 @@
-const task_two = 'Hello world this is Babatunde Abdulhameed with HNGi7 ID [00890] using Javascript for stage 2 task' 
 
-//return task_two;
 
-console.log(task_two);
+const hng00890 = (name, id, language, email) => {
+  
+    const task_two = `Hello World, this is ${name} with HNGi7 ID HNG-${id} using ${language} for stage 2 task ${email}`;
+
+    console.log(task_two);
+}
+
+hng00890('Babatunde Abdulhameed', '00890', 'Javascript', 'humiditii45@gmail.com')

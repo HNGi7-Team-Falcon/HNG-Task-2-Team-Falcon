@@ -1,8 +1,9 @@
 <?php
-$fullname = "Alajiki Temilola";
-$ID = "HNG00444";
+$name = "Alajiki Temilola";
+$id = "HNG-00444";
 $language = "PHP";
+$email = "alajikitemilola@gmail.com";
 
-echo "Hello World, this is " .$fullname.  " with HNGi7 ID, ".$ID. " ,using " .$language. " for stage 2 task.";
+echo "Hello World, this is " .$name.  " with HNGi7 ID ".$id. " using " .$language. " for stage 2 task. " .$email ;
 
 ?>

@@ -2,22 +2,42 @@
 
 // HNGi7 task 2: Just details about my profile
 
+$fullname = "Jaiyeola Matin Oluwaseun";
 
+$hngID = "HNG-00400";
 
-$fullname = "<strong>"."Jaiyeola Matin Oluwaseun"."</strong>";
+$lang = "PHP";
 
-$hngID = "<strong>"."00400"."</strong>";
+$email= "martinjaiyeola40@gmail.com";
 
-$lang = "<strong>"."PHP"."</strong>";
+$result = "Hello World, this is " . $fullname .
 
+          " with HNGi7 ID " . $hngID . 
 
+          " using " . $lang . " for stage 2 task. " . $email;
 
-echo "Hello World, this is " . $fullname .
-
-    " with HNGi7 ID " . $hngID . 
-
-    " using " . $lang . " for stage 2 task";
-
-
+echo $result;
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
