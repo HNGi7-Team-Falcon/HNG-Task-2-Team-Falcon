@@ -1,2 +1,12 @@
-var myMessage = "Hello world, this is Raheem Abeeb Ishola with HNGi7 ID[HNG-00452] using Javascript for stage 2 task"
-console.log(myMessage);
+const output = () =>{
+    const info = {
+        fullName: "Raheem Abeeb Ishola",
+        hngId: "HNG-00452",
+        language: "javascript",
+        email: "belovetech@gmail.com"
+    }
+    return 'Hello World, this is '  + info.fullName + ' with HNGi7 ID ' +
+            info.hngId + ' using ' + info.language + ' for stage 2 task. ' 
+}
+
+console.log(output());
