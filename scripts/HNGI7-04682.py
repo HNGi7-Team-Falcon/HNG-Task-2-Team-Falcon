@@ -10,5 +10,4 @@ def hngtask2():
     Address = ('lekan.koyi@gmail.com')
     print (Address)
 hngtask2()
-final = hngi7task2
-print (final)
+
