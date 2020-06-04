@@ -37,84 +37,13 @@
 	$path = "scripts";
 	$files = scandir($path);
 
-	$data =  array();
 	$totalCount = 0;
 	$passCount = 0;
 	$failCount = 0;
+?>
 
-	foreach ($files as $key => $fileName) {
-
-		$filePath = "./$path/$fileName";
-
-		if (!is_dir($filePath)) {
-			$item = array();
-			$totalCount++;
-
-			$runtime = getRuntime("$fileName");
-
-			// echo $fileName;
-			if ($runtime) {
-
-				set_time_limit(5); // prevent script from running too long
-				$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
-				if (is_null($output)) {
-
-					$item["status"] = "fail";
-					$item["output"] = "%> script produced no output";
-					$item["name"] = $fileName;
-					$failCount++;
-
-				} else {
-
-					if (preg_match($template, $output, $matches)) {
-						$item["status"] = "pass";
-						$item["output"] = $matches[0];
-						$passCount++;
-					} else {
-						$item["status"] = "fail";
-						$item["output"] = $output;
-						$failCount++;
-					}
-
-				}
-				// extract id
-				preg_match($idRegex, $output, $idMatches);
-				if (isset($idMatches[0])) {
-					$item["id"] = $idMatches[0];
-				}
-
-				// extract name 
-				preg_match($nameRegex, $output, $nameMatches);
-				if (isset($nameMatches[1])) {
-					$item["name"] = $nameMatches[1];
-				} else {
-					$item["name"] = $fileName;
-				}
-
-				// extract language
-				preg_match($languageRegex, $output, $languageMatches);
-				if (isset($languageMatches[1])) {
-					$item["language"] = $languageMatches[1];
-				}
-
-				// extract email
-				preg_match($emailRegex, $output, $emailMatches);
-				if (isset($emailMatches[0])) {
-					$item["email"] = $emailMatches[0];
-				}
-
-			} else {
-				$item["name"] = $fileName;
-				$item["output"] = "File not supported";
-				$item["status"] = "fail";
-			}
-
-			// fileName
-			$item["fileName"] = $fileName;
-
-			array_push($data, $item);
-		}
-	}
+<?php
+	$data =  array();
 
 	$isJson = false;
 	if(isset($_SERVER["QUERY_STRING"])) {
@@ -124,101 +53,218 @@
 
 	if ($isJson) {
 		header("Content-Type: application/json");
+		foreach ($files as $key => $fileName) {
+
+			$filePath = "./$path/$fileName";
+
+			if (!is_dir($filePath)) {
+				$item = array();
+				$totalCount++;
+
+				$runtime = getRuntime("$fileName");
+
+				// echo $fileName;
+				if ($runtime) {
+
+					set_time_limit(5); // prevent script from running too long
+					$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
+					if (is_null($output)) {
+
+						$item["status"] = "fail";
+						$item["output"] = "%> script produced no output";
+						$item["name"] = $fileName;
+						$failCount++;
+
+					} else {
+
+						if (preg_match($template, $output, $matches)) {
+							$item["status"] = "pass";
+							$item["output"] = $matches[0];
+							$passCount++;
+						} else {
+							$item["status"] = "fail";
+							$item["output"] = $output;
+							$failCount++;
+						}
+
+					}
+					// extract id
+					preg_match($idRegex, $output, $idMatches);
+					if (isset($idMatches[0])) {
+						$item["id"] = $idMatches[0];
+					}
+
+					// extract name 
+					preg_match($nameRegex, $output, $nameMatches);
+					if (isset($nameMatches[1])) {
+						$item["name"] = $nameMatches[1];
+					} else {
+						$item["name"] = $fileName;
+					}
+
+					// extract language
+					preg_match($languageRegex, $output, $languageMatches);
+					if (isset($languageMatches[1])) {
+						$item["language"] = $languageMatches[1];
+					}
+
+					// extract email
+					preg_match($emailRegex, $output, $emailMatches);
+					if (isset($emailMatches[0])) {
+						$item["email"] = $emailMatches[0];
+					}
+
+				} else {
+					$item["name"] = $fileName;
+					$item["output"] = "File not supported";
+					$item["status"] = "fail";
+				}
+
+				// fileName
+				$item["fileName"] = $fileName;
+
+				array_push($data, $item);
+			}
+		}
 		echo json_encode($data);
-	} else {
-		echo htmlFormat($data);
+		die();
 	}
+?>
 
-	function htmlFormat($data) {
-		global $totalCount;
-		global $passCount;
-		global $failCount;
 
-		$bootstrap = '
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>';
-
-		$head = '
-		<head>
-			<title>Team Falcon</title>
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-		</head>
-		';
-
-		$rows = getRows($data);
-
-		$table = '
-		<table class="table table-bordered table-hover">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">#</th>
-					<th scope="col">Name</th>
-					<th scope="col">Output</th>
-					<th scope="col">Status</th>
-				</tr>
-			</thead>
-			<tbody>'
-				.$rows.
-			'</tbody>
-		</table>';
-
-		$stats = '
-		<h1 class="text-center">Team Falcon</h1>
-		<table class="table">
-			<thead>
-				<tr class="text-center">
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Team Falcon</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	</head>
+		<body>
+			<div class=container>
+			<h1 class="text-center">Team Falcon</h1>
+			<table class="table">
+				<thead>
+					<tr class="text-center">
 					<th scope="col">Submitted</th>
 					<th scope="col">Passed</th>
 					<th scope="col">Failed</th>
 				</tr>
-			</thead>
-			<tbody>'
-			.'<tr>'
-				.'<td class="col-4 table-info text-center">'.$totalCount.'</td>'
-				.'<td class="col-4 table-success text-center">'.$passCount.'</td>'
-				.'<td class="col-4 table-danger text-center">'.$failCount.'</td>'
-			.'</tr>'
-			.'</tbody>
-		</table>';
+				</thead>
+				<tbody>
+					<tr>
+						<td class="col-4 table-info text-center"><?php echo $totalCount; ?></td>
+						<td class="col-4 table-success text-center"><?php echo $passCount ?></td>
+						<td class="col-4 table-danger text-center"><?php echo $failCount ?></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-bordered table-hover">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Name</th>
+						<th scope="col">Output</th>
+						<th scope="col">Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
 
-		return "
-		<!DOCTYPE html>
-		<html>"
-			.$head
-			."<body>
-					<div class=container>"
-					.$stats
-					.$table
-					.$bootstrap
-				."</div>
-			</body>
-		</html>";
-	}
+						foreach ($files as $key => $fileName) {
 
-	function getRows($items) {
-		$rows = "";
-		foreach ($items as $key => $item) {
-			$row = getRow($item); 
-			$rows = $rows.$row;
-		}
-		return $rows;
-	}
+							$filePath = "./$path/$fileName";
 
-	$counter = 0;
-	function getRow($item) {
-		global $counter;
-		$fail = $item["status"] == "fail";
-		$class = $fail ? "text-danger" : "'text-success'";
-		$counter++;
+							if (!is_dir($filePath)) {
+							$item = array();
+							$totalCount++;
 
-		return "
-		<tr>"
-			."<th scope='row'>".$counter."</th>"
-			."<td class=".$class.">".$item["name"]."</td>"
-			."<td><samp>".htmlspecialchars($item["output"])."</samp></td>"
-			."<td class=".$class.">".strtoupper($item["status"])."</td>"
-		."</tr>";
-	}
+							$runtime = getRuntime("$fileName");
 
-?>
+							// echo $fileName;
+							if ($runtime) {
+
+								set_time_limit(5); // prevent script from running too long
+								$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
+								if (is_null($output)) {
+
+									$item["status"] = "fail";
+									$item["output"] = "%> script produced no output";
+									$item["name"] = $fileName;
+									$failCount++;
+
+								} else {
+
+									if (preg_match($template, $output, $matches)) {
+										$item["status"] = "pass";
+										$item["output"] = $matches[0];
+										$passCount++;
+									} else {
+										$item["status"] = "fail";
+										$item["output"] = $output;
+										$failCount++;
+									}
+
+								}
+								// extract id
+								preg_match($idRegex, $output, $idMatches);
+								if (isset($idMatches[0])) {
+									$item["id"] = $idMatches[0];
+								}
+
+								// extract name 
+								preg_match($nameRegex, $output, $nameMatches);
+								if (isset($nameMatches[1])) {
+									$item["name"] = $nameMatches[1];
+								} else {
+									$item["name"] = $fileName;
+								}
+
+								// extract language
+								preg_match($languageRegex, $output, $languageMatches);
+								if (isset($languageMatches[1])) {
+									$item["language"] = $languageMatches[1];
+								}
+
+								// extract email
+								preg_match($emailRegex, $output, $emailMatches);
+								if (isset($emailMatches[0])) {
+									$item["email"] = $emailMatches[0];
+								}
+
+							} else {
+								$item["name"] = $fileName;
+								$item["output"] = "File not supported";
+								$item["status"] = "fail";
+							}
+
+							// fileName
+							$item["fileName"] = $fileName;
+
+							echo getRow($item);
+						}
+					}
+
+					$counter = 0;
+					function getRow($item) {
+						global $counter;
+						$fail = $item["status"] == "fail";
+						$class = $fail ? "text-danger" : "'text-success'";
+						$counter++;
+
+						return "
+						<tr>"
+							."<th scope='row'>".$counter."</th>"
+							."<td class=".$class.">".$item["name"]."</td>"
+							."<td><samp>".htmlspecialchars($item["output"])."</samp></td>"
+							."<td class=".$class.">".strtoupper($item["status"])."</td>"
+						."</tr>";
+					}
+				?>
+			</tbody>
+		</table>
+			.$bootstrap
+		</div>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</html>
