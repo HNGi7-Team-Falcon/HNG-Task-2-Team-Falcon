@@ -10,4 +10,4 @@ var language = "Javascript ";
 var text4 = "for Stage 2 Task, ";
 var email = "jamiesplendour@gmail.com.";
 
-console.log(text1 + fullname + text2 + id + text3 + language + text4 + email);
+console.log(text1 + fullName + text2 + id + text3 + language + text4 + email);
