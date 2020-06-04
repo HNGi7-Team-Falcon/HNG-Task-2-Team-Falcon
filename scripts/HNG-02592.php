@@ -12,6 +12,6 @@
 
         <?php //call variables into output text
 
-        echo "Hello World, this is " . $names . " with HNGi7 ID: " . $id . " using " . $language . " for my stage 2 task. My email is : " . $email . "";
+        echo "Hello World, this is " . $names . " with HNGi7 ID " . $id . " using " . $language . " for my stage 2 task. ";
 
         ?>
