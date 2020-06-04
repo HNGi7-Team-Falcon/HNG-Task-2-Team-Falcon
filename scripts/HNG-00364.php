@@ -1,4 +1,16 @@
 <?php
     ob_start();
-    echo "Hello World, this is Sajjad Khalid Abubakari with HNGi7 ID HNG-00364 using PHP for stage 2";
+
+    function myDetails()
+    {
+        $name = "Sajjad Khalid Abubakari";
+        $id = "HNG-00364";
+        $language = "Php";
+        $email = "captainsajjad4@gmail.com";
+        $output = "Hello World, this is ".$name." with HNGi7 ID ".$id." using ".$language." for stage 2. ".$email."";
+        echo json_encode($output);
+    }
+
+    myDetails();
     ob_flush();
+    
