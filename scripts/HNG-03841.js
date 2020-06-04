@@ -1,3 +1,6 @@
-<script>
-console.log("Hello World,this is Moses Obike with HNI7 ID HNG-03841 using Javascript for stage 2 task.mosesobike@gmail.com");
-</script>
+
+  const name = "Moses Obike";
+  const id ="HNG-O3841";
+  const lang ="Javascript";
+  const email= "mosesobike@gmail.com;
+   console.log(`Hello World,this is ${name} with HNI7 ID ${id} using ${lang}for stage 2 task.${email});
