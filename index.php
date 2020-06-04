@@ -10,10 +10,7 @@
 		"js": "node",
 		"php": "php",
 		"rb": "irb",
-		"java": "java",
-		"kt": "kotlinc",
-		"kts": "kotlinc",
-		"dart": "dart"
+		"java": "java"
 	}'; # currently supported types should be updated
 	$supported_map = json_decode($supported_json, true); # convert to json object to work with
 
