@@ -1,10 +1,10 @@
-const myName = 'Zimuzo Obiechina';
-const myId = 'HNG-00327';
-const myLang = 'JavaScript';
-const myEmail = 'zimobie@gmail.com';
+const printMessage = () => {
+  const name = 'Zimuzo Obiechina';
+  const id = 'hng00327';
+  const lang = 'JavaScript';
+  const email = 'zimobie@gmail.com';
 
-const printMessage = (name, id, lang, email) => {
-  return `Hello World, this is ${name} with HNGi7 ID: ${id} using ${lang} for stage 2 task. ${email} `;
+  console.log(
+    `Hello World, this is ${name} with HNG ID: ${id} using ${lang} for stage 2 task. ${email}`
+  );
 };
-
-console.log(printMessage(myName, myId, myLang, myEmail));
