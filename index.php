@@ -66,9 +66,7 @@
 
 				} else {
 
-					$isMatched = preg_match($template, $output, $matches) === 1;
-
-					if ($isMatched) {
+					if (preg_match($template, $output, $matches)) {
 						$item["status"] = "pass";
 						$item["output"] = $matches[0];
 						$passCount++;
@@ -99,7 +97,6 @@
 					$item["language"] = $languageMatches[1];
 				}
 
-
 				// extract email
 				preg_match($emailRegex, $output, $emailMatches);
 				if (isset($emailMatches[0])) {
@@ -129,7 +126,7 @@
 		header("Content-Type: application/json");
 		echo json_encode($data);
 	} else {
-		htmlFormat($data);
+		echo htmlFormat($data);
 	}
 
 	function htmlFormat($data) {
@@ -138,9 +135,9 @@
 		global $failCount;
 
 		$bootstrap = '
-				<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>';
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>';
 
 		$head = '
 		<head>
@@ -185,15 +182,15 @@
 			.'</tbody>
 		</table>';
 
-		echo "
+		return "
 		<!DOCTYPE html>
 		<html>"
 			.$head
 			."<body>
 					<div class=container>"
-				.$stats
-				.$table
-				.$bootstrap
+					.$stats
+					.$table
+					.$bootstrap
 				."</div>
 			</body>
 		</html>";
@@ -214,12 +211,14 @@
 		$fail = $item["status"] == "fail";
 		$class = $fail ? "text-danger" : "'text-success'";
 		$counter++;
-		return "<tr>"
+
+		return "
+		<tr>"
 			."<th scope='row'>".$counter."</th>"
 			."<td class=".$class.">".$item["name"]."</td>"
 			."<td><samp>".htmlspecialchars($item["output"])."</samp></td>"
 			."<td class=".$class.">".strtoupper($item["status"])."</td>"
-			."</tr>";
+		."</tr>";
 	}
 
 ?>
