@@ -171,12 +171,7 @@
 
 							// echo $fileName;
 							if ($runtime) {
-								$output = null;
-								try {
-									$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
-								} catch(Exeception $e) {
-									$output = null;
-								}
+								$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
 								if (is_null($output)) {
 
 									$item["status"] = "fail";
