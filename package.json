@@ -1,0 +1,25 @@
+{
+  "name": "hng-task-2-team-falcon",
+  "version": "1.0.0",
+  "description": "team falcon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usmansbk/HNG-Task-2-Team-Falcon.git"
+  },
+  "keywords": [
+    "hgni7"
+  ],
+  "author": "Usman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/usmansbk/HNG-Task-2-Team-Falcon/issues"
+  },
+  "homepage": "https://github.com/usmansbk/HNG-Task-2-Team-Falcon#readme"
+}

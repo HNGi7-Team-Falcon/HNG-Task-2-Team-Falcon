@@ -48,7 +48,7 @@
 
 		if (!is_dir($filePath)) {
 			$item = array();
-			$item["count"] = ++$totalCount;
+			$item["sn"] = ++$totalCount;
 
 			$runtime = getRuntime("$fileName");
 
@@ -214,7 +214,7 @@
 		$fail = $item["status"] == "fail";
 		$class = $fail ? "text-danger" : "'text-success'";
 		return "<tr>"
-			."<th scope='row'>".$item["count"]."</th>"
+			."<th scope='row'>".$item["sn"]."</th>"
 			."<td class=".$class.">".$item["name"]."</td>"
 			."<td><code>".htmlspecialchars($item["output"])."</code></td>"
 			."<td class=".$class.">".strtoupper($item["status"])."</td>"
