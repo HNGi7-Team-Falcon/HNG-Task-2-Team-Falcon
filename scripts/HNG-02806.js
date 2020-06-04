@@ -1,2 +1,16 @@
+let fullName = "Patrick Timothy Njoli";
+let id = "HNG-02806";
+let language = "JavaScripts";
+let email = "patimjoli@gmail.com";
 
-process.stdout.write("Hello World, this is Patrick Timothy Njoli with HNGi7 ID HNG-02806 using Javascript for stage 2 task");
+console.log(
+  " Hello World, this is " +
+    fullName +
+    " with HNGi7 ID " +
+    id +
+    " using " +
+    language +
+    " for stage 2 task and " +
+    email +
+    ""
+);
