@@ -175,7 +175,6 @@
 							// echo $fileName;
 							if ($runtime) {
 
-								set_time_limit(5); // prevent script from running too long
 								$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
 								if (is_null($output)) {
 
