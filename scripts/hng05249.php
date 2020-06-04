@@ -9,7 +9,7 @@ $email = "andikanaffiah@gmail.com";
 
 
 function intro_statement($name, $id, $language, $email){
-	$statement = "Hello World, this is $name, with HNGi7 ID $id using $language for stage 2 task. $email";
+	$statement = "Hello World, this is $name with HNGi7 ID $id using $language for stage 2 task. $email";
 	echo $statement;
 }
 
