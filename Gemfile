@@ -1,1 +1,3 @@
-ruby '1.9.3', :engine => 'jruby', :engine_version => '1.6.7'
+source 'https://rubygems.org'
+
+gem 'rails', '3.0.0.beta3'
