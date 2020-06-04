@@ -5,8 +5,21 @@ namespace mytaskC_
     class Program
     {
         static void Main(string[] args)
+
         {
-            Console.WriteLine("Hello World, this is Osakinle Dare Thomas with HNGi7 ID 00937 using C# for stage 2 task. Thomasdreh@gmail.com");
+            Console.WriteLine(GetmytaskC_());
+        }
+
+        private static bool GetmytaskC_()
+        {
+            throw new NotImplementedException();
+        }
+
+        string Name = "Osakinle Oluwadare Thomas";
+            int Id = 00937;
+            string email = "Thomasdreh@gmail.com";
+            string language = "C#";
+            string status = "Pass";
         }
     }
-}
+
