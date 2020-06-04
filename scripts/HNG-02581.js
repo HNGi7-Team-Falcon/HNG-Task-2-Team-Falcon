@@ -6,3 +6,4 @@ function newFunction() {
 	return " manuelckay@gmail.com";
 }
 	console.log("Hello World, this is " + fullName ", " + "with HNG ID " + hngiid, " using " + language, " for stage 2 task.")
+
