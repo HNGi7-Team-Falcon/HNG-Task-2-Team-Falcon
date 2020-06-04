@@ -1,5 +1,5 @@
 <?php
-  $HNG_ID = 'HNG-06468';
+  	$HNG_ID = 'hng06468';
 	$Fullname = 'Mutiulahi Tesleem Olamilekan';
 	$Email = 'tesleemolamilekan902@gmail.com';
 	$Language = 'PHP';
