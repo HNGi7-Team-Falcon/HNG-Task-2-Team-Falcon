@@ -10,7 +10,7 @@
 - Checkout (I.e Change your branch) to **submissions** branch using ```git checkout -b submissions``` 
 - Refresh then go to the **scripts** directory and:
   - create a new file in a server-side scripting language of your choice (i.e. PHP, Python or Javasript) a statement to return ```Hello World, this is [full name] with HNGi7 ID [HNG-ID] using [language] for stage 2 task. [email]```
-  - - E.g. ```"Hello World, this is CIROMA CHUKWUMA ADEKUNLE with HNGi7 ID HNG-00000 using Python for stage 2 task. adekunle.c.ciroma@gmail.com"```
+  - E.g. ```"Hello World, this is CIROMA CHUKWUMA ADEKUNLE with HNGi7 ID HNG-00000 using Python for stage 2 task. adekunle.c.ciroma@gmail.com"```
   - with naming format _“yourhngid.extension”_ e.g HNG-00000.php, HNG-00000.py, HNG-00000.js
 - Replace:
   - **[full name]** with your actual _fullname_,
