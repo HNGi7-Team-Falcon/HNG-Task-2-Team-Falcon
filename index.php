@@ -52,7 +52,7 @@
 
 			$runtime = getRuntime("$fileName");
 
-			// echo $fileName;
+			echo $fileName;
 			if ($runtime) {
 
 				$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
@@ -131,7 +131,7 @@
 		header("Content-Type: application/json");
 		echo json_encode($data);
 	} else {
-		htmlFormat($data);
+		// htmlFormat($data);
 	}
 
 	function htmlFormat($data) {
