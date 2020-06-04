@@ -1,5 +1,7 @@
-name="Rasaq Eniola Mariam"
-hngid ="HNG-04371"
-language ="python"
+def credentials(name, ID, language, email):
+    print("Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task.{}".format(name, ID, language, email, ))
 
-print("hello world,this is "+ name +"with HNGi7id:"+hndid + " using" + language+"for stage 2 task", flush=True);
+credentials("Rasaq Eniola Mariam", "HNG-04371","Python", "eniolakhira@gmail.com")
+
+
+
