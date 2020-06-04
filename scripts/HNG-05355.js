@@ -1,3 +1,5 @@
+// Abdurrahman Abolaji.
+
 let firstName = "Abdurrahman";
 let lastName = "Abolaji";
 let fullName = firstName + " " + lastName;
