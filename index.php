@@ -21,15 +21,15 @@
 		global $supported_map;
 
 		$tokens = explode(".", $fileName); // split file name into [fileName, extension];
-		$runtime = "php";
 		if (isset($tokens[1])) {
 			$ext = $tokens[1]; // extension
 			if ($ext && isset($supported_map[strtolower($ext)])) {
 				$runtime = $supported_map[strtolower($ext)]; // Get the name of the runtime
+				return $runtime;
 			}
 		}
 
-		return $runtime;
+		return null;
 	}
  
 
@@ -50,62 +50,67 @@
 			$item["count"] = ++$totalCount;
 
 			$runtime = getRuntime("$fileName");
-			$output;
 
+			// echo $fileName;
 			if ($runtime) {
+
 				$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
-			}
+				if (is_null($output)) {
 
-			if (is_null($output)) {
-
-				$item["status"] = "fail";
-				$item["output"] = "unable to run script";
-				$item["name"] = $fileName;
-				$failCount++;
-
-			} else {
-
-				$isMatched = preg_match($template, $output, $matches) === 1;
-
-				$name;
-				$language;
-				$email;
-
-				if ($isMatched) {
-					$item["status"] = "pass";
-					$passCount++;
-				} else {
 					$item["status"] = "fail";
+					$item["output"] = "unable to run script";
+					$item["name"] = $fileName;
 					$failCount++;
+
+				} else {
+
+					$isMatched = preg_match($template, $output, $matches) === 1;
+
+					$name;
+					$language;
+					$email;
+
+					if ($isMatched) {
+						$item["status"] = "pass";
+						$passCount++;
+					} else {
+						$item["status"] = "fail";
+						$failCount++;
+					}
+
+					$item["output"] = $output;
+				}
+				// extract id
+				preg_match($idRegex, $output, $idMatches);
+				if (isset($idMatches[0])) {
+					$item["id"] = $idMatches[0];
 				}
 
-				$item["output"] = $output;
-			}
-			// extract id
-			preg_match($idRegex, $output, $idMatches);
-			if (isset($idMatches[0])) {
-				$item["id"] = $idMatches[0];
-			}
+				// extract name 
+				preg_match($nameRegex, $output, $nameMatches);
+				if (isset($nameMatches[1])) {
+					$item["name"] = $nameMatches[1];
+				} else {
+					$item["name"] = $fileName;
+				}
 
-			// extract name 
-			preg_match($nameRegex, $output, $nameMatches);
-			if (isset($nameMatches[1])) {
-				$item["name"] = $nameMatches[1];
+				// extract language
+				preg_match($languageRegex, $output, $languageMatches);
+				if (isset($languageMatches[1])) {
+					$item["language"] = $languageMatches[1];
+				}
+
+
+				// extract email
+				preg_match($emailRegex, $output, $emailMatches);
+				if (isset($emailMatches[0])) {
+					$item["email"] = $emailMatches[0];
+				}
+
 			} else {
 				$item["name"] = $fileName;
-			}
-
-			// extract language
-			preg_match($languageRegex, $output, $languageMatches);
-			if (isset($languageMatches[1])) {
-				$item["language"] = $languageMatches[1];
-			}
-
-
-			// extract email
-			preg_match($emailRegex, $output, $emailMatches);
-			if (isset($emailMatches[0])) {
-				$item["email"] = $emailMatches[0];
+				$item["output"] = "File not supported";
+				$item["status"] = "fail";
 			}
 
 			// fileName
