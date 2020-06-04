@@ -1,5 +1,3 @@
-import json
-
 details = {'file': "Luwole.py",
            'name': "Oluwole Adetifa",
            'id': "HNG-00048",
@@ -8,11 +6,9 @@ details = {'file': "Luwole.py",
            'language': "Python",
            'status': "Pass",}
 
-output = f"Hello World, this is [{details['name']}] with HNGi7 ID [{details['id']}] using [{details['language']}] for stage 2 task. {details['email']}"
+output = print(f"Hello World, this is {details['name']} with HNGi7 ID {details['id']} using {details['language']} for stage 2 task. {details['email']}")
 #this is the string we are to display
 
 
-mydetails = ''.join(output)
-#this is to add the output string to an empty string
-display = json.dumps(details)
-print(mydetails)
+def myresult():
+    return output
