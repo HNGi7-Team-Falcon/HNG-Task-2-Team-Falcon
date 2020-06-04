@@ -1,6 +1,14 @@
-var fullName = "Omotosho David"
-var id = "HNG-01650"
-var language = "JavaScript"
-var email = talk2adeoluwa2310@gmail.com
 
-console.log("Hello world this is " + fullName + " with HNG ID " + id + " using " + language + " for stage two task. " + email);
+function task2() {
+  
+  const name = "Omotosho David";
+  const id = "HNG-01650";
+  const language = "JavaScript";
+  const Email = "talk2adeoluwa2310@gmail.com";
+  console.log("Hello World, this is" + " " + name + " " + "with HNGi7_ID:" +
+      id + " " + "using" + " " + language + " " + "for stage 2 task." + " " + "email:" + Email
+  );
+}
+
+
+task2();
