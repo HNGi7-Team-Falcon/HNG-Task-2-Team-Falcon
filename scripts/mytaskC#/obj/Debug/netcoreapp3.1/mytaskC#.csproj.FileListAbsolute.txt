@@ -1,0 +1,13 @@
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\bin\Debug\netcoreapp3.1\mytaskC#.exe
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\bin\Debug\netcoreapp3.1\mytaskC#.deps.json
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\bin\Debug\netcoreapp3.1\mytaskC#.runtimeconfig.json
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\bin\Debug\netcoreapp3.1\mytaskC#.runtimeconfig.dev.json
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\bin\Debug\netcoreapp3.1\mytaskC#.dll
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\bin\Debug\netcoreapp3.1\mytaskC#.pdb
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\obj\Debug\netcoreapp3.1\mytaskC#.csprojAssemblyReference.cache
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\obj\Debug\netcoreapp3.1\mytaskC#.csproj.CoreCompileInputs.cache
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\obj\Debug\netcoreapp3.1\mytaskC#.AssemblyInfoInputs.cache
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\obj\Debug\netcoreapp3.1\mytaskC#.AssemblyInfo.cs
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\obj\Debug\netcoreapp3.1\mytaskC#.dll
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\obj\Debug\netcoreapp3.1\mytaskC#.pdb
+C:\Users\USER\repos\hng-task-2-team-falcon\scripts\mytaskc#\obj\Debug\netcoreapp3.1\mytaskC#.genruntimeconfig.cache
