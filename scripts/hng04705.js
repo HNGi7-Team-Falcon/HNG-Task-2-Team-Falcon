@@ -9,4 +9,5 @@ const email = "apetuzee@gmail.com";
   );
 })();
 
-/* I declared variables using const for all necessary personal information as requested in the task directives. I then created an IIFE (immediately invoked function expression) that logs out a string containing of all the information in one meaningful senntence using template literals*/
+
+/* I declared variables using const for all necessary personal information as requested in the task directives. I then created an IIFE (immediately invoked function expression) that logs out a string containing of all the information in one meaningful senntence using template literals.*/
