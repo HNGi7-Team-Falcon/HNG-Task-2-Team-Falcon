@@ -1,3 +1,9 @@
-const myEmail = 'jabichris@gmail.com';
-console.log('Hello World, this is JABIRO Christian with HNGi7 ID HNG-04519 and email ' + myEmail + ' using Javascript for stage 2 task');
+const myEmail = 'jabichris@gmail.com'
+const myName = 'JABIRO Christian';
+const myId = 'HNG-04519';
+const myLanguage = 'Javascript';
+
+const myScript = () => console.log('Hello World, this is '+ myName +' with HNGi7 ID '+ myId + 'using '+ myLanguage +' for stage 2 task. ' + myEmail);
+
+myScript();
 
