@@ -1,5 +1,5 @@
-// Task 2 for the hngi7 
-
-console.log("Hello World, this is Oloruntoba Dare with HNGi7 ID HNG-00669 using JAVASCRIPT for the stage 2 task. d.toba91@gmail.com");
-
-// Javascript was used to write this script
+let name = 'Oloruntoba Dare'
+let id = 'HNG-00669'
+let lang = 'JavaScript'
+let email = 'd.toba91@gmail.com'
+console.log(`Hello World, this is ${name} with HNGi7 ID ${id} using ${lang} for stage 2 task. ${email}`)
