@@ -9,12 +9,11 @@
 		"py": "python",
 		"js": "node",
 		"php": "php",
-		"rb": "ruby",
+		"rb": "irb",
 		"java": "java",
 		"kt": "kotlinc",
 		"kts": "kotlinc",
-		"dart": "dart",
-		"csx": "dotnet-script"
+		"dart": "dart"
 	}'; # currently supported types should be updated
 	$supported_map = json_decode($supported_json, true); # convert to json object to work with
 
@@ -38,9 +37,9 @@
 	$path = "scripts";
 	$files = scandir($path);
 
-	$totalCount = 0;
-	$passCount = 0;
 	$failCount = 0;
+	$passCount = 0;
+	$totalCount = count($files);
 ?>
 
 <?php
@@ -60,32 +59,32 @@
 
 			if (!is_dir($filePath)) {
 				$item = array();
-				$totalCount++;
 
 				$runtime = getRuntime("$fileName");
 
 				// echo $fileName;
 				if ($runtime) {
 
-					set_time_limit(5); // prevent script from running too long
-					$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
+					$output = null;
+					try {
+						$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
+					} catch(Exception $e) {
+						$output = null;
+					}
 					if (is_null($output)) {
 
 						$item["status"] = "fail";
 						$item["output"] = "%> script produced no output";
 						$item["name"] = $fileName;
-						$failCount++;
 
 					} else {
 
 						if (preg_match($template, $output, $matches)) {
 							$item["status"] = "pass";
 							$item["output"] = $matches[0];
-							$passCount++;
 						} else {
 							$item["status"] = "fail";
 							$item["output"] = $output;
-							$failCount++;
 						}
 
 					}
@@ -137,24 +136,20 @@
 <html>
 	<head>
 		<title>Team Falcon</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	</head>
 		<body>
 			<div class=container>
 			<h1 class="text-center">Team Falcon</h1>
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 			<table class="table">
 				<thead>
 					<tr class="text-center">
-					<th scope="col">Submitted</th>
-					<th scope="col">Passed</th>
-					<th scope="col">Failed</th>
-				</tr>
+						<th scope="col">Submitted</th>
+					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td class="col-4 table-info text-center"><?php echo $totalCount; ?></td>
-						<td class="col-4 table-success text-center"><?php echo $passCount ?></td>
-						<td class="col-4 table-danger text-center"><?php echo $failCount ?></td>
 					</tr>
 				</tbody>
 			</table>
@@ -171,20 +166,21 @@
 					<?php
 
 						foreach ($files as $key => $fileName) {
-
 							$filePath = "./$path/$fileName";
 
 							if (!is_dir($filePath)) {
 							$item = array();
-							$totalCount++;
 
 							$runtime = getRuntime("$fileName");
 
 							// echo $fileName;
 							if ($runtime) {
-
-								set_time_limit(5); // prevent script from running too long
-								$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
+								$output = null;
+								try {
+									$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
+								} catch(Exeception $e) {
+									$output = null;
+								}
 								if (is_null($output)) {
 
 									$item["status"] = "fail";
@@ -266,7 +262,7 @@
 		</table>
 		</div>
 	</body>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </html>
