@@ -216,7 +216,7 @@
 		return "<tr>"
 			."<th scope='row'>".$item["sn"]."</th>"
 			."<td class=".$class.">".$item["name"]."</td>"
-			."<td><code>".htmlspecialchars($item["output"])."</code></td>"
+			."<td><samp>".htmlspecialchars($item["output"])."</samp></td>"
 			."<td class=".$class.">".strtoupper($item["status"])."</td>"
 			."</tr>";
 	}
