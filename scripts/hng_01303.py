@@ -1,6 +1,6 @@
 #Hello,this is Yamini
 #Task:stage 2 assignment 
-uname="Kankanala Yamini"
+uName="Kankanala Yamini"
 identification="HNG-01303"
 lan="python"
 email="yaminichowdary11111999@gmail.com"
