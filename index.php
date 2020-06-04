@@ -68,19 +68,16 @@
 
 					$isMatched = preg_match($template, $output, $matches) === 1;
 
-					$name;
-					$language;
-					$email;
-
 					if ($isMatched) {
 						$item["status"] = "pass";
+						$item["output"] = $matches[0];
 						$passCount++;
 					} else {
 						$item["status"] = "fail";
+						$item["output"] = $output;
 						$failCount++;
 					}
 
-					$item["output"] = $output;
 				}
 				// extract id
 				preg_match($idRegex, $output, $idMatches);
