@@ -1,1 +1,0 @@
-print ("Hello World, this is FALAE TEMITOPE with HNGi7 ID HNG-02221 using Python for stage 2 task")
