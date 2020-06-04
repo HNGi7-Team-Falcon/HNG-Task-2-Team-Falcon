@@ -1,4 +1,3 @@
-
 function task2() {
   
   const name = "Omotosho David";
