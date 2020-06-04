@@ -177,7 +177,7 @@
 							if ($runtime) {
 								$output = null;
 								try {
-									$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
+									$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
 								} catch(Exeception $e) {
 									$output = null;
 								}
