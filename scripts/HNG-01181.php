@@ -7,5 +7,5 @@ $email="o.matsididi@gmail.com";
 $language="PHP";
 
 //call variables into the output text
-echo"Hello World,this is ".$names." with ".$id." using ".$language." for stage 2 task.".$email."";
+echo"Hello World,this is $names with HNG ID $id using $language for stage 2 task. $email";
 ?>
