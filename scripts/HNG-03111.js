@@ -1,0 +1,1 @@
+console.log("Hello World, this is EZEKA EMMANUEL CHUKWUKA with HNGi7 ID HNG-03111 using JAVASCRIPT for stage 2 task. eec.studies@gmail.com")

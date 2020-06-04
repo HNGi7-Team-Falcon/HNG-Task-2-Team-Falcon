@@ -7,6 +7,9 @@ def user(cmd):
 		id='02502'
 		language='Python'
 		email='omohsam81@gmail.com'
-		print(f"name: {name}\n id: {id}\n programming language:{language}\n Email:{email}")
-		print(comment)		
+		print(name,id,language,email)
+		print(comment)	
+
+		
 user(cmd)
+
