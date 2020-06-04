@@ -36,6 +36,9 @@
 
 	$path = "scripts";
 	$files = scandir($path);
+
+	$failCount = 0;
+	$passCount = 0;
 	$totalCount = count($files);
 ?>
 
@@ -129,7 +132,6 @@
 <html>
 	<head>
 		<title>Team Falcon</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	</head>
 		<body>
 			<div class=container>
@@ -145,8 +147,8 @@
 				<tbody>
 					<tr>
 						<td class="col-4 table-info text-center"><?php echo $totalCount; ?></td>
-						<td class="col-4 table-success text-center"><?php echo $passCount ?></td>
-						<td class="col-4 table-danger text-center"><?php echo $failCount ?></td>
+						<td id="data-passCount" class="col-4 table-success text-center"><?php echo $passCount ?></td>
+						<td id="data-failCount" class="col-4 table-danger text-center"><?php echo $failCount ?></td>
 					</tr>
 				</tbody>
 			</table>
@@ -162,15 +164,11 @@
 				<tbody>
 					<?php
 
-						$failCount = 0;
-						$passCount = 0;
 						foreach ($files as $key => $fileName) {
-
 							$filePath = "./$path/$fileName";
 
 							if (!is_dir($filePath)) {
 							$item = array();
-							$totalCount++;
 
 							$runtime = getRuntime("$fileName");
 
@@ -258,10 +256,10 @@
 				?>
 			</tbody>
 		</table>
-			.$bootstrap
 		</div>
 	</body>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </html>
