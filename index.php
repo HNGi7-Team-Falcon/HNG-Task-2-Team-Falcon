@@ -48,7 +48,6 @@
 
 		if (!is_dir($filePath)) {
 			$item = array();
-			$item["sn"] = ++$totalCount;
 
 			$runtime = getRuntime("$fileName");
 
@@ -210,11 +209,14 @@
 		return $rows;
 	}
 
+	$counter = 0;
 	function getRow($item) {
+		global $counter;
 		$fail = $item["status"] == "fail";
 		$class = $fail ? "text-danger" : "'text-success'";
+		$counter++;
 		return "<tr>"
-			."<th scope='row'>".$item["sn"]."</th>"
+			."<th scope='row'>".$counter."</th>"
 			."<td class=".$class.">".$item["name"]."</td>"
 			."<td><samp>".htmlspecialchars($item["output"])."</samp></td>"
 			."<td class=".$class.">".strtoupper($item["status"])."</td>"
