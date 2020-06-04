@@ -1,5 +1,10 @@
 <?php
 
-echo "Hello World, this is Catherine Chen with HNGi7 ID HNG-05695 using PHP for stage 2 task";
+$name = "Catherine Chen";
+$id = "05695";
+$lang = "PHP";
+$email = "bluebirid228@gmail.com";
+
+echo "Hello World, this is $name with HNGi7 ID $id using $lang for stage 2 task. $email";
 
 ?>

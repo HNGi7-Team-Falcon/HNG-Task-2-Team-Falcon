@@ -1,1 +1,5 @@
-print("Hello World, this is Omikunle Okiki Joshua with HNGi7 ID HNG-04000 using python for stage 2")
+fullname = "Omikunle Okiki Joshua"
+slack_id = "HNG-04000"
+language = "python"
+email = "okikiomikunle@gmail.com"
+print("Hello World, this is", fullname, "with HNGi7 ID",slack_id,"and email",email ,"using", language, "for stage 2")
