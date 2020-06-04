@@ -1,9 +1,10 @@
-<?php
-$name = "Milind krishna";
-$language = "PHP";
-$HNG_id = "00344";
-$email = "milindkrishna69233@gmail.com" ;
-$c = "Hello World! this is ". $name." with hngi7id = ". $HNG_id. " using ". $language. " for stage 2 task. ". "email_id is ". $email;
-echo " $c ";
-?>
 
+
+<?php 
+
+$x = "Milind krishna";
+$y = "00344" ;
+$z = "PHP";$xyz = "milindkrishna69233@gmail.com" ;
+echo "Hello World! this is ". $x." with HNGi7 id = ".$y." using ". $z. " for stage two task. ".$xyz;
+
+?>
