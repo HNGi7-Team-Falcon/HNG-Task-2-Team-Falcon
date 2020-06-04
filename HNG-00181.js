@@ -2,10 +2,10 @@
 <h2> Task 2 </h2> 
 
 function PersonalDetails(name, id, lan, email) {
-  this.myName = Oluwatoyin;
-  this.myId = HNG-OO181;
-  this.myLan = JavaScript;
-  this.myEmail = futoyinbakare@gmail.com;
+  this.myName = name;
+  this.myId = id;
+  this.myLan = lan;
+  this.myEmail = email;
 }
 
 var myF = new PersonDetails("Oluwatoyin Bakare", "HNG-OO181", "Javascript", "futoyinbakare@gmail.com");
