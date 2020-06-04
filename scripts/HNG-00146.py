@@ -3,5 +3,6 @@ id = "HNG-00146"
 language = "Python"
 email = "harjhibolar@gmail.com"
 
+stuff = "Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task. {}"
 
-print("Hello World, this is %s with HNGi7 ID %s using %s for stage 2 task. %s"%(fullname, id, language, email), flush = True)
+print(stuff.format(fullname, id, language, email), flush = True)
