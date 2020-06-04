@@ -184,7 +184,11 @@
 							if ($runtime) {
 
 								set_time_limit(5); // prevent script from running too long
-								$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
+								try {
+									$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
+								} catch (Exception $e) {
+									$output = $e;
+								}
 								if (is_null($output)) {
 
 									$item["status"] = "fail";
