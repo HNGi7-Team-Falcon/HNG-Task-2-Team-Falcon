@@ -11,15 +11,15 @@
 
 $name = "Victor Akanmidu";
 $id = "HNG-01183";
-$language: "PHP";
-$email: "victor.mrcertified@gmail.com";
+$language = "PHP";
+$email = "victor.mrcertified@gmail.com";
 
 
 
 echo " 
 
 Hello World, this is ".$name." 
-with HNGi7 ID ".$id." 
+with HNGi7 ID ".$id." and email ".$email."
 using ".$language." for stage 2 task
 
 ";
