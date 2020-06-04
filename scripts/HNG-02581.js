@@ -1,8 +1,5 @@
-var fullName = " Emmanuel Chijioke";
-var hngiid = " HNG-02581 ";
-var email = newFunction()
-var language = "javascript";
-function newFunction() {
-	return " manuelckay@gmail.com";
-}
-	console.log("Hello World, this is " + fullName ", " + "with HNG ID " + hngiid, " using " + language, " for stage 2 task.")
+
+const greetings = "Hello World," 
+const myName = "this is Emmanuel Chijioke with HNGi7 ID HNG-02581 using JavaScript for stage 2 task" 
+const email = "manuelckay@gmail.com" 
+console.log(greetings + " " + myName)
