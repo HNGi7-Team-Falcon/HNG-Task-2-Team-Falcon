@@ -6,7 +6,7 @@ const output = () =>{
         email: "belovetech@gmail.com"
     }
     return 'Hello World, this is '  + info.fullName + ' with HNGi7 ID ' +
-            info.hngId + ' using ' + info.language + ' for stage 2 task. ' 
+            info.hngId + ' using ' + info.language + ' for stage 2 task. ' + info.email
 }
 
 console.log(output());
