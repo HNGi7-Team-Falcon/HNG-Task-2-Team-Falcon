@@ -48,6 +48,7 @@
 
 		if (!is_dir($filePath)) {
 			$item = array();
+			$totalCount++;
 
 			$runtime = getRuntime("$fileName");
 
