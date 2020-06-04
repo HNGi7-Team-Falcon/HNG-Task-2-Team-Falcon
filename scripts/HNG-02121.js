@@ -1,10 +1,10 @@
-let fullName = "Olalere Abdulazeez";
+var fullName = "Olalere Abdulazeez";
 
-let ID = "HND-02121";
+var ID = "HND-02121";
 
-let language = "Javascript";
+var language = "Javascript";
 
-let Email= "olalereazeez11@gmail.com";
+var Email= "olalereazeez11@gmail.com";
 
-let myString = `Hello World, this is ${fullName} with HNGi7 ID ${ID} using ${language} for stage 2 task. ${Email}`;
+var myString = `Hello World, this is ${fullName} with HNGi7 ID ${ID} using ${language} for stage 2 task. ${Email}`;
 console.log(myString);
