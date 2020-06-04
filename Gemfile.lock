@@ -6,7 +6,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES  
-   rails (~> 5.2.1)
 
 RUBY VERSION
    ruby 2.5.1p57
