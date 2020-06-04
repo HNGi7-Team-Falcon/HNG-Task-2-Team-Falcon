@@ -36,10 +36,7 @@
 
 	$path = "scripts";
 	$files = scandir($path);
-
-	$totalCount = 0;
-	$passCount = 0;
-	$failCount = 0;
+	$totalCount = count($files);
 ?>
 
 <?php
@@ -59,7 +56,6 @@
 
 			if (!is_dir($filePath)) {
 				$item = array();
-				$totalCount++;
 
 				$runtime = getRuntime("$fileName");
 
@@ -73,18 +69,15 @@
 						$item["status"] = "fail";
 						$item["output"] = "%> script produced no output";
 						$item["name"] = $fileName;
-						$failCount++;
 
 					} else {
 
 						if (preg_match($template, $output, $matches)) {
 							$item["status"] = "pass";
 							$item["output"] = $matches[0];
-							$passCount++;
 						} else {
 							$item["status"] = "fail";
 							$item["output"] = $output;
-							$failCount++;
 						}
 
 					}
@@ -169,6 +162,8 @@
 				<tbody>
 					<?php
 
+						$failCount = 0;
+						$passCount = 0;
 						foreach ($files as $key => $fileName) {
 
 							$filePath = "./$path/$fileName";
