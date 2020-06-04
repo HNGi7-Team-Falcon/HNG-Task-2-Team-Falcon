@@ -7,4 +7,4 @@ returnStatement = () => {
   return `Hello World, this is ${fullName} with HNGi7 ID ${hngID} using ${language} for the stage 2 task. ${email}`;
 }
 
-console.log(returnStatement())
+console.log(returnStatement());
