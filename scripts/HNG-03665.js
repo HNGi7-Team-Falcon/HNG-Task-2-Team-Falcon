@@ -7,7 +7,7 @@
 */
 
 
-const task2 = () => "Hello World, this is Isaiah Abiodun with HNGi7 ID HNG-03665 using JavaScript for stage 2 task. isaiah.abiodun@outlook.com"
+const task2 = () => "Hello World, this is Isaiah Abiodun with HNGi7 ID HNG-03665 using JavaScript for stage 2 task. isaiah.abiodun@outlook.com."
 task2();
 
 
