@@ -3,5 +3,5 @@
 myName = 'Onadipe Daniel'
 myHng_id = 'HNG-00663'
 myLang = 'python'
-myEmail = 'onadipedaniel@gmail.com
-print(f'Hello World, this is {myName} with HNGi7 ID {myHng_id} using {myLang} for stage 2 task. {myEmail}', flush = True)
+myEmail = 'onadipedaniel@gmail.com'
+print(f'Hello World, this is {myName} with HNGi7 ID {myHng_id} using {myLang} for stage 2 task.', flush = True)
