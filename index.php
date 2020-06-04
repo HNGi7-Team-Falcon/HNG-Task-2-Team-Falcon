@@ -9,11 +9,12 @@
 		"py": "python",
 		"js": "node",
 		"php": "php",
-		"rb": "irb",
+		"rb": "ruby",
 		"java": "java",
 		"kt": "kotlinc",
 		"kts": "kotlinc",
-		"dart": "dart"
+		"dart": "dart",
+		"csx": "dotnet-script"
 	}'; # currently supported types should be updated
 	$supported_map = json_decode($supported_json, true); # convert to json object to work with
 
