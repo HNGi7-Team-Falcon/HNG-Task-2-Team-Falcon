@@ -1,6 +1,6 @@
 [![Hng Internship](https://hng.tech/img/brand-logo.png)](https://hng.tech)
 
-# Team-falcon's Submission Repo For The Task 2 &mdash; HNG7i
+# HNGi7 Task 2 &mdash; Team Falcon :eagle:
 
 ## Instructions For Team Members
 
@@ -24,6 +24,7 @@
 #### N.B In event you notice a merge conflict when making your pull request, pull from the original repository by setting it as an upstream
 -  Command to set upstream: ```git remote add upstream https://github.com/anubabajide/HNG-Task-2-Team-Falcon```
 -  Command to pull from upstream: ```git pull upstream submissions```
+
 
 
 ## Instructions For The Mentors
