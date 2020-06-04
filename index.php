@@ -37,9 +37,9 @@
 	$path = "scripts";
 	$files = scandir($path);
 
-	$totalCount = 0;
-	$passCount = 0;
 	$failCount = 0;
+	$passCount = 0;
+	$totalCount = count($files);
 ?>
 
 <?php
