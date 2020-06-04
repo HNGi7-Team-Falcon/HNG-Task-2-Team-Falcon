@@ -60,7 +60,7 @@
 				if (is_null($output)) {
 
 					$item["status"] = "fail";
-					$item["output"] = "unable to run script";
+					$item["output"] = "%> script produced no output";
 					$item["name"] = $fileName;
 					$failCount++;
 
