@@ -55,6 +55,7 @@
 			echo $fileName;
 			if ($runtime) {
 
+				set_time_limit(5);
 				$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
 				if (is_null($output)) {
 
