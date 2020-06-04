@@ -1,0 +1,15 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-module</artifactId>
+  <version>1</version>
+
+  <dependencies>
+      <dependency>
+   	<groupId>org.jetbrains.kotlin</groupId>           
+        <artifactId>kotlin-stdlib</artifactId>
+        <version>1.3.72</version>
+      </dependency>
+  </dependencies>
+
+</project>

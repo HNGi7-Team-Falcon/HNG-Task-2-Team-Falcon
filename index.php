@@ -5,15 +5,39 @@
 	$languageRegex = "/using \[{0,1}(\w+[^\s]+)/i";
 	$nameRegex = "/this is \[{0,1}([\w+,\s]+)]{0,1} with/i";
 
+
+$url = $_SERVER['REQUEST_URI'];
+$response_type = substr(strrchr($url, "?"), 1);
+//define directory
+$dir = 'scripts';
+//scan directory and return array of files
+$files = scandir($dir);
+
+//loop through array of files
+	foreach ($files as $key => $value) {
+		if (strrpos($value, 'HNG-')  !== false ) {
+			$file = $dir ."/". $value;
+			//get file extensions
+			$id = substr($value,0,9);
+			$ext = substr(strrchr($value, "."), 1);
+			//run the file in php and get the output
+			$res = ($ext === 'js') ? exec("node $file 2>&1", $output) : exec("$ext $file 2>&1", $output) ; //exec("$ext $file 2>&1", $output);
+			$title = "$value";
+			$name = trim(get_string_between($res, 'this is', 'with'));
+			$language = trim(get_string_between($res, 'using', 'for'));
+			//set pass criteria
+			$passCondition = "Hello World, this is {$name} with HNGi7 ID {$id} using {$language} for stage 2 task";
+			if($passCondition === $res){
+				$status = 'pass';
+			}else{
+				$status = 'fail';
+
 	$supported_json = '{
 		"py": "python",
 		"js": "node",
 		"php": "php",
 		"rb": "irb",
-		"java": "java",
-		"kt": "kotlinc",
-		"kts": "kotlinc",
-		"dart": "dart"
+		"java": "java"
 	}'; # currently supported types should be updated
 	$supported_map = json_decode($supported_json, true); # convert to json object to work with
 
@@ -27,6 +51,7 @@
 			if ($ext && isset($supported_map[strtolower($ext)])) {
 				$runtime = $supported_map[strtolower($ext)]; // Get the name of the runtime
 				return $runtime;
+
 			}
 		}
 
