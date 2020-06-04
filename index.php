@@ -228,6 +228,8 @@
 								preg_match($emailRegex, $output, $emailMatches);
 								if (isset($emailMatches[0])) {
 									$item["email"] = $emailMatches[0];
+								} else {
+									$item["status"] = "fail";
 								}
 
 							} else {
