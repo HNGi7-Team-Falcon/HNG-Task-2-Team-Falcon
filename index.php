@@ -140,16 +140,12 @@
 			<table class="table">
 				<thead>
 					<tr class="text-center">
-					<th scope="col">Submitted</th>
-					<th scope="col">Passed</th>
-					<th scope="col">Failed</th>
-				</tr>
+						<th scope="col">Submitted</th>
+					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td class="col-4 table-info text-center"><?php echo $totalCount; ?></td>
-						<td id="data-passCount" class="col-4 table-success text-center"><?php echo $passCount ?></td>
-						<td id="data-failCount" class="col-4 table-danger text-center"><?php echo $failCount ?></td>
 					</tr>
 				</tbody>
 			</table>
@@ -175,7 +171,7 @@
 
 							// echo $fileName;
 							if ($runtime) {
-
+								$output = null;
 								try {
 									$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
 								} catch(Exeception $e) {
