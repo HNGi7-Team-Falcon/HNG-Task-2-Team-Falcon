@@ -5,39 +5,15 @@
 	$languageRegex = "/using \[{0,1}(\w+[^\s]+)/i";
 	$nameRegex = "/this is \[{0,1}([\w+,\s]+)]{0,1} with/i";
 
-
-$url = $_SERVER['REQUEST_URI'];
-$response_type = substr(strrchr($url, "?"), 1);
-//define directory
-$dir = 'scripts';
-//scan directory and return array of files
-$files = scandir($dir);
-
-//loop through array of files
-	foreach ($files as $key => $value) {
-		if (strrpos($value, 'HNG-')  !== false ) {
-			$file = $dir ."/". $value;
-			//get file extensions
-			$id = substr($value,0,9);
-			$ext = substr(strrchr($value, "."), 1);
-			//run the file in php and get the output
-			$res = ($ext === 'js') ? exec("node $file 2>&1", $output) : exec("$ext $file 2>&1", $output) ; //exec("$ext $file 2>&1", $output);
-			$title = "$value";
-			$name = trim(get_string_between($res, 'this is', 'with'));
-			$language = trim(get_string_between($res, 'using', 'for'));
-			//set pass criteria
-			$passCondition = "Hello World, this is {$name} with HNGi7 ID {$id} using {$language} for stage 2 task";
-			if($passCondition === $res){
-				$status = 'pass';
-			}else{
-				$status = 'fail';
-
 	$supported_json = '{
 		"py": "python",
 		"js": "node",
 		"php": "php",
 		"rb": "irb",
-		"java": "java"
+		"java": "java",
+		"kt": "kotlinc",
+		"kts": "kotlinc",
+		"dart": "dart"
 	}'; # currently supported types should be updated
 	$supported_map = json_decode($supported_json, true); # convert to json object to work with
 
@@ -51,7 +27,6 @@ $files = scandir($dir);
 			if ($ext && isset($supported_map[strtolower($ext)])) {
 				$runtime = $supported_map[strtolower($ext)]; // Get the name of the runtime
 				return $runtime;
-
 			}
 		}
 
@@ -80,20 +55,18 @@ $files = scandir($dir);
 			// echo $fileName;
 			if ($runtime) {
 
-				set_time_limit(5);
-				$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
+				set_time_limit(5); // prevent script from running too long
+				$output = shell_exec("$runtime $filePath 2>&1 < input_for_scripts"); # Execute script and assign result
 				if (is_null($output)) {
 
 					$item["status"] = "fail";
-					$item["output"] = "unable to run script";
+					$item["output"] = "%> script produced no output";
 					$item["name"] = $fileName;
 					$failCount++;
 
 				} else {
 
-					$isMatched = preg_match($template, $output, $matches) === 1;
-
-					if ($isMatched) {
+					if (preg_match($template, $output, $matches)) {
 						$item["status"] = "pass";
 						$item["output"] = $matches[0];
 						$passCount++;
@@ -124,7 +97,6 @@ $files = scandir($dir);
 					$item["language"] = $languageMatches[1];
 				}
 
-
 				// extract email
 				preg_match($emailRegex, $output, $emailMatches);
 				if (isset($emailMatches[0])) {
@@ -154,7 +126,7 @@ $files = scandir($dir);
 		header("Content-Type: application/json");
 		echo json_encode($data);
 	} else {
-		htmlFormat($data);
+		echo htmlFormat($data);
 	}
 
 	function htmlFormat($data) {
@@ -163,9 +135,9 @@ $files = scandir($dir);
 		global $failCount;
 
 		$bootstrap = '
-				<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-				<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-				<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>';
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>';
 
 		$head = '
 		<head>
@@ -210,15 +182,15 @@ $files = scandir($dir);
 			.'</tbody>
 		</table>';
 
-		echo "
+		return "
 		<!DOCTYPE html>
 		<html>"
 			.$head
 			."<body>
 					<div class=container>"
-				.$stats
-				.$table
-				.$bootstrap
+					.$stats
+					.$table
+					.$bootstrap
 				."</div>
 			</body>
 		</html>";
@@ -239,12 +211,14 @@ $files = scandir($dir);
 		$fail = $item["status"] == "fail";
 		$class = $fail ? "text-danger" : "'text-success'";
 		$counter++;
-		return "<tr>"
+
+		return "
+		<tr>"
 			."<th scope='row'>".$counter."</th>"
 			."<td class=".$class.">".$item["name"]."</td>"
 			."<td><samp>".htmlspecialchars($item["output"])."</samp></td>"
 			."<td class=".$class.">".strtoupper($item["status"])."</td>"
-			."</tr>";
+		."</tr>";
 	}
 
 ?>
