@@ -1,7 +1,7 @@
 (
    function greeting() {
 
-   let sQueryParam = window.location.search.substr(1);
+   //let sQueryParam = window.location.search.substr(1);
    //console.log( "sQueryParam: '" + sQueryParam.trim()  + "'" );
    //console.log( parent.document.URL );
 
@@ -16,8 +16,8 @@
       + sFullName
       + " with HNGi7 ID "
       + sId
-      + " and email "
-      + sEmail
+      //+ " and email "
+      //+ sEmail
       + " using "
       + sLanguage
       + " for stage 2 task";
