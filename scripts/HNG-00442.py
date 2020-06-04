@@ -1,1 +1,9 @@
-print("Hello World, this is Jayasree Kurmannagari with HNGi7 ID HNG-00442 using python for stage 2")
+Name = "Jayasree Kurmannagari"
+Id = "HNG-00442"
+emailId = "kjsree1998@gmail.com"
+language = "Python"
+ 
+def hello():
+  return "Hello World, this is " + Name + " with HNGi7 ID " + Id + " using " + language + " for stage 2 task. " + emailId
+
+print(hello(), flush = True)
