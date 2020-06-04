@@ -25,7 +25,7 @@
 -  Command to set upstream: ```git remote add upstream https://github.com/anubabajide/HNG-Task-2-Team-Falcon```
 -  Command to pull from upstream: ```git pull upstream submissions```
 
-
+Here is the link to the live server: https://hidden-falls-97449.herokuapp.com/
 
 ## Instructions For The Mentors
 
