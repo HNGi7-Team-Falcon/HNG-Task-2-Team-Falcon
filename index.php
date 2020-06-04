@@ -2,7 +2,7 @@
 	$template = "/^Hello World, this is [\w\s]+ with HNGi7 ID HNG-\d{1,} using \w.* for stage 2 task/";
 	$idRegex = "/(HNG[-{0,}][\d]+)/";
 	$emailRegex = "/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/i";
-	$languageRegex = "/using \[{0,1}(\w+)\b/i";
+	$languageRegex = "/using \[{0,1}(\w+[^\s]+)/i";
 	$nameRegex = "/this is \[{0,1}([\w+,\s]+)]{0,1} with/i";
 
 	$supported_json = '{
