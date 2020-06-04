@@ -1,7 +1,5 @@
-import json
-
+#task 2
 info = {
-    'file':'ayokoya.py',
     'fname':'Ayomide',
     'lname':'Odukoya',
     'Id':'HNG-01201',
@@ -9,9 +7,7 @@ info = {
     'email':'odukoyaayomide81@hotmail.com'
 }
 
-string =("Hello World,", "this is", '[Ayomide]', "[Odukoya]", "with HNGi7 ID", '[HNG-01201]', "using",  '[Python]',  "for stage 2 task.",  info['email']) 
-result = " ".join(string)
-output = json.dumps(info)
-print(result)
+string =(f"Hello World, this is, [{info['fname']}] [{info['lname']}] with HNGi7 ID [{info['Id']}] using [{info['lang']}] for stage 2 task. {info['email']}") 
+print(string) #output string
 
     
