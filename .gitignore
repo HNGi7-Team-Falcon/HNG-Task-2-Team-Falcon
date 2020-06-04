@@ -1,2 +1,16 @@
-/scripts/**.ts
-**.html
+# Editor Dependencies
+.vscode/
+
+# Os Dependencies
+.DS_Store
+
+# Others
+.idea/
+
+/.idea
+
+.history/
+/.history
+
+.history/**
+.idea
