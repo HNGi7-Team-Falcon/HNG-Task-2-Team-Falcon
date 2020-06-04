@@ -1,2 +1,5 @@
-var message = "Hello world,";
-console.log(message + " this is Oloruntoba Dare with HNGi7  ID HNG-00669 using Javascript for stage 2 task. Email: d.toba91@gmail.com");
+// Task 2 for the hngi7 
+
+console.log("Hello World, this is Oloruntoba Dare with HNGi7 ID HNG-00669 using JAVASCRIPT for the stage 2 task. d.toba91@gmail.com");
+
+// Javascript was used to write this script
