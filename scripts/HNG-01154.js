@@ -1,6 +1,1 @@
-const fullName ='ADEBOGUN AYOMIDE';
-const HNGID = 'HNG-01154';
-const email ='ayomideadebogun@gmailcom';
-const language = 'Javascript';
-
-console.log(`Hello World,this is ${fullName} with HNGi7 ID ${HNGID} using ${language} for stage 2 task.${email}`);
+console.log("Hello World,this is ADEBOGUN AYOMIDE with HNGi7 ID HNG-01154 using javascript for stage 2 task. ayomideadebogun@gmail.com")
