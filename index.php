@@ -1,5 +1,5 @@
 <?php
-	$template = "/^Hello World, this is [\w\s]+ with HNGi7 ID HNG-\d{0,} using \w.* for stage 2 task/";
+	$template = "/^Hello World, this is [\w\s]+ with HNGi7 ID HNG-\d{1,} using \w.* for stage 2 task/";
 	$idRegex = "/(HNG[-{0,}][\d]+)/";
 	$emailRegex = "/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/i";
 	$languageRegex = "/using \[{0,1}(\w+)\b/i";
