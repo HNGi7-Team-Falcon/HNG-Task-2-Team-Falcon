@@ -14,4 +14,9 @@ Replace
 [language] with the programming language you used.
 
 ## For Mentors
-Step 1:
+
+### Dependecies
+
+	* Node.js >= 0.12
+	* Python 3.0
+	* PHP :)
