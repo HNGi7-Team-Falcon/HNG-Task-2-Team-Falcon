@@ -30,14 +30,14 @@
 // }
 // greeting()
 
-var greet = "Hello World!"
+var greet = "Hello World"
 var name = "Adegoke Praise";
 var id = "HNG-04517";
 var lang = "Javascript";
 var email = "adegokepraise6@gmail.com";
 
 function greeting(greet, name, id, lang, email) {
-  return `${greet} My name is ${name}, with HNGi7 ID ${id}, using ${lang} for stage 2 task. ${email}`;
+  return `${greet} this is ${name}, with HNGi7 ID ${id} using ${lang} for stage 2 task. ${email}`;
 }
 
 console.log(greeting(greet, name, id, lang, email));
