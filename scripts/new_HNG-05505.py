@@ -1,4 +1,4 @@
-name = 'Ibrahim Afolabi'
+name = 'Ibrahim Tunde Afolabi'
 id = "HNG-05505"
 language = 'pyton'
 email ='afolability@gmail.com'
