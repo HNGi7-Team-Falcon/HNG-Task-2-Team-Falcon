@@ -3,6 +3,8 @@ fname ="Aisha"
 hng_id = "HNG-04499"
 language ="Python"
 email = "alishadesua1@gmail.com"
+flush = True
+
 
 def mydata ():
     name = (lname+" "+ fname);
