@@ -1,12 +1,7 @@
-
-
-
-const userName = "Soumya";
-const hngId = "HNG-05556";
-const lang = "javascript";
+const name = "Soumya Choudhary"
+const HNG_id = "HNG-05556"
+const language = "Javascript"
 const email = "soumyachoudhary1999@gmail.com"
+const output = `Hello World, this is ${name} with HNGi7 ID ${HNG_id} using ${language} for stage 2 task. ${email}`
 
-function task () {
-    return `Hi HNG,I am ${userName} and email ${email} with HNGi7 ID ${hngId} and this is my ${lang} for stage 2 task. Thank you. `  
-}
-console.log(task()) 
+console.log(output) 
