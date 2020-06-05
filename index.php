@@ -30,6 +30,13 @@ $noOfFailures = 0;
 ?>
 
 <?php
+    // Declaring the variable for the names of lead in the team
+    $teamLeadBackEnd = 'onyijne';
+    $teamLeadFrontEnd = 'Susanspecs';
+    $teamLeadDevOps = 'Rufai'
+?>
+
+<?php
 if ($response_type == 'json') {
     $result = array();
     $result['length'] = $length;
