@@ -10,4 +10,4 @@ d2 = my_dict.get("hng_id", " ")
 d3 = my_dict.get("language", " ")
 d4 = my_dict.get("email", " ")
 
-print("Hello world, this is" , d1, "with HNGi7 ID" , d2, "using" , d3, "for Stage 2 task.", d4  )
+print("Hello World, this is" , d1, "with HNGi7 ID" , d2, "using" , d3, "for stage 2 task.", d4  )
