@@ -9,12 +9,16 @@ $id = "HNG-02665";
 $language = "php";
 $stage = 2;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 echo ("Hello World, this is " .$fullName. " with HNGi7 ID " .$id. " using " .$language . " for stage " .$stage . " task");
 
 ?>
 =======
 $email = "judexes@hotmail.com"
+=======
+$email = "judexes@hotmail.com";
+>>>>>>> 82589908e116bd082a5123860e4956454c505798
 
 echo ("Hello World, this is " .$fullName. " with HNGi7 ID " .$id. " using " .$language . " for stage " .$stage . " task " .$email);
   

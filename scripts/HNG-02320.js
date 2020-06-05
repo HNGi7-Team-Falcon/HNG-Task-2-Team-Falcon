@@ -3,7 +3,7 @@ const HNG02320 = () => {
   const id = "HNG-02320";
   const language = "Javascript";
   const email = "damicodd123@gmail.com";
-  const completeCredentials = `"Hello World, this is ${fullName} with HNGi7 ID ${id} using ${language} for stage 2 task. ${email}"`;
+  const completeCredentials = `Hello World, this is ${fullName} with HNGi7 ID ${id} using ${language} for stage 2 task. ${email}`;
 
     return completeCredentials;    
 }
