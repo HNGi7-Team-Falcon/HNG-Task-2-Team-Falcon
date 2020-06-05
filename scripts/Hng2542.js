@@ -3,8 +3,12 @@ function Hng_task2() {
   const id = "HNG-2542";
   const language = "JavaScript";
 <<<<<<< HEAD
+<<<<<<< HEAD
   const Email = "tejumolabolu@gmail.com";
 =======
+>>>>>>> submissions
+=======
+  const email = "tejumolabolu@gmail.com"
 >>>>>>> submissions
   console.log(
     "Hello World, this is" +
@@ -24,12 +28,18 @@ function Hng_task2() {
       language +
       " " +
 <<<<<<< HEAD
+<<<<<<< HEAD
       "for stage 2 task." +
       " " +
       "email:" +
       Email
 =======
       "for stage 2 task"
+>>>>>>> submissions
+=======
+    "for stage 2 task" +
+     " " +
+    email
 >>>>>>> submissions
   );
 }
