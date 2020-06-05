@@ -1,11 +1,8 @@
 <?php
-
-$name = "Abraham Peter";
-$hngi7_id = " HNG-04745";
+$fullname = "Abraham Peter";
+$ID = " HNG-04745";
 $language = "PHP" ;
 $mail = "abrahampeter236@gmail.com";
-$message = "Hello World, this is ".$name. " with HNGi7 ID = ".$hngi7_id." using ".$language. " for stage 2. ".$mail;
+$message = "Hello World, this is ".$fullname. " with HNGi7 ID ".$ID." using ".$language. " for stage 2. ".$mail;
 
 echo "$message" ;
-?>
-        
