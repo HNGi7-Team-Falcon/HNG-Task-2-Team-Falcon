@@ -1,10 +1,11 @@
-
-
-<?php 
-
-$x = "Milind krishna";
-$y = "00344" ;
-$z = "PHP";$xyz = "milindkrishna69233@gmail.com" ;
-echo "Hello World! this is ". $x." with HNGi7 id = ".$y." using ". $z. " for stage two task. ".$xyz;
-
+<?php
+$uname = "Milind krishna";
+$identification = " HNG-00344";
+$lan = "PHP" ;
+$output = "Hello World, this is ". $uname. " with HNG ID ".$identification . " using ". $lan. " for stage 2 task." ;
+echo $output;
 ?>
+
+
+
+
