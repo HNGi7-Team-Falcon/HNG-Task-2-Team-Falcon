@@ -1,0 +1,6 @@
+var Name = "Fadare Ademilade Oluwatobi";
+var ID = "HNG-05885";
+var Language = "javascript";
+var Email = "tbfadare999@gmail.com";
+
+console.log("Hello world, this is "' + Name + " with HNGI7 ID " + ID + " using " + Language + " for stage 2 task. " + Email);
