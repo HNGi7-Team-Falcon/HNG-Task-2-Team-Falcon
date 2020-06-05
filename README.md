@@ -22,7 +22,7 @@
 - Then create a pull request and type the title of the merge and a description of what you did. **Make sure to change the branch to 'submission'**.
 
 #### N.B In event you notice a merge conflict when making your pull request, pull from the original repository by setting it as an upstream
--  Command to set upstream: ```git remote add upstream https://github.com/anubabajide/HNG-Task-2-Team-Falcon```
+-  Command to set upstream: ```git remote add upstream https://github.com/howtobuildx/HNG-Task-2-Team-Falcon```
 -  Command to pull from upstream: ```git pull upstream submissions```
 
 Here is the link to the live server: https://hidden-falls-97449.herokuapp.com/
