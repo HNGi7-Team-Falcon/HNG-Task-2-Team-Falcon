@@ -4,5 +4,5 @@ var myLanguage = "JavaScript";
 var myEmail = "propertyvaluecss@gmail.com";
 
 
-console.log(`Hello World, this is ${myFullName}, with HNGi7 ID ${myHngId}, using ${myLanguage} for stage 2 task. ${myEmail}`)
+console.log(`Hello World, this is ${myFullName} with HNGi7 ID ${myHngId} using ${myLanguage} for stage 2 task. ${myEmail}`)
 
