@@ -1,5 +1,5 @@
 
-<?php
+<?PHP
        $myName = "Abolarin Victor";
        $myId = "HNG-00255";
        $myLanguage = "Php";
