@@ -1,9 +1,9 @@
-name = 'Temitope Ilesanmi'
-hngi7Id = 'HNG-05123'
-language = 'Python'
-email = 'ilesanmiisaac@gmail.com'
+Name = "Temitope Ilesanmi"
+Id = "HNG-05123"
+emailId = "ilesanmiisaac@gmail.com"
+language = "Python"
+ 
+def hello():
+  return "Hello World, this is " + Name + " with HNGi7 ID " + Id + " using " + language + " for stage 2 task. " + emailId
 
-print(
-    f'Hello world, this is {name} with HNGi7 ID {hngi7Id} using {language} for stage 2 task. {email}'
-    )
-    
+print(hello(), flush = True)

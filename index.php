@@ -1,5 +1,5 @@
 <?php
-	$template = "/^Hello World, this is [\w\s]+ with HNGi7 ID HNG-\d{1,} using \w.* for stage 2 task/";
+	$template = "/^Hello World, this is [\w\s?-]+ with HNGi7 ID HNG-\d{1,} using \w.* for stage 2 task/";
 	$idRegex = "/(HNG[-{0,}][\d]+)/";
 	$emailRegex = "/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/i";
 	$languageRegex = "/using \[{0,1}(\w+[^\s]+)/i";
@@ -37,6 +37,7 @@
 	$path = "scripts";
 	$files = scandir($path);
 
+<<<<<<< HEAD
 	$failCount = 0;
 	$passCount = 0;
 	$totalCount = count($files);
@@ -73,6 +74,50 @@
 						$item["output"] = "%> script produced no output";
 						$item["name"] = $fileName;
 
+=======
+	$totalCount = count($files);
+?>
+
+<?php
+	$data =  array();
+
+	$isJson = false;
+// 	if(isset($_SERVER["QUERY_STRING"])) {
+// 	 	$queryStr = $_SERVER["QUERY_STRING"];
+// 	 	$isJson = $queryStr == "json";
+// 	}
+
+	$link = "https://";
+  	// Append the host(domain name, ip) to the URL. 
+  	$link .= $_SERVER['HTTP_HOST'];
+  	// Append the requested resource location to the URL 
+  	$link .= $_SERVER['REQUEST_URI'];
+
+	$queryStr = parse_url($link, PHP_URL_QUERY);
+	$isJson = $queryStr == "json";
+
+	if ($isJson) {
+		header("Content-Type: application/json");
+		foreach ($files as $key => $fileName) {
+
+			$filePath = "./$path/$fileName";
+
+			if (!is_dir($filePath)) {
+				$item = array();
+
+				$runtime = getRuntime("$fileName");
+
+				// echo $fileName;
+				if ($runtime) {
+
+					$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
+					if (is_null($output)) {
+
+						$item["status"] = "fail";
+						$item["output"] = "%> script produced no output";
+						$item["name"] = $fileName;
+
+>>>>>>> deploy
 					} else {
 
 						if (preg_match($template, $output, $matches)) {
@@ -87,13 +132,21 @@
 					// extract id
 					preg_match($idRegex, $output, $idMatches);
 					if (isset($idMatches[0])) {
+<<<<<<< HEAD
 						$item["id"] = $idMatches[0];
+=======
+						$item["id"] = trim($idMatches[0]);
+>>>>>>> deploy
 					}
 
 					// extract name 
 					preg_match($nameRegex, $output, $nameMatches);
 					if (isset($nameMatches[1])) {
+<<<<<<< HEAD
 						$item["name"] = $nameMatches[1];
+=======
+						$item["name"] = trim($nameMatches[1]);
+>>>>>>> deploy
 					} else {
 						$item["name"] = $fileName;
 					}
@@ -101,13 +154,21 @@
 					// extract language
 					preg_match($languageRegex, $output, $languageMatches);
 					if (isset($languageMatches[1])) {
+<<<<<<< HEAD
 						$item["language"] = $languageMatches[1];
+=======
+						$item["language"] = trim($languageMatches[1]);
+>>>>>>> deploy
 					}
 
 					// extract email
 					preg_match($emailRegex, $output, $emailMatches);
 					if (isset($emailMatches[0])) {
+<<<<<<< HEAD
 						$item["email"] = $emailMatches[0];
+=======
+						$item["email"] = trim($emailMatches[0]);
+>>>>>>> deploy
 					}
 
 				} else {
@@ -140,7 +201,11 @@
 			<table class="table">
 				<thead>
 					<tr class="text-center">
+<<<<<<< HEAD
 						<th scope="col">Submitted</th>
+=======
+						<th scope="col">Submissions</th>
+>>>>>>> deploy
 					</tr>
 				</thead>
 				<tbody>
@@ -171,24 +236,37 @@
 
 							// echo $fileName;
 							if ($runtime) {
+<<<<<<< HEAD
 								$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
+=======
+								$output = shell_exec("$runtime $filePath 2>&1 << inputs.txt"); # Execute script and assign result
+>>>>>>> deploy
 								if (is_null($output)) {
 
 									$item["status"] = "fail";
 									$item["output"] = "%> script produced no output";
 									$item["name"] = $fileName;
+<<<<<<< HEAD
 									$failCount++;
+=======
+>>>>>>> deploy
 
 								} else {
 
 									if (preg_match($template, $output, $matches)) {
 										$item["status"] = "pass";
 										$item["output"] = $matches[0];
+<<<<<<< HEAD
 										$passCount++;
 									} else {
 										$item["status"] = "fail";
 										$item["output"] = $output;
 										$failCount++;
+=======
+									} else {
+										$item["status"] = "fail";
+										$item["output"] = $output;
+>>>>>>> deploy
 									}
 
 								}
@@ -253,7 +331,10 @@
 		</table>
 		</div>
 	</body>
+<<<<<<< HEAD
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+=======
+>>>>>>> deploy
 </html>
