@@ -15,8 +15,7 @@ function Hng_task2() {
       " " +
       language +
       " " +
-      "for stage 2 task." +
-    Email
+      "for stage 2 task"
   );
 }
 Hng_task2();
