@@ -5,4 +5,4 @@ var info = {
 "language": "JavaScript",
 "emailAddress": "Aregeamos@gmail.com"
 };
-console.log(message+= ", this is " + info.name + " with HNGi7 ID HNG-" + info.HNGi7ID + " using " + info.language  + " stage 2 task");
+console.log(message+= ", this is " + info.name + " with HNGi7 ID HNG-" + info.HNGi7ID + " using " + info.language  + " stage 2 task " + info.emailAddress);
