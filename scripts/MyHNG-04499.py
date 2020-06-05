@@ -1,11 +1,6 @@
-def task(fullname,hngid, lang):
-    return f"Hello World, this is {fullname} with HNGi7 ID {hngid} using {lang} for stage 2 task. {email}"
+full_name = 'Aisha Juma'
+HNG_ID = 'HNG-04499'
+language = 'Python'
+email = 'alishadesua1@gmail.com'
 
-
-fullname= 'Juma Aisha'
-hngid= 'HNG-04499'
-lang= 'Python'
-email= 'alishadesua1@gmail.com'
-
-
-print(task(fullname,hngid,lang), flush= True)
+print('Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task.{}'.format(full_name,HNG_ID,language,email))
