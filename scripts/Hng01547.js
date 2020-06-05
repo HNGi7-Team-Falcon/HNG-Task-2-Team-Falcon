@@ -2,13 +2,16 @@ function Hng_task2() {
   const name = "Shubham Thakre";
   const id = "HNG-01547";
   const language = "JavaScript";
-  const Email = "thakres955@gmail.com";
+
+  const email = "thakres955@gmail.com";
+
   console.log(
     "Hello World, this is" +
       " " +
       name +
       " " +
-      "with HNGi7_ID:" +
+      "with HNGi7 ID" +
+      " " +
       id +
       " " +
       "using" +
@@ -17,8 +20,7 @@ function Hng_task2() {
       " " +
       "for stage 2 task." +
       " " +
-      "email:" +
-      Email
+      email
   );
 }
 Hng_task2();
