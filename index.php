@@ -46,10 +46,19 @@
 	$data =  array();
 
 	$isJson = false;
-	if(isset($_SERVER["QUERY_STRING"])) {
-	 	$queryStr = $_SERVER["QUERY_STRING"];
-	 	$isJson = $queryStr == "json";
-	}
+// 	if(isset($_SERVER["QUERY_STRING"])) {
+// 	 	$queryStr = $_SERVER["QUERY_STRING"];
+// 	 	$isJson = $queryStr == "json";
+// 	}
+
+	$link = "https://";
+  	// Append the host(domain name, ip) to the URL. 
+  	$link .= $_SERVER['HTTP_HOST'];
+  	// Append the requested resource location to the URL 
+  	$link .= $_SERVER['REQUEST_URI'];
+
+	$queryStr = parse_url($link, PHP_URL_QUERY);
+	$isJson = $queryStr == "json";
 
 	if ($isJson) {
 		header("Content-Type: application/json");
