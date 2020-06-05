@@ -10,4 +10,8 @@ class Intern(object):
 Intern= Intern()
 print('Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task. {}'.format(Intern.full_name, Intern.ID, Intern.language, Intern.Email))
 s = json.dumps(Intern.__dict__) 
+<<<<<<< HEAD
 print(s)
+=======
+print(s, flush = True)
+>>>>>>> 5445fa0f8ad3f6b6c2680d3b9c1d7e328b203914

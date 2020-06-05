@@ -1,9 +1,9 @@
 const HNG02320 = () => {
-  let fullName = "Awopetu Rasheed Oluwadamilare";
-  let id = "HNG-02320";
-  let language = "Javascript";
-  let email = "damicodd123@gmail.com";
-  let completeCredentials = `Hello World, this is ${fullName} with HNGi7 ID ${id} using ${language} for stage 2 task. ${email}`;
+  const fullName = "Awopetu Rasheed Oluwadamilare";
+  const id = "HNG-02320";
+  const language = "Javascript";
+  const email = "damicodd123@gmail.com";
+  const completeCredentials = `"Hello World, this is ${fullName} with HNGi7 ID ${id} using ${language} for stage 2 task. ${email}"`;
 
     return completeCredentials;    
 }

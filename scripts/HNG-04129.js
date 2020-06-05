@@ -10,7 +10,11 @@ function task2() {
          mail
      } = details;
 
+<<<<<<< HEAD
    return `Hello World, this is ${name}, with HNGi7 ID ${id} using javascript for stage 2 task. ${mail}`;
+=======
+   return `Hello World, this is ${name} with HNGi7 ID ${id} using javascript for stage 2 task. ${mail}`;
+>>>>>>> 5445fa0f8ad3f6b6c2680d3b9c1d7e328b203914
      
  }
 
