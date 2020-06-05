@@ -3,7 +3,7 @@ intern_name = 'Ibibo Seleye Fubara'
 connector = ' with HNGi7 ID '
 intern_id = 'HNG-02197'
 connector2 = ' using '
-intern_language = 'Python for stage 2 task'
+intern_language = 'Python for stage 2 task.'
 email = ' ibibofubara@gmail.com'
 
 
