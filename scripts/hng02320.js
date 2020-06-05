@@ -1,4 +1,4 @@
-const HNG02320 = () => {
+function HNG02320() {
   const fullName = "Awopetu Rasheed Oluwadamilare";
   const id = "HNG-02320";
   const language = "Javascript";
