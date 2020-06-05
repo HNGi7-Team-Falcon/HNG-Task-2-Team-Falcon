@@ -2,7 +2,9 @@ function Hng_task2() {
   const name = "Shubham Thakre";
   const id = "HNG-01547";
   const language = "JavaScript";
+
   const email = "thakres955@gmail.com";
+
   console.log(
     "Hello World, this is" +
       " " +
