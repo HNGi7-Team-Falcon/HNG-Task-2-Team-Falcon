@@ -6,7 +6,11 @@ def task(fullname,hngid, lang):
 
 fullname= 'Philip Ireoluwa Okiokio'
 hngid= 'HNG-00037'
+<<<<<<< HEAD
 lang= 'python'
+=======
+lang= 'Python'
+>>>>>>> 4bedf0c5da86e5f52f9bc131cdfd06c212d73e81
 email= 'philipokiokiocodes@gmail.com'
 
 
