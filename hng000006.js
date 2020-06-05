@@ -1,10 +1,36 @@
 function message() { 
+
  var fullName = "Azubuike Nnamdi Clement";
+
 var hngId = "HNG-03331";
-var email = "blessedmarcel1@gmail.com";
+
 var language = "JavaScript";
 
- return("Hello world I am " + fullName + " by name with " + hngId + " and slack email " + email + " using " + language + " for stage 2 task ") ;
+var email = "blessedmarcel1@gmail.com";. 
+
+ return("Hello World, this is" + fullName + " with HNGi7 ID " + hngId + " using " + language + " for stage 2 task. " + email ) ;
+
 }
 
 console.log(message ())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
