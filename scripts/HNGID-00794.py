@@ -1,4 +1,3 @@
-Pls assist to confirm
 full_name = "Udoh Francis Umoh"
 id_name = "HNG-00794"
 email_address = "saint4frank@gmail.com"
