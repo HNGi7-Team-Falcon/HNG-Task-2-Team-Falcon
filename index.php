@@ -37,8 +37,6 @@
 	$path = "scripts";
 	$files = scandir($path);
 
-	$failCount = 0;
-	$passCount = 0;
 	$totalCount = count($files);
 ?>
 
@@ -195,7 +193,6 @@
 									$item["status"] = "fail";
 									$item["output"] = "%> script produced no output";
 									$item["name"] = $fileName;
-									$failCount++;
 
 								} else {
 
@@ -206,7 +203,6 @@
 									} else {
 										$item["status"] = "fail";
 										$item["output"] = $output;
-										$failCount++;
 									}
 
 								}
