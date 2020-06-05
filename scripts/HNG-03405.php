@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HNG-03405 FirstTask</title>
-</head>
-<body>
-<?php 
-echo "<Hello World, this is Olatunde Ibitoye with HNGi7 ID HNG-03405 <br> using PHP for stage 2 task. <br> horlartundhey@gmail.com";
+<?php
+
+$name= 'Ibitoye Olatunde';
+$id = 'HNG-03405';
+$language = 'PHP';
+$email = 'horlartundhey@gmail.com';
+
+
+ 
+echo "Hello World, this is {$name} with HNGi7 ID {$id} using {$language} for stage 2 task {$email}.";
 ?>
-    
-</body>
-</html>
