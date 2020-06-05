@@ -1,4 +1,4 @@
-const hngId = "01780",
+const hngId = "HNG-01780",
   progLang = "JavaScript",
   fullName = "Olajide Hammed Abayomi",
   email = "olajide.a.hammed@gmail.com";
