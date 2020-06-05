@@ -12,7 +12,7 @@ var email = "blessedmarcel1@gmail.com";.
 
 }
 
-console.log(message ())
+console.log(message())
 
 
 
