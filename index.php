@@ -110,34 +110,69 @@ if ($response_type == 'json') {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+              />
 
     <title>Team Falcon</title>
 
     <style>
-        #btn {
+        * {
+            margin: 0;
+        }
+         #btn {
             border: 1px solid #ddd;
         }
-
+        .heading {
+            margin-top: 50px;
+            font-weight: bold;
+            color: green;
+        }
+        .record-section {
+            margin-bottom: 40px;
+        }
+        .record-section span {
+            font-weight: bold;
+        }
+        .team-leads {
+            background-color: #1e3a1e;
+            padding: 10px 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+        .team-leads span {
+            font-weight: bold;
+        }
     </style>
 
 </head>
 <body>
 
 <div class="container">
+
+    <div class="team-leads">
+            <h6>Team lead/Backend: <span>@onyijne</span></h6>
+            <h6>Frontend:  <span>@susanspecs</span></h6>
+            <h6>DevOps:  <span>@Rufai</span></h6>
+    </div>
+
+    <h2 class="text-center heading animate__animated animate__slideInDown">Team Falcon</h2>
+
     <div class="row mt-5">
         <div class="col-lg-4">
-            <button class="btn btn-light badge-primary" id="btn">Submitted <span id="badge"><?php echo $counter; ?></span></button>
+            <button class="btn btn-light badge-primary" id="btn">Submitted: <span id="badge"><?php echo $counter; ?></span></button>
         </div>
         <div class="col-lg-4">
-            <button class="btn btn-light badge-success" id="btn">Passes  <span id="badge"><?php echo $passed; ?></span></button>
+            <button class="btn btn-light badge-success" id="btn">Passes: <span id="badge"><?php echo $passed; ?></span></button>
         </div>
         <div class="col-lg-4">
-            <button class="btn btn-light badge-danger" id="btn">Fails <span id="badge"><?php echo $failed; ?></span></button>
+            <button class="btn btn-light badge-danger" id="btn">Fails: <span id="badge"><?php echo $failed; ?></span></button>
         </div>
     </div>
     <div class="row mt-2">
         <div class="col-lg-12">
-            <h3 class="text-center">Team Falcon</h3>
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead class="thead-dark">
