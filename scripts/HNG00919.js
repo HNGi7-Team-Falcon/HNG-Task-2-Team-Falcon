@@ -1,9 +1,12 @@
-function caller (){
-    let name = "Mmonim Ukpanah"
-    let id = "HNG-00919"
-    let language= "Javascript" 
-    console.log ('Hello world, this is' + ' ' + name +  ' '+ 'with HNGi7 id' +' ' + id + ' '+ 'using' + ' ' + language + ' ' + 'for stage 2 task. mukpanah22@gmail.com')
+const fullName = "Mmonim Ukpanah"
+  const id = "HNG-00919"
+  const languageUsed= "Javascript"
+  const emailAddress= "mukpanah22@gmail.com" 
+
+let helloWorld=()=>{
+  console.log (`Hello World, this is ${fullName} with HNGi7 ID ${id} using ${languageUsed} for stage 2 task. ${emailAddress}`)
 }
 
 
-caller()
+
+helloWorld();
