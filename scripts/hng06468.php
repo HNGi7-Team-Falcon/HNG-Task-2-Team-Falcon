@@ -1,8 +1,7 @@
 <?php
-  $HNG_ID = 'HNG-06468';
-	$Fullname = 'Mutiulahi Tesleem Olamilekan';
-	$Email = 'tesleemolamilekan902@gmail.com';
-	$Language = 'PHP';
-	echo "Hello World, this is [$Fullname] with HNGi7 ID [$HNG_ID] using [$Language] and email [$Email] for stage 2 task.";
-	echo "Hello World, this is [$Fullname] with HNGi7 ID [$HNG_ID] using [$Language]  for stage 2 task. and email [$Email]";
+    $Fullname = "Mutiulahi Tesleem Olamilekan";
+    $HNG_ID = "06468";
+    $Language = "PHP";
+    $email = "tesleemolamilekan902@gmail.com";
+    echo 'Hello World, this is '.$Fullname.' with HNGi7 ID HNG-'.$HNG_ID.' using '.$Language.' for stage 2 task.'; 
 ?>
