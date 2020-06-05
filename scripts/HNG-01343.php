@@ -11,8 +11,6 @@
       . $sFullName
       . " with HNGi7 ID "
       . $sId
-      //. " and email "
-      //. sEmail
       . " using "
       . $sLanguage
       . " for stage 2 task";
