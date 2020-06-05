@@ -8,3 +8,4 @@ $message = "Hello World, this is ".$name. " with HNGi7 ID = ".$hngi7_id." using 
 
 echo "$message" ;
 ?>
+        
