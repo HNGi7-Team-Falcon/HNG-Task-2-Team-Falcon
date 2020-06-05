@@ -1,4 +1,4 @@
-fullname= "Isaac Adejuwon"
+fullname= "Isaac  Adejuwon"
 HNGi7ID= "HNG-06429"
 language= "Python"
 email= "isaacadejuwon27@gmail.com"
