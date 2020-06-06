@@ -3,7 +3,13 @@ function Hng_task2() {
   const id = "HNG-01547";
   const language = "JavaScript";
 <<<<<<< HEAD
+<<<<<<< HEAD
   const email = "thakres955@gmail.com";
+=======
+
+  const email = "thakres955@gmail.com";
+
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 =======
 
   const email = "thakres955@gmail.com";

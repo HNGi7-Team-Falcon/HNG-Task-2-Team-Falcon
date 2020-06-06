@@ -11,7 +11,11 @@ function task2() {
      } = details;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    return `Hello World, this is ${name}, with HNGi7 ID ${id} using javascript for stage 2 task. ${mail}`;
+=======
+   return `Hello World, this is ${name} with HNGi7 ID ${id} using javascript for stage 2 task. ${mail}`;
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 =======
    return `Hello World, this is ${name} with HNGi7 ID ${id} using javascript for stage 2 task. ${mail}`;
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc

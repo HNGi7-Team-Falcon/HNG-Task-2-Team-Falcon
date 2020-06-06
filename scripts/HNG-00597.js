@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
+=======
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc
 const name = "Christian Dirisu";
 
@@ -17,8 +20,11 @@ const task = () => {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 console.log(task());
 =======
+=======
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 console.log(task());
 =======
 const name = "Christian Dirisu";
@@ -35,4 +41,7 @@ const intro = () => {
 
 intro();
 >>>>>>> submissions
+<<<<<<< HEAD
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
+=======
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc

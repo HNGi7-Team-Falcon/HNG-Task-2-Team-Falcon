@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 my_dict = {
    "name" : "Juma Aisha",
    "hng_id" : "HNG-04499",
@@ -13,6 +14,8 @@ d4 = my_dict.get("email", " ")
 
 print("Hello world, this is" , d1, "with HNGi7 ID" , d2, "using" , d3, "for Stage 2 task.", d4  )
 =======
+=======
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 lname = "Juma"
 fname ="Aisha"
 hng_id = "HNG-04499"
@@ -36,4 +39,7 @@ mydata()
 
 
 
+<<<<<<< HEAD
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
+=======
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc

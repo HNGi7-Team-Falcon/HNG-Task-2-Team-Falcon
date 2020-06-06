@@ -13,7 +13,12 @@ function intro_statement($name, $id, $language, $email){
 	$statement = "Hello World, this is $name, with HNGi7 ID $id using $language for stage 2 task. $email";
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$statement = "Hello World, this is $name, with HNGi7 ID $id using $language for stage 2 task. $email";
+=======
+	$statement = "Hello World, this is $name with HNGi7 ID $id using $language for stage 2 task. $email";
+>>>>>>> submissions
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 =======
 	$statement = "Hello World, this is $name with HNGi7 ID $id using $language for stage 2 task. $email";
 >>>>>>> submissions
@@ -27,7 +32,12 @@ intro_statement($full_name, $hngi7_id, $language_used, $email);
 ?>
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> submissions
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 =======
 ?>
 >>>>>>> submissions

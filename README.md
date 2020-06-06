@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
+=======
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc
 [![N|Solid](https://hng.tech/img/brand-logo.png)](https://nodesource.com/products/nsolid)
 

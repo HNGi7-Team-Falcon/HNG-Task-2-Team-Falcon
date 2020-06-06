@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
+=======
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc
     <?php
     $name = "Bello Yakub";
@@ -9,7 +12,10 @@
     $email = "hyaaquub@gmail.com";
         echo '<p>Hello World, this is [$name] with HNGi7 ID [$id] using [$language] for stage 2 task. [$email]</p>'; 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 =======
 
  <?php
@@ -19,5 +25,8 @@
     $email = "hyaaquub@gmail.com";
         echo 'Hello World, this is '.$fullname.' with HNGi7 ID '.$id.' using '.$language.' for stage 2 task. '.$email.'';
 >>>>>>> submissions
+<<<<<<< HEAD
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
+=======
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc
         ?>

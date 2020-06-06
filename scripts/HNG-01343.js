@@ -2,7 +2,11 @@
    function greeting() {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    let sQueryParam = window.location.search.substr(1);
+=======
+   let sQueryParam = ""; //window.location.search.substr(1);
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 =======
    let sQueryParam = ""; //window.location.search.substr(1);
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc
@@ -21,8 +25,13 @@
       + " with HNGi7 ID "
       + sId
 <<<<<<< HEAD
+<<<<<<< HEAD
       + " and email "
       + sEmail
+=======
+      //+ " and email "
+      //+ sEmail
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 =======
       //+ " and email "
       //+ sEmail

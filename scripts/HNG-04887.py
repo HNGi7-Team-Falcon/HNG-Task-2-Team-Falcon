@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 '''
 
 Developer: Elpis
@@ -26,6 +27,8 @@ task = f'Hello World, this is {fullname} with HNGi7 ID {hng_id} using {language}
 print(task)
 
 =======
+=======
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 '''
 
 Developer: Elpis
@@ -53,4 +56,7 @@ task = f'Hello World, this is {fullname} with HNGi7 ID {hng_id} using {language}
 
 print(task)
 
+<<<<<<< HEAD
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
+=======
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc

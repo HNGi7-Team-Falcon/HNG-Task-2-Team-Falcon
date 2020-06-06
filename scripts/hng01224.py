@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
+=======
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc
 def taskCode():
     my_name = "Oluwatosin Taiwo"
@@ -8,10 +11,13 @@ def taskCode():
     language = "Python"
     email = "ttvicktor1@gmail.com"
 <<<<<<< HEAD
+<<<<<<< HEAD
     print("Hello World, this is " + my_name + " with HNGi7 ID " + hng_id "using " + language "for stage2 task");
 
 taskCode()
 =======
+=======
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 
     print("Hello World, this is " + my_name + " with HNGi7 ID " + hng_id "using " + language "for stage2 task."+ email);
 
@@ -36,4 +42,7 @@ print(result.format(name, myid, language, email),flush = True)
 
 
 >>>>>>> submissions
+<<<<<<< HEAD
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
+=======
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc

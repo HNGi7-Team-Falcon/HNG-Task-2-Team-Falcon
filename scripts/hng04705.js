@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const myName = "Apetu Ezekiel Olayori";
 const HNG_ID = "HND-04705";
 
@@ -27,6 +28,8 @@ const myInfo = {
 
 /* I created a const variable amd binded an object containinf all the necessary personal information as requested in the task directives. I then created an IIFE (immediately invoked function expression) that logs out a concatenated string of all the myInfo object information in one meaningful senntence*/
 =======
+=======
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 const myName = "Apetu Olayori Ezekiel";
 const id = "HNG-04705";
 const spec_language = "JavaScript";
@@ -40,4 +43,7 @@ const email = "apetuzee@gmail.com";
 
 
 /* I declared variables using const for all necessary personal information as requested in the task directives. I then created an IIFE (immediately invoked function expression) that logs out a string containing of all the information in one meaningful senntence using template literals.*/
+<<<<<<< HEAD
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
+=======
 >>>>>>> fe759df7741696222bf787566f523851411c6ebc
