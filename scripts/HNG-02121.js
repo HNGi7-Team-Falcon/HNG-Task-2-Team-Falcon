@@ -1,6 +1,10 @@
 var fullName = "Olalere Abdulazeez";
 
+<<<<<<< HEAD
 var ID = "HND-02121";
+=======
+var ID = "HNG-02121";
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 
 var language = "Javascript";
 

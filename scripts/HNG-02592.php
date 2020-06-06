@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +11,9 @@
 <body>
 
     <?php
+=======
+<?php
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 
 
     // variable declaration and Initializing
@@ -17,6 +21,7 @@
     $names = "Olatunji Omogbemile";
     $id = "HNG-02592";
     $email = "o.omogbemile@gmail.com";
+<<<<<<< HEAD
     $language = "php";
     ?>
     <div>
@@ -31,3 +36,11 @@
 </body>
 
 </html>
+=======
+    $language = "PHP";
+
+
+    //call variables into output text
+
+    echo "Hello World, this is " . $names . " with HNGi7 ID " . $id . " using " . $language . " for stage 2 task. " . $email . "";
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc

@@ -1,5 +1,9 @@
 fullname = 'Kazeem Hakeem'
+<<<<<<< HEAD
 ID = '01404'
+=======
+ID = 'HNG-01404'
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 language = 'python'
 email = 'hakymulla@gmail.com'
 

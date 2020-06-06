@@ -4,4 +4,12 @@ full_name = 'Michael Ashi'
 HNDid = 'HNG-01089'
 language_type = 'python'
 email = 'ashimichaelashi@gmail.com'
+<<<<<<< HEAD
 print(f'Hello World, this is {full_name} with HNGi7 ID {HNDid} using {language_type} for stage 2 task.\nMy email is: {email}', flush = True)
+=======
+<<<<<<< HEAD
+print(f'Hello world, this is {full_name} with HNGi7 ID {HNDid} using {language_type} for stage 2 task.\nMy email is: {email}', flush = True)
+=======
+print(f'Hello World, this is {full_name} with HNGi7 ID {HNDid} using {language_type} for stage 2 task. {email}', flush = True)
+>>>>>>> submissions
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc

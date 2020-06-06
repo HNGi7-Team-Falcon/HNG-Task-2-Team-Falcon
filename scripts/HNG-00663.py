@@ -3,5 +3,10 @@
 myName = 'Onadipe Daniel'
 myHng_id = 'HNG-00663'
 myLang = 'python'
+<<<<<<< HEAD
 myEmail = 'onadipedaniel@gmail.com'
 print(f'Hello World, this is {myName} with HNGi7 ID {myHng_id} using {myLang} for stage 2 task.', flush = True)
+=======
+myEmail = 'onadipedaniel@gmail.com
+print(f'Hello World, this is {myName} with HNGi7 ID {myHng_id} using {myLang} for stage 2 task. {myEmail}', flush = True)
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc

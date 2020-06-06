@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> fe759df7741696222bf787566f523851411c6ebc
 name  = "Musa Abdulwadud Olagoke"
 hngId = "HNG-00172"
 language = "python"
