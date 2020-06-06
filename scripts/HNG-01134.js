@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 theTask = () => {
     let task = {
         id: "Ayo Solomon",
@@ -19,3 +20,8 @@ let myTask = "Ayo Solomon"; let myHid = "HNG-01134";
 let scriptLang = "JavaScript"; 
 let myEmail = "ayoseunsolomon@gmail.com"; console.log("Hello World, this is " + myTask + " with HNGi7 ID " + myHid + " using " + scriptLang + " for stage 2 task. " + myEmail);
 >>>>>>> b21ba22bca18da6ceea540d56ff80de2715294e0
+=======
+console.log("Hello World, this is Ayo Solomon with HNGi7 ID HNG-01134 using javascript for stage 2 task. ayoseunsolomon@gmail.com")
+
+
+>>>>>>> dbbe90f2bd0697c0ba05f195107b8a135e9e246c
