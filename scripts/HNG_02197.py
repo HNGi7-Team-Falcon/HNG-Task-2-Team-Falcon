@@ -1,9 +1,9 @@
 greetings = 'Hello World, this is '
 intern_name = 'Ibibo Seleye Fubara'
-connector = ' with ID '
-intern_id = ' HNG-02197'
-connector2 = ' Using '
-intern_language = ' python for task 2'
+connector = ' with HNGi7 ID '
+intern_id = 'HNG-02197'
+connector2 = ' using '
+intern_language = 'Python for stage 2 task.'
 email = ' ibibofubara@gmail.com'
 
 
