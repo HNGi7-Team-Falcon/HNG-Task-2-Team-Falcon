@@ -1,3 +1,8 @@
-  <?php
-     echo '<p>Hello World, this is OLADEJI OLAIYA with HNGi7 ID HNG-06805 using php for stage 2 task. olaiyagideon@gmail.com </p>';
-    ?> 
+<?php
+$txt = "Oladeji";
+$txt1 ="Olaiya";
+$txt2 = "HNG-06805";
+$txt3 = "php";
+$txt4 = "olaiyagideon@gmail.com";
+echo "hello world, this is $txt $txt1 with hng i $txt2 using $txt3 for stage 2 task. $txt4";
+?>
