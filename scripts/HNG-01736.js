@@ -1,1 +1,1 @@
-console.log("Hello World, this is Nweke Johnbosco Chinonso with HNGi7 ID HNG-01736 using javascript for stage 2 task");
+console.log("Hello World, this is Nweke Johnbosco Chinonso with HNGi7 ID HNG-01736 using Javascript for stage 2 task");
