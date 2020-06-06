@@ -1,0 +1,5 @@
+name = str("Adeniyi Samuel")
+Internid = str('HNG-01544')
+email =str('sa7259379@gmail.com')
+language = str('Python')
+print('Hello World, this is ' + name  + ' with HNGi7 ID ' + Internid + ' and email ' + email + ' using ' + language + ' for stage 2 task')
