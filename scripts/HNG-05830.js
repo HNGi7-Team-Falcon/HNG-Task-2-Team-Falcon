@@ -5,14 +5,14 @@
         let sLanguage = "JavaScript";
     let sEmail    = "horlaps96@gmail.com"
      
-        let sGreeting = "Hello World, this is "
+       let sGreeting = "Hello World, this is "
                       + sFullName
                       + " with HNGi7 ID "
                       + sHngi7Id
                       + " using "
                       + sLanguage
                       + " for stage 2 task. "
-              + sEmail;
+               + sEmail;
         console.log( sGreeting );
     }
 ) ();
