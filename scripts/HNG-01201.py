@@ -1,17 +1,17 @@
-def myinfo():
-    info = {
-        "name":"Ayomide Odukoya",
-        "ID":"HNG-01201",
-        "email":"odukoyaayomide81@hotmail.com",
-        "language":"Python"
-    }
-    #concatenate string
-    string = "Hello World, this is {name} with HNGi7 ID {ID} using {language} for stage 2 task. {email}".format(
-        name=info["name"], ID=info["ID"], email=info["email"], language=info["language"])
+import json
 
-    print(string) #print string
+info = {
+    'file':'ayokoya.py',
+    'fname':'Ayomide',
+    'lname':'Odukoya',
+    'Id':'HNG-01201',
+    'lang':'Python',
+    'email':'odukoyaayomide81@hotmail.com'
+}
 
-    return string
+string =("Hello World,", "this is", 'Ayomide', "Odukoya", "with HNGi7 ID", 'HNG-01201', "using",  'Python',  "for stage 2 task." + info['email'] )
+result = " ".join(string)
+output = json.dumps(info)
+print(result)
 
-
-myinfo() #call function
+    
