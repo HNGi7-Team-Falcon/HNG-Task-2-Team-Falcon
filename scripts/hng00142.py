@@ -16,4 +16,4 @@ class Intern:
 
 
 olasunkanmi = Intern(full_name, hng_id, language, email)
-print(Olasunkanmi.introduction())
+print(olasunkanmi.introduction())
