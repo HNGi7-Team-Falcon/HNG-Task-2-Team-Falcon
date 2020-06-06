@@ -4,6 +4,6 @@ function hngTask2() {
 	ScriptLng = 'Javascript';
   Email = ' wissmellal@gmail.com';
 	
-			console.log("Hello World, this is "+ fullName +" with HNG ID "+ID + " using " + ScriptLng + " for stage 2 task." + Email+".");
+			console.log("Hello World, this is "+ fullName +" with HNGi7 ID "+ID + " using " + ScriptLng + " for stage 2 task." + Email+".");
 }
 hngTask2();
