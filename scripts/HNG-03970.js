@@ -14,6 +14,6 @@ console.log(
 		info.HNGi7ID +
 		' using ' +
 		info.language +
-		' stage2 task. ' +
+		' stage 2 task. ' +
 		info.emailAddress)
 );
