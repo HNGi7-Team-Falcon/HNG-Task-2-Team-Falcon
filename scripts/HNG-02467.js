@@ -5,3 +5,4 @@ const hng = {
     email:'kidrolex19@gmail.com'
 };
 console.log (`Hello World, this is ${hng.name} with HNGi7 ID ${hng.id} using ${hng.language} for stage 2 task. ${hng.email}`);
+
