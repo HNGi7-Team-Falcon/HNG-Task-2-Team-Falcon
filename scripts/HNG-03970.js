@@ -1,4 +1,4 @@
-var message = 'Hello World';
+var message = 'Hello World,';
 var info = {
 	name: 'Tolulope Olufotebi',
 	HNGi7ID: '03970',
@@ -8,7 +8,7 @@ var info = {
 
 console.log(
 	(message +=
-		' This is ' +
+		' this is ' +
 		info.name +
 		' with HNGi7 ID ' +
 		info.HNGi7ID +
