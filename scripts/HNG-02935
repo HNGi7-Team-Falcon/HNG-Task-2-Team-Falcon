@@ -1,0 +1,9 @@
+x = 'Babalola Ibrahim,'
+y = 'ibrahimbabalola8@gmail.com'
+z = 'HNG-02945,'
+print ("Hello World, this is")
+print(x)
+print(" with HNGi7 ID")  
+print (z)
+print (y)
+print("using python for stage 2 task.")
