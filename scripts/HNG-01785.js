@@ -3,4 +3,4 @@ var myName = "PHILOMENA OBASI";
     myLanguage = "JAVASCRIPT";
     myEmail = "philomenaobasi04@gmail.com";
 
-console.log ("Hello World, this is "+ myName + " with HNG i7 ID " + myID + " using " + myLanguage +" for stage 2 task. " + myEmail);
+console.log ("Hello World, this is "+ myName + " with HNGi7 ID " + myID + " using " + myLanguage +" for stage 2 task. " + myEmail);
