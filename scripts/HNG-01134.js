@@ -1,11 +1,7 @@
-theTask = () => {
-    let task = {
-        id: "Ayo Solomon",
-        hid: "HNG-01134",
-        lang: "Javascript",
-        email: "ayoseunsolomon@gmail.com",
-    }
-    let needed = `Hello World, this is ${task.id} with HNGi7 ID ${task.hid} using ${task.Lang} for stage 2 Task`
-    console.log(needed)
-}
-theTask()
+const name = "Ayo Solomon";
+const hid = "HNG-01134";
+const lang = "Javascript";
+const email = "ayoseunsolomon@gmail.com";
+
+
+console.log(`Hello World, this is ${name} with HNGi7 ID ${hid} using ${lang} for stage 2 task. ${email}`)
