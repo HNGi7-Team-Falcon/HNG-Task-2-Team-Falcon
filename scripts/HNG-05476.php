@@ -1,4 +1,7 @@
 <?php
-$value = "Hello World, this Emmanuel Bashorun with HNGi7 ID HNG-05476 using PHP for stage 2 task";
-echo $value;
+$myId = "HNG-05476";
+$myName = "Emmanuel Bashorun";
+$myLanguage = "PHP";
+$myEmail = "bashorun.emma@gmail.com";
+echo "Hello World, this is {$myName} with HNGi7 ID {$myId} using {$myLanguage} for stage 2 task. {$myEmail}";
 ?>

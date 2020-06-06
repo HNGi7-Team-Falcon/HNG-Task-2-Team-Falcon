@@ -1,7 +1,5 @@
-full_name = "Udoh Francis Umoh"
-id_name = "HNG-00794"
-email_address = "saint4frank@gmail.com"
-language_name = "Python"
-
-
-print("Hello World, this is  " + full_name + " with " + " HNGi7 ID  " +  id_name + " using " + language_name + " for stage 2 task. " + email_address)
+hng_full_name = 'Francis Udoh'
+hngid = 'HNG-00794'
+programming_language = 'Python'
+hng_email = 'saint4frank@gmail.com'
+print(f'Hello World, this is {hng_full_name} with HNGi7 ID {hngid} using {programming_language} for stage 2 task. {hng_email}')

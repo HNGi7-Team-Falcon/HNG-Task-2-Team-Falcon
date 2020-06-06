@@ -1,3 +1,5 @@
-details = "Hello World, this is Miracle Osigwe with HGNi7 ID HNG-05624 using python for stage 2 task. jomacconcept@gmail.com"
-print(details)
-flush=True
+Name= 'Miracle Osigwe'
+Id = 'HNG-05624'
+Lang= 'Python'
+Email = 'jomacconcept@email.com'
+print("Hello World, this is {} with HGNi7 ID {} using {} for stage 2 task. {}".format(Name, Id, Lang, Email))
