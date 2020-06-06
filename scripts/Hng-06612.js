@@ -1,5 +1,10 @@
-var name = 'Bakare Rilwan'
-var id = 'HNG-06612'
-var lang = 'JavaScript'
-var email = 'bakis4life@gmail.com'
-console.log("Hello World, this is "+name +  " with HNGi7 ID " +id  " using " +lang+ " for stage 2 task.")
+let Full_Name ="Bakare Rilwan";
+let HNG_ID="HNG-06612";
+let language="javascript"
+let email="bakis4life@gmail.com"
+
+console.log("Hello World, this is ",`${Full_Name}`,"with HNGi7 ID",`${HNG_ID}`,"using",`${language}`,"for stage 2 task.",`${email}`);
+
+
+
+
