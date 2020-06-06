@@ -1,3 +1,5 @@
+<<<<<<< HEAD:scripts/hng-00786.php
+=======
 <<<<<<< HEAD
 <html>
   <body>
@@ -10,6 +12,7 @@
         
 =======
 
+>>>>>>> development:scripts/HNG-00786.php
 <?php
 $name = "Anigbogu Chioma Paschaline";
 $id = "HNG-00786";
@@ -18,4 +21,7 @@ $txt = "prisca4luv2@gmail.com";
 echo "Hello World, this is {$name} with HNGi7 ID {$id} using {$lang} for stage 2 task";
 ?>
                   
+<<<<<<< HEAD:scripts/hng-00786.php
+=======
 >>>>>>> submissions
+>>>>>>> development:scripts/HNG-00786.php
