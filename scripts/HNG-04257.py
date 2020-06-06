@@ -1,9 +1,6 @@
 def task_two():
-    full_name = "Joseph Ndirangu Mindo"
-    ID = "04257"
-    language = "Python"
     email = "ndirangumindo@gmail.com"
-    return "Hello World, this is "+full_name+" with HNGi7 ID "+ID+" using "+language+" for stage 2 task. "+email
+    print("Hello World, this is Joseph Mindo with HNGi7 ID HNG-04257 using Python for stage 2 task. Email:"+email)
 
 
-print(task_two())
+task_two()
