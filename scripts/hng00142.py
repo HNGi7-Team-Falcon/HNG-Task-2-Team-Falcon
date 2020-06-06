@@ -15,5 +15,5 @@ class Intern:
         return f'Hello World, this is {self.name} with HNGi7 ID {self.id} using {self.language} for stage 2 task'
 
 
-Olasunkanmi = Intern(full_name, hng_id, language, email)
-print(Olasunkanmi.introduction())
+olasunkanmi = Intern(full_name, hng_id, language, email)
+print(olasunkanmi.introduction())
