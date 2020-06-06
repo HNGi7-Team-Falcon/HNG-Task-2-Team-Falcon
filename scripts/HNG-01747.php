@@ -1,4 +1,3 @@
-  
 <?php
  $HNGi_ID = 'HNG-01747';
  $Language = 'PHP';
