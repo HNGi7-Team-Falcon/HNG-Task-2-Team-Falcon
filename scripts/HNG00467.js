@@ -4,4 +4,4 @@ let myInfo = {
   language: "JavaScript",
   email: "olodoopeyemi@gmail.com"
   };
-console.log(' Hello this is ' + myInfo.fullName + ' Hngi7 id ' + myInfo.hngId + ' using ' + myInfo.language + ' for stage 2 task ' + myInfo.email);
+console.log(' Hello World, this is ' + myInfo.fullName + ' Hngi7 id ' + myInfo.hngId + ' using ' + myInfo.language + ' for stage 2 task. ' + myInfo.email);
