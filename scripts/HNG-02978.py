@@ -1,6 +1,8 @@
-full_name ='olaitan dipo david'
-HNGid='02978'
-language ='python'
-email='olaitandipo4@gmail.com'
+def Task_Two(Name, HNG_ID, Lang):
+    return print("Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task. olaitandipo4@gmail.com".format(Name, HNG_ID, Lang))
 
-print(f'Hello world,this is {full_name} with HNGi7 ID {HNGid} using {language} for stage 2 task.{email}')
+Name = "Dipo David Olaitan"
+HNG_ID = "HNG-02978"
+Lang = "Python"
+
+Task_Two(Name, HNG_ID, Lang)
