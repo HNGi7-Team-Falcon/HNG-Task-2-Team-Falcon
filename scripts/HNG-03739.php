@@ -1,1 +1,0 @@
-echo "Hello World, this is SAMUEL ONYIJNE with HNGi7 ID HNG-03739 using PHP for stage 2 task";
