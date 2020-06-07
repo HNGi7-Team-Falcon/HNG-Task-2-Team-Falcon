@@ -1,7 +1,5 @@
 full_name= 'Obaro Rachael'
 HNGi7_ID='HNG-03817'
-language= ' python '
+language= 'Python'
 email='obaro.rachaels@gmail.com'
-
-
-print(f'Hello World, this is {full_name} with HNGi7 ID {HNGi7_ID} using {language} for stage 2 task. {email}',flush=True)
+print("Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task. {}".format(full_name, HNGi7_ID, language, email))
