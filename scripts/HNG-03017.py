@@ -1,1 +1,0 @@
-print ("Hello World, this is Damilola Oginni with HNGi7 ID HNG-03017 using python for stage 2 task. damilola.oginni@yahoo.com") 
