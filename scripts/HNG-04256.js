@@ -1,7 +1,7 @@
 'use strict';
 const introduceMyself = (fullName, id, preferredLang, email) => {
   console.log(
-    `Hello World, this is ${fullName} with HNGi7 ID ${id} using ${preferredLang} for stage 2 task.${email}`
+    `Hello World, this is ${fullName} with HNGi7 ID ${id} .${email} using ${preferredLang} for stage 2 task`
   );
 };
 
