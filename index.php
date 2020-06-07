@@ -83,6 +83,7 @@
 					$output = null;
 					try {
 						$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
+						$output = trim($output); // remove extra space at the beginning and at the end
 					} catch(Exception $e) {
 						$output = null;
 					}
@@ -96,7 +97,7 @@
 
 						if (preg_match($template, $output, $matches)) {
 							$item["status"] = "pass";
-							$item["output"] = trim($matches[0]);
+							$item["output"] = $matches[0];
 							$totalPass += 1; //add total pass
 						} else {
 							$item["status"] = "fail";
@@ -195,6 +196,7 @@
 								$output = null;
 								try {
 									$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
+									$output = trim($output); // remove extra space at the beginning and at the end
 								} catch(Exeception $e) {
 									$output = null;
 								}
