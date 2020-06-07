@@ -3,4 +3,4 @@ let statement = `Hello World, this is ${name} with HNGi7 ID ${id} using ${langua
 console.log(statement);
 } 
 
-mySecondTask ('Ummul-Khair Zurak', 'HNG-04258', 'JavaScript', 'zurakummu@gmail.com')
+mySecondTask ('Ummu Zurak', 'HNG-04258', 'JavaScript', 'zurakummu@gmail.com')
