@@ -83,6 +83,7 @@
 					$output = null;
 					try {
 						$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
+						$output = trim($output); // remove extra space at the beginning and at the end
 					} catch(Exception $e) {
 						$output = null;
 					}
@@ -91,15 +92,17 @@
 						$item["status"] = "fail";
 						$item["output"] = "%> script produced no output";
 						$item["name"] = $fileName;
-
+						$totalFail += 1; //add total fail
 					} else {
 
 						if (preg_match($template, $output, $matches)) {
 							$item["status"] = "pass";
 							$item["output"] = $matches[0];
+							$totalPass += 1; //add total pass
 						} else {
 							$item["status"] = "fail";
 							$item["output"] = $output;
+							$totalFail += 1; //add total fail
 						}
 
 					}
@@ -141,7 +144,7 @@
 				array_push($data, $item);
 			}
 		}
-		echo json_encode($data);
+		echo json_encode($data), JSON_PRETTY_PRINT;
 		die();
 	}
 ?>
@@ -193,6 +196,7 @@
 								$output = null;
 								try {
 									$output = shell_exec("$runtime $filePath 2>&1"); # Execute script and assign result
+									$output = trim($output); // remove extra space at the beginning and at the end
 								} catch(Exeception $e) {
 									$output = null;
 								}
