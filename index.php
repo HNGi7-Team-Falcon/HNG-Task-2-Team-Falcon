@@ -91,15 +91,17 @@
 						$item["status"] = "fail";
 						$item["output"] = "%> script produced no output";
 						$item["name"] = $fileName;
-
+						$totalFail += 1; //add total fail
 					} else {
 
 						if (preg_match($template, $output, $matches)) {
 							$item["status"] = "pass";
-							$item["output"] = $matches[0];
+							$item["output"] = trim($matches[0]);
+							$totalPass += 1; //add total pass
 						} else {
 							$item["status"] = "fail";
 							$item["output"] = $output;
+							$totalFail += 1; //add total fail
 						}
 
 					}
@@ -141,9 +143,8 @@
 				array_push($data, $item);
 			}
 		}
-		echo json_encode($data);
-		die();
-	}
+		echo json_encode($data), JSON_PRETTY_PRINT;
+	} else {
 ?>
 
 
@@ -279,3 +280,5 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </html>
+<?php 
+	}
