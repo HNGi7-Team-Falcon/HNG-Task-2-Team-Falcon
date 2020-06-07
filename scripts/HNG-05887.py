@@ -1,4 +1,3 @@
-  
 fullnames = 'Mariam David-Alozie'
 ids = 'HNG-05887'
 language = 'Python'
