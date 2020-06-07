@@ -1,8 +1,9 @@
-<?php
-$name = "Milind krishna";
-$hngi7_id = "HNG-00344";
-$language = "PHP" ;
-$mail = "milindkrishna69233@gmail.com";
-$message = "Hello World, this is ". $name. " with HNGi7 ID " . $hngi7_id." using ". $language. " for stage 2 task. ".$mail;
-echo "$message" ;
+
+$uname = "Milind krishna";
+$identification = " HNG-00344";
+$lan = "PHP" ;
+$mail = "milindkrishna69233@gmail.com" 
+$output = "Hello World, this is ". $uname. " with HNGi7 ID ".$identification . " using ". $lan. " for stage 2 task. ". $mail;
+echo $output;
+
 ?>
