@@ -7,8 +7,12 @@
 # Others
 .idea/
 
+<<<<<<< HEAD
 /.idea
 
+=======
+.idea/
+>>>>>>> 06cc20aceb3737a2d3f6009d05f7a723eca04dd5
 .history/
 /.history
 
