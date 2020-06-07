@@ -1,0 +1,1 @@
+console.log("Hello world, this is Nweke Johnbosco Chinonso with HNGi7 ID HNG-01736 using javascript for stage 2")

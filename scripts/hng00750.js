@@ -1,0 +1,1 @@
+console.log ("Hello World, this is Chidiebere Eucharia Okoli with HNGi7 ID HNG-00750 using Javascript for stage 2 task. euriaokoli90@gmail.com")

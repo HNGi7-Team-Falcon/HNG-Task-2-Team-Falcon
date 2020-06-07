@@ -1,5 +1,10 @@
-<p id="profile"></p>
 
-<script>
-document.getElementById("profile").innerHTML = "Hello World, this is Shotolu Paul Oluwabukunmi with HGNi7 ID HNG-02125 using javascript";
-</script>
+    var name = "Shotolu Paul"
+        var hngid = "HNG-02125"
+        var lang = "javascript"
+        var email= "paulshotolu@gmail.com"
+
+		function paulfunc() {
+		   return ('Hello World, this '+ name +' with HNGi7 ID '+ hngid +' using '+ lang +' for stage 2 task. '+ email +'');
+		}
+		console.log(paulfunc());

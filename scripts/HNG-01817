@@ -1,0 +1,11 @@
+#include "stdafx.h"
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout<<"Hello World,this is Mahlatse Selamolela with HNGi7 ID [HNG-01817] using C++ for stage 2 task."<<endl;
+
+	system ("pause");
+	return 0;
+}
