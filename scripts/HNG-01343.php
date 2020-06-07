@@ -13,7 +13,7 @@
       . $sId
       . " using "
       . $sLanguage
-      . " for stage 2 task."
+      . " for stage 2 task. "
       . $sEmail;
 
    $sMessage = $sGreeting;
