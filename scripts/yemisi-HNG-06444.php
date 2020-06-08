@@ -10,4 +10,5 @@ $word = 'Hello World, this is '.$lastname.' '.$firstname.' with HNGi7 ID '.$id.'
 
 echo $word;
 
+
 ?>
