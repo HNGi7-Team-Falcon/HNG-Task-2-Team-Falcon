@@ -1,13 +1,7 @@
-my_dict = {
-   "name" : "Juma Aisha",
-   "hng_id" : "HNG-04499",
-   "language" : "Python",
-   "email" : "alishadesua1@gmail.com",
-   
-}
-d1 = my_dict.get("name", " ")
-d2 = my_dict.get("hng_id", " ")
-d3 = my_dict.get("language", " ")
-d4 = my_dict.get("email", " ")
+full_name = 'Aisha Juma'
+HNG_ID = 'HNG-04499'
+language = 'Python'
+email = 'alishadesua1@gmail.com'
 
-print("Hello world, this is" , d1, "with HNGi7 ID" , d2, "using" , d3, "for Stage 2 task.", d4  )
+print('Hello World, this is {} with HNGi7 ID {} using {} for stage 2 task.{}'.format(full_name,HNG_ID,language,email))
+

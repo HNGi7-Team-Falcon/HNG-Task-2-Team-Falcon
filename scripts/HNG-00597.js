@@ -1,15 +1,13 @@
 const name = "Christian Dirisu";
-
 const id = "HNG-00597";
-
-const language = "Javascript";
-
+const devlang = "javaScript";
 const email = "christian.dirisu@gmail.com";
+const stage = "stage 2";
 
-const task = () => {
-
-    return `Hello world, this is ${name} with HNGi7 ID ${id} and email ${email} using ${language} for stage 2 task`
-
+const intro = () => {
+  console.log(
+    `Hello World, this is ${name} with HNGi7 ID ${id} using ${devlang} for stage 2 task. ${email}`
+  );
 };
 
-console.log(task());
+intro();
