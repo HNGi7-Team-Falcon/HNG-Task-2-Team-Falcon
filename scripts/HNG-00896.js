@@ -6,7 +6,7 @@ const language = "javascript";
 const email = "kruzabasi@gmail.com";
 
 
-console.log("Hello World, this is " + name + " with HNGi7 ID " + hngid + " using " + language + " for stage 2 task");
+console.log("Hello World, this is " + name + " with HNGi7 ID " + hngid + " using " + language + " for stage 2 task " + email);
 
 
 //this script was written in javascript by HNG-00896
