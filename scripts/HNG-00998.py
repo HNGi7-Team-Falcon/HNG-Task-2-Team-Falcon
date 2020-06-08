@@ -1,16 +1,14 @@
-lname = "Juma"
-fname ="Aisha"
-hng_id = "HNG-04499"
+
+first_name = "Bolaji"
+last_name ="Alabi"
+id = "HNG-00998"
 language ="Python"
-email = "alishadesua1@gmail.com"
-flush = true;
+email = "alabibolaji78@gmail.com"
 
 
-def mydata ():
+def printData ():
+    full_name = (first_name+" "+ last_name);
+    print("Hello World, this is "+ full_name + " with HNGi7 ID " + id + " using " + language +" for stage 2 task.", email, flush=True)
+    return;
 
-    print("Hello World, this is "+ name + " with HNGi7 ID " + hng_id + " using " + language +" for stage 2 task")
-   
-
-mydata()
- 
- 
+printData()
