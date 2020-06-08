@@ -1,2 +1,9 @@
-// JavaScript source code
-"Hello World, this is Oke Olaniyi with HNGi7 ID 02724 using JavaScript for stage 2 task oayomide77@gmail.com"
+// This is a code to perform task 2
+//variable declarations
+var MyName = Oke Olaniyi;
+var ID = HNG 02724;
+var emailadd = oayomide77@gmail.com;
+var lang = JavaScript;
+console.log (Hello World, this is [MyName] with HNGi7 [ID] using [lang] for stage 2 task [emailadd]);
+
+
